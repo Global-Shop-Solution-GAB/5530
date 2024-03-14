@@ -1,0 +1,8 @@
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+Variable.Passed.CRM-lblSRFax.Set("Serial Number")
+Variable.Passed.CRM-lblSRPriority.Set("Root Cause ")
+F.Intrinsic.UI.ChangeCallerProperty(Variable.Passed.CRM-cboSRPriCnct,"LOCK",1)
+Program.Sub.Main.End
