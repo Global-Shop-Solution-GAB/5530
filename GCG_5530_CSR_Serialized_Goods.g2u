@@ -1,0 +1,3530 @@
+Program.Sub.ScreenSU.Start
+Gui.FormSerialMangement..Create
+Gui.FormSerialMangement..Caption("Serial# Management")
+Gui.FormSerialMangement..Size(20955,14655)
+Gui.FormSerialMangement..MinX(0)
+Gui.FormSerialMangement..MinY(0)
+Gui.FormSerialMangement..Position(0,0)
+Gui.FormSerialMangement..BackColor(-2147483633)
+Gui.FormSerialMangement..MousePointer(0)
+Gui.FormSerialMangement..Event(UnLoad,FormSerialMangement_UnLoad)
+Gui.FormSerialMangement.lblSerial.Create(Label,"Serial No:",True,855,255,0,105,150,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.txtSerial.Create(TextBox,"",True,2595,300,0,975,75,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtSerial.Event(KeyPressEnter,loadsingle)
+Gui.FormSerialMangement.GsGridControlSERV.Create(GsGridControl)
+Gui.FormSerialMangement.GsGridControlSERV.Size(14895,1740)
+Gui.FormSerialMangement.GsGridControlSERV.Position(105,495)
+Gui.FormSerialMangement.GsGridControlSERV.Event(RowCellClick,GsGridControlSERV_RowCellClick)
+Gui.FormSerialMangement.tab1.Create(Tab)
+Gui.FormSerialMangement.tab1.Size(20640,11655)
+Gui.FormSerialMangement.tab1.Position(135,2280)
+Gui.FormSerialMangement.tab1.Anchor(3)
+Gui.FormSerialMangement.tab1.Tabs(3)
+Gui.FormSerialMangement.tab1.SetTab(0)
+Gui.FormSerialMangement.tab1.Caption("Contacts & CSR History")
+Gui.FormSerialMangement.tab1.SetTab(1)
+Gui.FormSerialMangement.tab1.Caption("WO BOM")
+Gui.FormSerialMangement.tab1.SetTab(2)
+Gui.FormSerialMangement.tab1.Caption("Attachments")
+Gui.FormSerialMangement.lblContactCust.Create(Label,"Customer",True,975,255,0,75,330,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblContactCust.Parent("tab1",0)
+Gui.FormSerialMangement.txtContactCust.Create(TextBox,"",True,2355,300,0,2325,570,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtContactCust.Parent("tab1",0)
+Gui.FormSerialMangement.GsGridControlbomWOBOM.Create(GsGridControl)
+Gui.FormSerialMangement.GsGridControlbomWOBOM.Size(19980,7590)
+Gui.FormSerialMangement.GsGridControlbomWOBOM.Position(120,150)
+Gui.FormSerialMangement.GsGridControlbomWOBOM.Parent("tab1",1)
+Gui.FormSerialMangement.GsGridControlbomWOBOM.Event(RowCellClick,GsGridControlbomWOBOM_RowCellClick)
+Gui.FormSerialMangement.htmlContainerDoc.Create(HtmlContainer)
+Gui.FormSerialMangement.htmlContainerDoc.Size(16920,9975)
+Gui.FormSerialMangement.htmlContainerDoc.Position(3150,405)
+Gui.FormSerialMangement.htmlContainerDoc.Parent("tab1",2)
+Gui.FormSerialMangement.lblSiteContact.Create(Label,"Site Contact",True,975,255,0,75,3120,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblSiteContact.Parent("tab1",0)
+Gui.FormSerialMangement.lblOrigSO.Create(Label,"Orig. SO",True,1080,255,0,5220,5340,True,1,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblOrigSO.Parent("tab1",0)
+Gui.FormSerialMangement.GsGridControlCSREvent.Create(GsGridControl)
+Gui.FormSerialMangement.GsGridControlCSREvent.Size(7080,2415)
+Gui.FormSerialMangement.GsGridControlCSREvent.Position(13410,2745)
+Gui.FormSerialMangement.GsGridControlCSREvent.Parent("tab1",0)
+Gui.FormSerialMangement.lblCSREvent.Create(Label,"CSR Action Log: ",True,1305,255,0,13410,2490,True,1,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblCSREvent.Parent("tab1",0)
+Gui.FormSerialMangement.GsGridControlOrigSO.Create(GsGridControl)
+Gui.FormSerialMangement.GsGridControlOrigSO.Size(14160,2175)
+Gui.FormSerialMangement.GsGridControlOrigSO.Position(6330,5280)
+Gui.FormSerialMangement.GsGridControlOrigSO.Parent("tab1",0)
+Gui.FormSerialMangement.GsGridControlOrigSO.Event(RowCellClick,GsGridControlOrigSO_RowCellClick)
+Gui.FormSerialMangement.cmdNewSO.Create(Button)
+Gui.FormSerialMangement.cmdNewSO.Size(1485,375)
+Gui.FormSerialMangement.cmdNewSO.Position(135,9930)
+Gui.FormSerialMangement.cmdNewSO.Parent("tab1",0)
+Gui.FormSerialMangement.cmdNewSO.Caption("NEW Sales Order")
+Gui.FormSerialMangement.cmdNewSO.Event(Click,cmdNewSO_Click)
+Gui.FormSerialMangement.cmdNewRMA.Create(Button)
+Gui.FormSerialMangement.cmdNewRMA.Size(1485,375)
+Gui.FormSerialMangement.cmdNewRMA.Position(1725,9930)
+Gui.FormSerialMangement.cmdNewRMA.Parent("tab1",0)
+Gui.FormSerialMangement.cmdNewRMA.Caption("NEW RMA")
+Gui.FormSerialMangement.cmdNewRMA.Event(Click,cmdNewRMA_Click)
+Gui.FormSerialMangement.lblContacts.Create(Label,"Contacts",True,975,255,0,75,660,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblContacts.Parent("tab1",0)
+Gui.FormSerialMangement.GsGridControlDoc.Create(GsGridControl)
+Gui.FormSerialMangement.GsGridControlDoc.Size(2850,9960)
+Gui.FormSerialMangement.GsGridControlDoc.Position(150,405)
+Gui.FormSerialMangement.GsGridControlDoc.Parent("tab1",2)
+Gui.FormSerialMangement.GsGridControlDoc.Event(RowCellClick,GsGridControlDoc_RowCellClick)
+Gui.FormSerialMangement.lbl10.Create(Label,"Select Document to View",True,2820,255,0,150,180,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lbl10.Parent("tab1",2)
+Gui.FormSerialMangement.txtConCustPhone.Create(TextBox,"",True,1230,300,0,1065,900,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtConCustPhone.Parent("tab1",0)
+Gui.FormSerialMangement.txtConCustEmail.Create(TextBox,"",True,2355,300,0,2325,900,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtConCustEmail.Parent("tab1",0)
+Gui.FormSerialMangement.GsGridControlCSRHist.Create(GsGridControl)
+Gui.FormSerialMangement.GsGridControlCSRHist.Size(14160,2100)
+Gui.FormSerialMangement.GsGridControlCSRHist.Position(6330,240)
+Gui.FormSerialMangement.GsGridControlCSRHist.Parent("tab1",0)
+Gui.FormSerialMangement.GsGridControlCSRHist.Event(RowCellClick,GsGridControlCSRHist_RowCellClick)
+Gui.FormSerialMangement.GsGridControlServSO.Create(GsGridControl)
+Gui.FormSerialMangement.GsGridControlServSO.Size(14145,2700)
+Gui.FormSerialMangement.GsGridControlServSO.Position(6330,7605)
+Gui.FormSerialMangement.GsGridControlServSO.Parent("tab1",0)
+Gui.FormSerialMangement.GsGridControlServSO.Event(RowCellClick,GsGridControlServSO_RowCellClick)
+Gui.FormSerialMangement.lblServSO.Create(Label,"Service ",True,1065,255,0,5235,7665,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblServSO.Parent("tab1",0)
+Gui.FormSerialMangement.lblCSRHist.Create(Label,"CSR Hist.",True,855,255,0,5445,300,True,1,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblCSRHist.Parent("tab1",0)
+Gui.FormSerialMangement.cmdNewCSR.Create(Button)
+Gui.FormSerialMangement.cmdNewCSR.Size(1485,375)
+Gui.FormSerialMangement.cmdNewCSR.Position(3255,9930)
+Gui.FormSerialMangement.cmdNewCSR.Parent("tab1",0)
+Gui.FormSerialMangement.cmdNewCSR.Caption("NEW CSR")
+Gui.FormSerialMangement.cmdNewCSR.Event(Click,cmdNewCSR_Click)
+Gui.FormSerialMangement.lblFileDesc.Create(Label,"Label",True,6300,255,0,3150,180,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblFileDesc.Parent("tab1",2)
+Gui.FormSerialMangement.txtCustNum.Create(TextBox,"",True,1230,300,0,1065,240,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtCustNum.Parent("tab1",0)
+Gui.FormSerialMangement.txtCustName.Create(TextBox,"",True,2355,300,0,2325,240,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtCustName.Parent("tab1",0)
+Gui.FormSerialMangement.cmdContact.Create(Button)
+Gui.FormSerialMangement.cmdContact.Size(420,375)
+Gui.FormSerialMangement.cmdContact.Position(4725,540)
+Gui.FormSerialMangement.cmdContact.Parent("tab1",0)
+Gui.FormSerialMangement.cmdContact.Caption("^")
+Gui.FormSerialMangement.cmdContact.Event(Click,cmdContact_Click)
+Gui.FormSerialMangement.txtSiteName.Create(TextboxM)
+Gui.FormSerialMangement.txtSiteName.Size(3870,1740)
+Gui.FormSerialMangement.txtSiteName.Position(1065,1245)
+Gui.FormSerialMangement.txtSiteName.Parent("tab1",0)
+Gui.FormSerialMangement.txtSiteName.BorderStyle(1)
+Gui.FormSerialMangement.lblSiteName.Create(Label,"Site Name",True,975,255,0,75,1320,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblSiteName.Parent("tab1",0)
+Gui.FormSerialMangement.txtSiteContact.Create(TextboxM)
+Gui.FormSerialMangement.txtSiteContact.Size(3870,1740)
+Gui.FormSerialMangement.txtSiteContact.Position(1065,3045)
+Gui.FormSerialMangement.txtSiteContact.Parent("tab1",0)
+Gui.FormSerialMangement.txtSiteContact.BorderStyle(1)
+Gui.FormSerialMangement.GsGcOrderToWO.Create(GsGridControl)
+Gui.FormSerialMangement.GsGcOrderToWO.Size(19980,2505)
+Gui.FormSerialMangement.GsGcOrderToWO.Position(120,7905)
+Gui.FormSerialMangement.GsGcOrderToWO.Parent("tab1",1)
+Gui.FormSerialMangement.GsGcOrderToWO.Event(RowCellClick,GsGcOrderToWO_RowCellClick)
+Gui.FormSerialMangement.txtCustContactNumber.Create(TextBox,"",True,1230,300,0,1065,570,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtCustContactNumber.Parent("tab1",0)
+Gui.FormSerialMangement.cmdCSRHISTREFRESH.Create(Button)
+Gui.FormSerialMangement.cmdCSRHISTREFRESH.Size(675,375)
+Gui.FormSerialMangement.cmdCSRHISTREFRESH.Position(5625,525)
+Gui.FormSerialMangement.cmdCSRHISTREFRESH.Parent("tab1",0)
+Gui.FormSerialMangement.cmdCSRHISTREFRESH.Caption("REFRESH")
+Gui.FormSerialMangement.cmdCSRHISTREFRESH.Event(Click,cmdCSRHISTREFRESH_Click)
+Gui.FormSerialMangement.frmPrefVend.Create(Frame)
+Gui.FormSerialMangement.frmPrefVend.Size(4575,1560)
+Gui.FormSerialMangement.frmPrefVend.Position(90,4875)
+Gui.FormSerialMangement.frmPrefVend.Parent("tab1",0)
+Gui.FormSerialMangement.frmPrefVend.Caption("Preferred Vendor")
+Gui.FormSerialMangement.cmdPreferredVendor.Create(Button)
+Gui.FormSerialMangement.cmdPreferredVendor.Size(420,375)
+Gui.FormSerialMangement.cmdPreferredVendor.Position(3795,210)
+Gui.FormSerialMangement.cmdPreferredVendor.Parent("frmPrefVend")
+Gui.FormSerialMangement.cmdPreferredVendor.Caption("^")
+Gui.FormSerialMangement.cmdPreferredVendor.Event(Click,cmdPreferredVendor_Click)
+Gui.FormSerialMangement.txtVendorName.Create(TextBox,"",True,2355,300,0,1380,240,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtVendorName.Parent("frmPrefVend")
+Gui.FormSerialMangement.txtVendor.Create(TextBox,"",True,1230,300,0,120,240,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtVendor.Parent("frmPrefVend")
+Gui.FormSerialMangement.cmdVendorContact.Create(Button)
+Gui.FormSerialMangement.cmdVendorContact.Size(420,375)
+Gui.FormSerialMangement.cmdVendorContact.Position(3795,810)
+Gui.FormSerialMangement.cmdVendorContact.Parent("frmPrefVend")
+Gui.FormSerialMangement.cmdVendorContact.Caption("^")
+Gui.FormSerialMangement.cmdVendorContact.Event(Click,cmdVendorContact_Click)
+Gui.FormSerialMangement.txtVendorContact.Create(TextBox,"",True,2355,300,0,1380,840,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtVendorContact.Parent("frmPrefVend")
+Gui.FormSerialMangement.txtVendContactNumber.Create(TextBox,"",True,1230,300,0,120,840,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtVendContactNumber.Parent("frmPrefVend")
+Gui.FormSerialMangement.lblVendorContact.Create(Label,"Vendor Contact",True,1875,255,0,120,630,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblVendorContact.Parent("frmPrefVend")
+Gui.FormSerialMangement.txtVendorEmail.Create(TextBox,"",True,2355,300,0,1380,1185,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtVendorEmail.Parent("frmPrefVend")
+Gui.FormSerialMangement.txtVendorPhone.Create(TextBox,"",True,1230,300,0,120,1185,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtVendorPhone.Parent("frmPrefVend")
+Gui.FormSerialMangement.frmSecVend.Create(Frame)
+Gui.FormSerialMangement.frmSecVend.Size(4575,1560)
+Gui.FormSerialMangement.frmSecVend.Position(90,6465)
+Gui.FormSerialMangement.frmSecVend.Parent("tab1",0)
+Gui.FormSerialMangement.frmSecVend.Caption("Secondary Vendor")
+Gui.FormSerialMangement.lblSecVendCont.Create(Label,"Vendor Contact",True,1875,255,0,120,615,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblSecVendCont.Parent("frmSecVend")
+Gui.FormSerialMangement.txtSecVendor.Create(TextBox,"",True,1230,300,0,120,240,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtSecVendor.Parent("frmSecVend")
+Gui.FormSerialMangement.txtSecVendorName.Create(TextBox,"",True,2355,300,0,1380,240,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtSecVendorName.Parent("frmSecVend")
+Gui.FormSerialMangement.txtSecVendorContact.Create(TextBox,"",True,2355,300,0,1380,825,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtSecVendorContact.Parent("frmSecVend")
+Gui.FormSerialMangement.txtSecVendContactNumber.Create(TextBox,"",True,1230,300,0,120,825,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtSecVendContactNumber.Parent("frmSecVend")
+Gui.FormSerialMangement.txtSecVendorEmail.Create(TextBox,"",True,2355,300,0,1380,1170,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtSecVendorEmail.Parent("frmSecVend")
+Gui.FormSerialMangement.txtSecVendorPhone.Create(TextBox,"",True,1230,300,0,120,1170,True,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtSecVendorPhone.Parent("frmSecVend")
+Gui.FormSerialMangement.cmdPreferredVendor2.Create(Button)
+Gui.FormSerialMangement.cmdPreferredVendor2.Size(420,375)
+Gui.FormSerialMangement.cmdPreferredVendor2.Position(3795,210)
+Gui.FormSerialMangement.cmdPreferredVendor2.Parent("frmSecVend")
+Gui.FormSerialMangement.cmdPreferredVendor2.Caption("^")
+Gui.FormSerialMangement.cmdPreferredVendor2.Event(Click,cmdPreferredVendor2_Click)
+Gui.FormSerialMangement.cmdSecVendCont.Create(Button)
+Gui.FormSerialMangement.cmdSecVendCont.Size(420,375)
+Gui.FormSerialMangement.cmdSecVendCont.Position(3795,780)
+Gui.FormSerialMangement.cmdSecVendCont.Parent("frmSecVend")
+Gui.FormSerialMangement.cmdSecVendCont.Caption("^")
+Gui.FormSerialMangement.cmdSecVendCont.Event(Click,cmdSecVendCont_Click)
+Gui.FormSerialMangement.lblCSREvent2.Create(Label,"(Select CSR)",True,1080,255,0,14865,2490,True,1,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblCSREvent2.Parent("tab1",0)
+Gui.FormSerialMangement.lblServSO2.Create(Label,"Sales Orders",True,1140,255,0,5160,7905,True,1,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblServSO2.Parent("tab1",0)
+Gui.FormSerialMangement.cmdContactsSave.Create(Button)
+Gui.FormSerialMangement.cmdContactsSave.Size(4575,375)
+Gui.FormSerialMangement.cmdContactsSave.Position(90,8115)
+Gui.FormSerialMangement.cmdContactsSave.Parent("tab1",0)
+Gui.FormSerialMangement.cmdContactsSave.Caption("Save")
+Gui.FormSerialMangement.cmdContactsSave.Event(Click,cmdContactsSave_Click)
+Gui.FormSerialMangement.txtExtDesc.Create(TextboxM)
+Gui.FormSerialMangement.txtExtDesc.Size(7080,2415)
+Gui.FormSerialMangement.txtExtDesc.Position(6330,2745)
+Gui.FormSerialMangement.txtExtDesc.Parent("tab1",0)
+Gui.FormSerialMangement.lblExtDesc.Create(Label,"Part Ext. Desc.",True,1395,255,0,6330,2490,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblExtDesc.Parent("tab1",0)
+Gui.FormSerialMangement.lblPartNo.Create(Label,"PartNo",False,1935,255,0,7680,2490,True,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.lblPartNo.Parent("tab1",0)
+Gui.FormSerialMangement.lblPartNo.FontStyle(True,False,False,False,False)
+Gui.FormSerialMangement.lblCustomer.Create(Label,"or/ Customer:",False,1230,255,0,3675,150,False,0,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.txtCustomer.Create(TextBox,"",False,2595,300,0,4785,75,False,0,"Arial",8,-2147483643,1)
+Gui.FormSerialMangement.txtCustomer.Event(KeyPressEnter,txtCustomer_KeyPressEnter)
+Gui.FormSerialMangement.cmdRefresh.Create(Button)
+Gui.FormSerialMangement.cmdRefresh.Size(855,375)
+Gui.FormSerialMangement.cmdRefresh.Position(9120,45)
+Gui.FormSerialMangement.cmdRefresh.Caption("Refresh")
+Gui.FormSerialMangement.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.FormSerialMangement.cmdRefresh.Visible(False)
+Gui.FormSerialMangement.pBar1.Create(ProgressBar)
+Gui.FormSerialMangement.pBar1.Size(4245,255)
+Gui.FormSerialMangement.pBar1.Position(10050,105)
+Gui.FormSerialMangement.lbl1.Create(Label,"0%",True,705,270,0,14295,150,True,1,"Arial",8,-2147483633,0)
+Gui.FormSerialMangement.picGSSLogo.Create(PictureBox)
+Gui.FormSerialMangement.picGSSLogo.Size(4125,1965)
+Gui.FormSerialMangement.picGSSLogo.Position(16485,180)
+Gui.FormSerialMangement.picGSSLogo.Anchor(9)
+Gui.F_Seq_Notes..Create
+Gui.F_Seq_Notes..Caption("Sequence Notes")
+Gui.F_Seq_Notes..Size(7080,4290)
+Gui.F_Seq_Notes..MinX(0)
+Gui.F_Seq_Notes..MinY(0)
+Gui.F_Seq_Notes..Position(0,0)
+Gui.F_Seq_Notes..BackColor(-2147483633)
+Gui.F_Seq_Notes..MaxButton(False)
+Gui.F_Seq_Notes..MinButton(False)
+Gui.F_Seq_Notes..MousePointer(0)
+Gui.F_Seq_Notes..Event(UnLoad,F_Seq_Notes_UnLoad)
+Gui.F_Seq_Notes.mltSeqNotes.Create(TextboxM)
+Gui.F_Seq_Notes.mltSeqNotes.Size(6720,3645)
+Gui.F_Seq_Notes.mltSeqNotes.Position(45,45)
+Gui.F_Seq_Notes.mltSeqNotes.Anchor(15)
+Gui.frmCSR..Create
+Gui.frmCSR..Size(10470,7140)
+Gui.frmCSR..MinX(0)
+Gui.frmCSR..MinY(0)
+Gui.frmCSR..Position(0,0)
+Gui.frmCSR..BackColor(-2147483633)
+Gui.frmCSR..MousePointer(0)
+Gui.frmCSR..Caption("CSR Update")
+Gui.frmCSR..Event(UnLoad,frmCSR_UnLoad)
+Gui.frmCSR.lblSubject.Create(Label,"Subject",True,720,255,0,4155,120,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblSubject.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtSubject.Create(TextBox,"",True,6150,300,0,4155,330,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtSubject.MaxLength(30)
+Gui.frmCSR.txtSubject.ControlGroup(1)
+Gui.frmCSR.lblReqType.Create(Label,"Request Type",True,1635,255,0,60,780,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblReqType.FontStyle(True,False,False,False,False)
+Gui.frmCSR.lblStatus.Create(Label,"Down Time",True,1425,255,0,8250,780,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblStatus.FontStyle(True,False,False,False,False)
+Gui.frmCSR.lblProb.Create(Label,"Problem",True,900,255,0,60,3000,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblProb.FontStyle(True,False,False,False,False)
+Gui.frmCSR.lblRootCause.Create(Label,"Root Cause",True,1395,255,0,6195,780,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblRootCause.DefaultValue("")
+Gui.frmCSR.lblRootCause.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtProb.Create(TextBoxR)
+Gui.frmCSR.txtProb.Size(10230,1905)
+Gui.frmCSR.txtProb.Position(60,3210)
+Gui.frmCSR.txtProb.BorderStyle(1)
+Gui.frmCSR.txtProb.ControlGroup(1)
+Gui.frmCSR.cmdUpdate.Create(Button)
+Gui.frmCSR.cmdUpdate.Size(1725,540)
+Gui.frmCSR.cmdUpdate.Position(8580,6060)
+Gui.frmCSR.cmdUpdate.Caption("Add/Update")
+Gui.frmCSR.cmdUpdate.Event(Click,cmdUpdate_Click)
+Gui.frmCSR.cmdUpdate.FontStyle(True,False,False,False,False)
+Gui.frmCSR.lblResp.Create(Label,"Responsible",True,1620,255,0,1320,120,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblResp.FontStyle(True,False,False,False,False)
+Gui.frmCSR.lblSerNo.Create(Label,"Serial Number",True,1320,255,0,60,120,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblSerNo.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtSerNo.Create(TextBox,"",True,1215,300,0,60,330,False,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtSerNo.Locked(True)
+Gui.frmCSR.txtSerNo.ControlGroup(1)
+Gui.frmCSR.cboResp.Create(ComboBox)
+Gui.frmCSR.cboResp.Size(2805,330)
+Gui.frmCSR.cboResp.Position(1320,330)
+Gui.frmCSR.cboResp.ControlGroup(1)
+Gui.frmCSR.frmContact.Create(Frame)
+Gui.frmCSR.frmContact.Size(10245,915)
+Gui.frmCSR.frmContact.Position(45,5115)
+Gui.frmCSR.frmContact.Caption("Contact")
+Gui.frmCSR.frmContact.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtPhone.Create(TextBox,"",True,1965,300,0,5535,480,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtPhone.Parent("frmContact")
+Gui.frmCSR.txtPhone.ControlGroup(1)
+Gui.frmCSR.lblPhone.Create(Label,"Phone",True,750,255,0,5535,270,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblPhone.Parent("frmContact")
+Gui.frmCSR.lblPhone.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtEmail.Create(TextBox,"",True,3240,300,0,2265,480,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtEmail.Parent("frmContact")
+Gui.frmCSR.txtEmail.ControlGroup(1)
+Gui.frmCSR.lblEmail.Create(Label,"Email",True,885,255,0,2265,270,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblEmail.Parent("frmContact")
+Gui.frmCSR.lblEmail.FontStyle(True,False,False,False,False)
+Gui.frmCSR.lblPrimContact.Create(Label,"Primary",True,1830,255,0,90,270,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblPrimContact.Parent("frmContact")
+Gui.frmCSR.lblPrimContact.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtPrimeContact.Create(TextBox,"",True,2145,300,0,90,480,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtPrimeContact.Parent("frmContact")
+Gui.frmCSR.txtPrimeContact.ControlGroup(1)
+Gui.frmCSR.cmdPrimContact.Create(Button)
+Gui.frmCSR.cmdPrimContact.Size(420,375)
+Gui.frmCSR.cmdPrimContact.Position(7605,450)
+Gui.frmCSR.cmdPrimContact.Caption("^")
+Gui.frmCSR.cmdPrimContact.Event(Click,cmdPrimContact_Click)
+Gui.frmCSR.cmdPrimContact.Parent("frmContact")
+Gui.frmCSR.lblEvent.Create(Label,"Event Code",True,1170,255,0,4155,780,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblEvent.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtReqNo.Create(TextBox,"",False,1215,300,0,60,6075,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtReqNo.ControlGroup(1)
+Gui.frmCSR.frmRelTrans.Create(Frame)
+Gui.frmCSR.frmRelTrans.Size(10245,1545)
+Gui.frmCSR.frmRelTrans.Position(45,1380)
+Gui.frmCSR.frmRelTrans.Caption("Related Transaction Info")
+Gui.frmCSR.frmRelTrans.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtCustLocn.Create(TextBox,"",True,1215,300,0,7590,1065,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtCustLocn.Parent("frmRelTrans")
+Gui.frmCSR.txtCustLocn.ControlGroup(1)
+Gui.frmCSR.lblCustLocn.Create(Label,"Loc",True,1935,255,0,7590,855,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblCustLocn.Parent("frmRelTrans")
+Gui.frmCSR.lblCustLocn.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtCustPart.Create(TextBox,"",True,2520,300,0,5025,1065,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtCustPart.Parent("frmRelTrans")
+Gui.frmCSR.txtCustPart.ControlGroup(1)
+Gui.frmCSR.lblCustPart.Create(Label,"Part",True,1935,255,0,5025,855,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblCustPart.Parent("frmRelTrans")
+Gui.frmCSR.lblCustPart.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtCustSOLine.Create(TextBox,"",True,1215,300,0,2805,480,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtCustSOLine.Parent("frmRelTrans")
+Gui.frmCSR.txtCustSOLine.ControlGroup(1)
+Gui.frmCSR.lblCustSOLine.Create(Label,"-",True,300,255,0,2490,570,True,2,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblCustSOLine.Parent("frmRelTrans")
+Gui.frmCSR.lblCustSOLine.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtCustSO.Create(TextBox,"",True,2385,300,0,90,480,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtCustSO.Parent("frmRelTrans")
+Gui.frmCSR.txtCustSO.ControlGroup(1)
+Gui.frmCSR.lblCustSO.Create(Label,"Sales Order",True,1935,255,0,90,270,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblCustSO.Parent("frmRelTrans")
+Gui.frmCSR.lblCustSO.FontStyle(True,False,False,False,False)
+Gui.frmCSR.txtCustPO.Create(TextBox,"",True,3945,300,0,90,1065,True,0,"Arial",8,-2147483643,1)
+Gui.frmCSR.txtCustPO.Parent("frmRelTrans")
+Gui.frmCSR.txtCustPO.ControlGroup(1)
+Gui.frmCSR.lblCustPO.Create(Label,"Customer PO",True,1935,255,0,90,855,True,0,"Arial",8,-2147483633,0)
+Gui.frmCSR.lblCustPO.Parent("frmRelTrans")
+Gui.frmCSR.lblCustPO.FontStyle(True,False,False,False,False)
+Gui.frmCSR.cmdCustPOBrw.Create(Button)
+Gui.frmCSR.cmdCustPOBrw.Size(420,375)
+Gui.frmCSR.cmdCustPOBrw.Position(4125,1020)
+Gui.frmCSR.cmdCustPOBrw.Parent("frmRelTrans")
+Gui.frmCSR.cmdCustPOBrw.Caption("^")
+Gui.frmCSR.cmdCustPOBrw.Event(Click,cmdCustPOBrw_Click)
+Gui.frmCSR.cmdSOBrw.Create(Button)
+Gui.frmCSR.cmdSOBrw.Size(420,375)
+Gui.frmCSR.cmdSOBrw.Position(4125,450)
+Gui.frmCSR.cmdSOBrw.Parent("frmRelTrans")
+Gui.frmCSR.cmdSOBrw.Caption("^")
+Gui.frmCSR.cmdSOBrw.Event(Click,cmdSOBrw_Click)
+Gui.frmCSR.cmdPartBrw.Create(Button)
+Gui.frmCSR.cmdPartBrw.Size(420,375)
+Gui.frmCSR.cmdPartBrw.Position(8865,1020)
+Gui.frmCSR.cmdPartBrw.Parent("frmRelTrans")
+Gui.frmCSR.cmdPartBrw.Caption("^")
+Gui.frmCSR.cmdPartBrw.Event(Click,cmdPartBrw_Click)
+Gui.frmCSR.chkClsCSR.Create(CheckBox)
+Gui.frmCSR.chkClsCSR.Size(1335,300)
+Gui.frmCSR.chkClsCSR.Position(6690,6180)
+Gui.frmCSR.chkClsCSR.Alignment(1)
+Gui.frmCSR.chkClsCSR.Caption("Close CSR")
+Gui.frmCSR.chkClsCSR.FontStyle(True,False,False,False,False)
+Gui.frmCSR.chkClsCSR.ControlGroup(1)
+Gui.frmCSR.chkClsCSR.Event(Click,chkClsCSR_Click)
+Gui.frmCSR.cboReqType.Create(ComboBox)
+Gui.frmCSR.cboReqType.Size(1995,330)
+Gui.frmCSR.cboReqType.Position(60,990)
+Gui.frmCSR.cboReqType.Event(Change,cboReqType_Change)
+Gui.frmCSR.cboReqType.ControlGroup(1)
+Gui.frmCSR.cboReqSubType.Create(ComboBox)
+Gui.frmCSR.cboReqSubType.Size(1995,330)
+Gui.frmCSR.cboReqSubType.Position(2115,990)
+Gui.frmCSR.cboReqSubType.ControlGroup(1)
+Gui.frmCSR.cboEvent.Create(ComboBox)
+Gui.frmCSR.cboEvent.Size(1995,330)
+Gui.frmCSR.cboEvent.Position(4155,990)
+Gui.frmCSR.cboEvent.ControlGroup(1)
+Gui.frmCSR.cboRootCause.Create(ComboBox)
+Gui.frmCSR.cboRootCause.Size(1995,330)
+Gui.frmCSR.cboRootCause.Position(6195,990)
+Gui.frmCSR.cboRootCause.ControlGroup(1)
+Gui.frmCSR.cboStatus.Create(ComboBox)
+Gui.frmCSR.cboStatus.Size(2025,330)
+Gui.frmCSR.cboStatus.Position(8250,990)
+Gui.frmCSR.cboStatus.ControlGroup(1)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.sSerial.Declare(String,"")
+V.Global.iLastDocIndex.Declare(Long,-1)
+V.Global.bIssued.Declare(Boolean)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sError.Declare(String,"")
+	V.Local.sFile.Declare(String,"")
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	
+	F.Intrinsic.Control.CallSub(checkCustomFolder)
+
+	F.Intrinsic.Control.CallSub(Create_Empty_DTs)
+	F.Intrinsic.Control.CallSub(Set_Properties)
+	F.Intrinsic.Control.CallSub("Deserialize")
+	
+	Gui.FormSerialMangement.lblFileDesc.Caption("")
+	
+	F.Intrinsic.String.Build("{0}\ART\GSS2.ico",V.Caller.GlobalDir,V.Local.sFile)
+	Gui.FormSerialMangement.htmlContainerDoc.Silent(true)
+	Gui.FormSerialMangement.htmlContainerDoc.Navigate("about:blank")
+	Gui.FormSerialMangement.htmlContainerDoc.Navigate(V.Local.sFile,false)
+	
+	Gui.FormSerialMangement.tab1.SetTab(0)
+	F.Intrinsic.Control.CallSub(LoadIcon)
+
+	Gui.FormSerialMangement.lbl1.Visible(False)
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	'Gui.FormSerialMangement.frmPrefVend.Visible(False)
+	
+	Gui.FormSerialMangement..Show
+	
+	'Moved Anchors to here to keep form from flashing
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.tab1.Anchor(13)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.Anchor(13)
+	Gui.FormSerialMangement.htmlContainerDoc.Anchor(15)
+	Gui.FormSerialMangement.GsGridControlCSREvent.Anchor(13)
+	Gui.FormSerialMangement.GsGridControlOrigSO.Anchor(13)
+	Gui.FormSerialMangement.GsGridControlDoc.Anchor(7)
+	Gui.FormSerialMangement.GsGridControlCSRHist.Anchor(13)
+	Gui.FormSerialMangement.GsGridControlServSO.Anchor(13)
+	Gui.FormSerialMangement.GsGridControlSERV.Anchor(13)
+	Gui.FormSerialMangement.GsGcOrderToWO.Anchor(15)
+	Gui.FormSerialMangement.pBar1.Anchor(9)
+	Gui.FormSerialMangement.lbl1.Anchor(9)
+	Gui.FormSerialMangement.cmdRefresh.Anchor(9)
+	'Gui.FormSerialMangement.frmPrefVend.Anchor(9)
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.loadIcon.Start
+V.Local.sError.Declare(String,"")
+V.Local.sIcon.Declare(String,"")
+V.Local.sGSSLogo.Declare(String,"")
+
+F.Intrinsic.Control.Try
+	'sets the icon
+	F.Intrinsic.String.Build("{0}\ART\gss2.ico", V.Caller.GlobalDir, V.Local.sIcon)
+	Gui.FormSerialMangement..Icon(V.Local.sIcon)
+	
+	F.Intrinsic.String.Build("{0}\ART\GAB_GSS_Logo_Green_Dash.png", V.Caller.GlobalDir, V.Local.sGSSLogo)
+	Gui.FormSerialMangement.picGSSLogo.Picture(V.Local.sGSSLogo)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.loadIcon.End
+
+Program.Sub.checkCustomFolder.Start
+V.Local.sFolder.Declare
+V.Local.bExists.Declare
+F.Intrinsic.Control.Try
+	F.Intrinsic.String.Build("{0}\CUSTOM\GCG_5530\", V.Caller.GlobalDir, V.Local.sFolder)
+	F.Intrinsic.File.DirExists(V.Local.sFolder, V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists.Not)
+		F.Intrinsic.File.CreateDir(V.Local.sFolder)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.checkCustomFolder.End
+
+Program.Sub.ErrorMsg.Start
+V.Local.sError.Declare
+
+'Generic Error message.
+F.Intrinsic.String.Build("Project GCG_5530_CSR_Serialized_Good.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", V.Ambient.NewLine, V.Args.CurrentSub, V.Ambient.ErrorNumber, V.Ambient.ErrorDescription, V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+
+F.Intrinsic.Control.End
+Program.Sub.ErrorMsg.End
+
+Program.Sub.cmdNewSO_Click.Start
+V.Local.iRet.Declare
+F.Intrinsic.Control.Try
+	F.Global.General.LaunchMenuTask(132, 2, V.Local.iRet)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNewSO_Click.End
+
+Program.Sub.cmdNewRMA_Click.Start
+V.Local.iRet.Declare
+F.Intrinsic.Control.Try
+
+	F.Global.General.LaunchMenuTask(399, 0, V.Local.iRet)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNewRMA_Click.End
+
+Program.Sub.cmdNewCSR_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sUserName.Declare
+
+F.ODBC.Connection!comm.OpenCommonConnection
+F.Intrinsic.String.Build("Select RTRIM(FIRST_NAME)+' '+RTRIM(LAST_NAME) as NAME from USER_INFORMATION where GS_USER = '{0}'",V.Caller.User,V.Local.sUserName)
+F.ODBC.Connection!comm.ExecuteAndReturn(V.Local.sUserName,V.Local.sUserName)
+F.ODBC.Connection!comm.Close
+
+Gui.frmCSR.txtSerNo.Text(V.Screen.FormSerialMangement!txtSerial.Text)
+
+Gui.frmCSR.cboResp.Text(V.Local.sUserName)
+
+Gui.frmCSR..Caption("New CSR")
+
+Gui.frmCSR..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNewCSR_Click.End
+
+Program.Sub.FormSerialMangement_UnLoad.Start
+F.Intrinsic.Control.Try
+	
+	F.Intrinsic.Control.CallSub("Serialize")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.FormSerialMangement_UnLoad.End
+
+Program.Sub.Create_Empty_DTs.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.sSql.Declare(String,"")
+	V.Local.i.Declare(Long,0)
+	V.Local.dDate.Declare(Date,V.Ambient.Date)
+	V.Local.iMonth.Declare(Long,0)
+	V.Local.sStatus.Declare(String,"")
+	V.Local.sRet.Declare
+	
+	V.Local.iCnt.Declare
+	V.Local.sSerialCheck.Declare
+	V.Local.sDateCheck.Declare
+	
+'	F.Intrinsic.Control.If(V.ODBC.con.State, =, 1)
+'		F.ODBC.Connection!con.Close
+'	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!con.OpenCompanyConnection(1000)
+	
+'	F.Intrinsic.String.Build("Select right(Reference,7) as Ref, rtrim(Serial_Number) as Serial, rtrim(Customer) as Customer, rtrim(Customer) as Name_Customer,  rtrim(Customer) as Warranty_Code,'' as Status, Date_History, Date_History as Date_Warranty, Part From V_Item_History Where Code_Transaction = 'O35' and Serial_Number <> ''", V.Local.sSql)
+	V.Local.sSql.Set("Select right(rtrim(Reference),7) as Ref, rtrim(Serial_Number) as Serial, rtrim(Customer) as Customer, rtrim(Customer) as Name_Customer,Date_History, Part From V_Item_History Where Code_Transaction = 'O35' and Serial_Number <> '' and part = ''")
+	F.Data.DataTable.CreateFromSQL("Serv","con",V.Local.sSql,True)
+	
+	'Changes 1/17/2020 Adding part number and Description
+	'F.Data.DataTable.AddColumn("Serv", "Part", "String")
+	F.Data.DataTable.AddColumn("Serv", "Description", "String")
+	'F.Data.DataTable.AddExpressionColumn("Serv", "KeyField", "String", "IFF(Ref = '', Serial, Ref)")
+	
+	
+'	F.Data.DataTable.CreateFromSQL("shipDT", "con", "Select Order_No, Date_shipped from V_SHIPMENT_HEADER")
+'	F.Data.DataTable.CreateFromSQL("histDT", "con", "Select Order_No, Date_shipped from V_ORDER_HIST_HEAD")
+'	F.Data.DataTable.Merge("histDT", "shipDT", false, 2)
+'	
+'	F.Data.Dictionary.CreateFromDataTable("shipDict", "shipDT", "Order_No", "Date_shipped")
+'	F.Data.Dictionary.SetDefaultReturn("shipDict", 1/1/1900)
+'	F.Data.DataTable.FillFromDictionary("Serv", "shipDict", "Ref", "Date_History")
+'	F.Data.Dictionary.Close("shipDict")
+'	
+'	F.Data.DataTable.Close("histDT")
+'	F.Data.DataTable.Close("shipDT")
+'	
+'	F.Data.DataView.Create("Serv", "tmpServDV", 22, "Serial not like 'HC%'", "")
+'		
+'''''	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataView.Serv!tmpServDV.RowCount--, 1)
+'''''		V.Local.sSerialCheck.Set(V.DataView.Serv!tmpServDV(V.Local.iCnt).Serial!FieldValTrim)
+'''''		F.Intrinsic.String.LPad(V.Local.sSerialCheck, "0", 7, V.Local.sSerialCheck)
+'''''		
+'''''		F.Intrinsic.String.Build("Select Date_Closed from V_JOB_HIST_MAST where Job = '{0}' and Suffix = '000'", V.Local.sSerialCheck, V.Local.sSql)
+''''''		F.ODBC.Connection!con.OpenCompanyConnection
+'''''		 	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sDateCheck)
+''''''		F.ODBC.Connection!con.Close
+'''''		
+'''''		F.Intrinsic.Control.If(V.Local.sDateCheck.Trim, =, "")
+'''''			V.Local.sDateCheck.Set("1/1/1900")
+'''''		F.Intrinsic.Control.EndIf
+'''''		F.Data.DataView.SetValue("Serv", "tmpServDV", V.Local.iCnt, "Date_History", V.Local.sDateCheck)
+'''''	F.Intrinsic.Control.Next(V.Local.iCnt)
+'	F.Data.DataTable.AcceptChanges("Serv")
+'	F.Data.DataView.Close("Serv", "tmpServDV")
+	
+'	F.Data.Dictionary.CreateFromSQL("termsDict", "con", "select Terms from GCG_5530_Warranty where Warranty_Code = {0}")
+'	F.Data.Dictionary.SetDefaultReturn("warrantyDict", 0)
+	
+	
+	F.Data.DataTable.SetValueFormat("Serv", -1, "Name_Customer", "Name_Customer", ">")
+	F.Data.Dictionary.CreateFromSQL("servDict", "con", "Select rtrim(Customer) as Customer, Name_Customer from V_Customer_Master")
+	F.Data.Dictionary.SetDefaultReturn("servDict", "")
+	F.Data.DataTable.FillFromDictionary("Serv", "servDict", "Name_Customer", "Name_Customer")
+	F.Data.Dictionary.Close("servDict")
+	
+'	F.Data.DataTable.Create("Serv", true)
+'	F.Data.DataTable.AddColumn("Serv", "Ref", "String")
+'	F.Data.DataTable.AddColumn("Serv", "Serial", "String")
+'	F.Data.DataTable.AddColumn("Serv", "Customer", "String")
+'	F.Data.DataTable.AddColumn("Serv", "Name_Customer", "String")
+'	F.Data.DataTable.AddColumn("Serv", "Status", "String")
+'	F.Data.DataTable.AddColumn("Serv", "Date_History", "Date")
+'	F.Data.DataTable.AddColumn("Serv", "Date_Warranty", "Date")
+'	F.Data.DataTable.AddColumn("Serv", "Part", "String")
+	F.Data.DataView.Create("Serv", "ServDV", 22)
+	
+	'F.Data.DataTable.RemoveColumn("Serv","Part")
+	
+	F.Intrinsic.String.Build("Select File_Num, Path, File, Description From ATG_Doc_Assoc Where Link_ID = -1","",V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("Doc","con",V.Local.sSql,True)
+	
+	F.Intrinsic.String.Build("Select Order_No, Record_No as Order_Line, Part, Description From V_Order_Lines Where Order_No = '-1'","",V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("OrigSO","con",V.Local.sSql,True)
+	F.Data.DataTable.AddColumn("OrigSO", "Quote", "String")
+	
+	F.Intrinsic.String.Build("Select Order_No, Record_No as Order_Line, Part, Description, '' as PO, '' as PO_Line From V_Order_Lines Where Order_No = '-1'","",V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("ServSO","con",V.Local.sSql,True)
+	
+	F.Intrinsic.String.Build("Select Request_Number, Date_Entered, IF(Date_Closed = '1900-01-01','',Date_Closed) as Date_Closed, SUBJECT From V_Cust_Serv_Req Where Fax = '{0}'","-1",V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("ServHist","con",V.Local.sSql,True)
+	F.Data.DataTable.AddColumn("ServHist", "Notes", "String")
+	
+	F.Intrinsic.String.Build("Select Date as Date_Entered, Text From V_Cust_Svc_Rq_Notes Where CSR_Number = '-1'","",V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("Event","con",V.Local.sSql,True)
+	
+	F.Intrinsic.String.Build("Select Job, Suffix, Order_no, Order_line, Part, Description from Order_to_wo where Order_No+Order_Line in (Select Order_No+Record_No from V_Order_Lines where Order_no in (Select distinct Order_No from V_Order_Header where User_1 = '{0}')) ", "-1", V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("orderToWoDT", "con", V.Local.sSQL, true)
+	
+	F.Intrinsic.String.Build("Select Job, Suffix, Seq, '' Job_Part, '' as SerialNumber, Part, Description, '' as Warranty, HOURS_WORKED as Quantity From V_Job_Detail Where Job = '-1'","",V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("WOBOM","con",V.Local.sSql,True)
+	
+	'F.Intrinsic.String.Build("Select Job, Suffix, Seq, '' Job_Part, '' as SerialNumber, Part, Description, '' as Warranty, '' as Quantity From V_Job_Detail Where Job = '-1'","",V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("orderToWoDT$ChildWO","con",V.Local.sSql,True)
+	
+	F.Data.DataTable.AddRelation("orderToWoDT", "Job*!*Suffix", "orderToWoDT$ChildWO", "Job*!*Suffix")
+	F.Data.DataView.Create("orderToWoDT$ChildWO", "ChildDV", 22)
+		
+	F.ODBC.Connection!con.Close
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Create_Empty_DTs.End
+
+Program.Sub.Set_Properties.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.i.Declare(Long,0)
+	V.Local.fValue.Declare(Float,0)
+	V.Local.sValue.Declare(String,"")
+	
+	'adding values to dropdown list
+	Gui.frmCSR.cboRootCause.AddItem("",0)
+	Gui.frmCSR.cboRootCause.AddItem("N/A",1)
+	Gui.frmCSR.cboRootCause.AddItem("HASKRIS-MATERIAL",2)
+	Gui.frmCSR.cboRootCause.AddItem("HASKRIS-WORKMANSHIP",3)
+	Gui.frmCSR.cboRootCause.AddItem("HASKRIS-CORE DESIGN",4)
+	Gui.frmCSR.cboRootCause.AddItem("NOT HASKRIS-TAMPERING",5)
+	Gui.frmCSR.cboRootCause.AddItem("NOT HASKRIS-ENVIRONMENTAL",6)
+	Gui.frmCSR.cboRootCause.AddItem("NOT HASKRIS-NORMAL WEAR",7)
+	Gui.frmCSR.cboRootCause.AddItem("NOT HASKRIS-FREIGHT",8)
+	
+'	Gui.frmCSR.ddlReqType.AddItem("",0)
+'	Gui.frmCSR.ddlReqType.AddItem("Issue Upon Receipt",1)
+'	Gui.frmCSR.ddlReqType.AddItem("Installation",2)
+'	Gui.frmCSR.ddlReqType.AddItem("Education/Maintenance",3)
+'	Gui.frmCSR.ddlReqType.AddItem("Site Related",4)
+'	Gui.frmCSR.ddlReqType.AddItem("Temp Control",5)
+'	Gui.frmCSR.ddlReqType.AddItem("Fluid Circuit",6)
+'	Gui.frmCSR.ddlReqType.AddItem("Controller",7)
+	
+	Gui.frmCSR.cboEvent.AddItem("1 - Unscheduled Event")
+	Gui.frmCSR.cboEvent.AddItem("2 - Scheduled Event")
+	Gui.frmCSR.cboEvent.AddItem("3 - PM Scheduled Event")
+
+	Gui.frmCSR.cboStatus.AddItem(0," ")
+	F.Intrinsic.Control.For(V.Local.i,1,12,1)
+		F.Intrinsic.Math.Sub(V.Local.i,.5,V.Local.fValue)
+		F.Intrinsic.String.Format(V.Local.fValue,"###0.0",V.Local.sValue)
+		Gui.frmCSR.cboStatus.AddItem(V.Local.sValue,V.Local.sValue)
+		F.Intrinsic.String.Format(V.Local.i,"###0.0",V.Local.sValue)
+		Gui.frmCSR.cboStatus.AddItem(V.Local.sValue,V.Local.sValue)
+	F.Intrinsic.Control.Next(V.Local.i)
+	
+	F.Intrinsic.Control.For(V.Local.i,13,24,1)
+		F.Intrinsic.String.Format(V.Local.i,"###0.0",V.Local.sValue)
+		Gui.frmCSR.cboStatus.AddItem(V.Local.sValue,V.Local.sValue)
+	F.Intrinsic.Control.Next(V.Local.i)
+	
+	F.Intrinsic.Control.For(V.Local.i,23,71,2)
+		F.Intrinsic.Math.Add(V.Local.i,2,V.Local.fValue)
+		F.Intrinsic.String.Format(V.Local.fValue,"###0.0",V.Local.sValue)
+		Gui.frmCSR.cboStatus.AddItem(V.Local.sValue,V.Local.sValue)
+	F.Intrinsic.Control.Next(V.Local.i)
+	
+	F.Intrinsic.Control.For(V.Local.i,72,164,4)
+		F.Intrinsic.Math.Add(V.Local.i,4,V.Local.fValue)
+		F.Intrinsic.String.Format(V.Local.fValue,"###0.0",V.Local.sValue)
+		Gui.frmCSR.cboStatus.AddItem(V.Local.sValue,V.Local.sValue)
+	F.Intrinsic.Control.Next(V.Local.i)
+	
+	F.Intrinsic.Control.For(V.Local.i,168,328,8)
+		F.Intrinsic.Math.Add(V.Local.i,8,V.Local.fValue)
+		F.Intrinsic.String.Format(V.Local.fValue,"###0.0",V.Local.sValue)
+		Gui.frmCSR.cboStatus.AddItem(V.Local.sValue,V.Local.sValue)
+	F.Intrinsic.Control.Next(V.Local.i)
+	
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	F.Data.Dictionary.CreateFromSQL("dictSP","con","Select SALESPERSON_CODE,SALESPERSON from V_SALESPEOPLE")
+	Gui.frmCSR.cboResp.addItems("Dictionary","dictSP")
+	F.Data.Dictionary.Close("dictSP")
+	
+	F.Data.Dictionary.CreateFromSQL("Req","con","Select rtrim(Req_Type), rtrim(Req_Type) From Cust_Serv_Req_Typ")
+	Gui.frmCSR.cboReqType.AddItem(" ",0)
+	Gui.frmCSR.cboReqType.AddItems("Dictionary","Req")
+	F.Data.Dictionary.Close("Req")
+	F.ODBC.Connection!Con.Close
+	
+	Gui.FormSerialMangement.GsGridControlSERV.AddGridviewFromDataview("GServ", "Serv", "ServDV")
+	Gui.FormSerialMangement.GsGridControlSERV.SetGridviewProperty("GServ", "OptionsViewColumnAutoWidth", false)
+'	Gui.FormSerialMangement.GsGridControlSERV.BestFitColumns("GServ")
+	
+	Gui.FormSerialMangement.GsGridControlSERV.SetGridviewProperty("GServ","ReadOnly",True)
+	Gui.FormSerialMangement.GsGridControlSERV.SetGridviewProperty("GServ","Editable",False)
+	Gui.FormSerialMangement.GsGridControlSERV.SetGridviewProperty("GServ","OptionsViewShowAutoFilterRow",True)
+	Gui.FormSerialMangement.GsGridControlSERV.SetGridviewProperty("GServ","Enableappearanceoddrow",True)
+	
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Ref","Caption","Ref")
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Serial","Caption","Serial No:")
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Customer","Caption","Customer")
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Name_Customer","Caption","Customer Name")
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("Gserv","Date_History","Caption","Ship Date")
+	
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Ref","Width",150)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Serial","Width",150)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Customer","Width",150)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Name_Customer","Width",150)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("Gserv","Date_History","Width",150)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Part","Width",150)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Description","Width",200)
+	
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("Gserv","Ref","VisibleIndex", 0)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("Gserv","Serial","VisibleIndex", 1)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("Gserv","Part","VisibleIndex", 2)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("Gserv","Description","VisibleIndex", 3)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("Gserv","Customer","VisibleIndex", 4)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("Gserv","Name_Customer","VisibleIndex", 5)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("Gserv","Date_History","VisibleIndex", 6)
+	
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Ref","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Ref","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Serial","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Serial","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Customer","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Customer","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Name_Customer","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Name_Customer","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Date_History","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Date_History","HeaderForeColor","White")
+	
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Part","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Part","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Description","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Description","HeaderForeColor","White")
+	
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ", "Ref", "Visible", false)
+	
+	Gui.FormSerialMangement.GsGridControlSERV.SetColumnProperty("GServ","Date_History","DisplayCustomDatetime","d")
+	
+	Gui.FormSerialMangement.GsGridControlSERV.MainView("GServ")
+	
+	Gui.FormSerialMangement.GsGridControlDoc.AddGridviewFromDatatable("GDoc","Doc")
+	Gui.FormSerialMangement.GsGridControlDoc.SetGridviewProperty("GDoc", "OptionsViewColumnAutoWidth", false)
+	Gui.FormSerialMangement.GsGridControlDoc.BestFitColumns("GDoc")
+	
+	Gui.FormSerialMangement.GsGridControlDoc.SetGridviewProperty("GDoc","ReadOnly",True)
+	Gui.FormSerialMangement.GsGridControlDoc.SetGridviewProperty("GDoc","Editable",False)
+	Gui.FormSerialMangement.GsGridControlDoc.SetGridviewProperty("GDoc","OptionsViewColumnAutoWidth",True)
+	
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","Path","Caption","Path")
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","Path","Visible",False)
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","File","Caption","File")
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","Description","Visible",False)
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","Description","Caption","Description")
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","File_Num","Visible",False)
+	
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","Path","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","Path","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","File","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","File","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","Description","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","Description","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","File_Num","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlDoc.SetColumnProperty("GDoc","File_Num","HeaderForeColor","White")
+	
+	Gui.FormSerialMangement.GsGridControlDoc.MainView("GDoc")
+	
+	F.Intrinsic.Control.If(V.DataView.WOBOM!TEMPWOBOMVIEW.Exists,=,True)
+		F.Data.DataView.Close("WOBOM","TEMPWOBOMVIEW")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.DataView.Create("WOBOM","TEMPWOBOMVIEW",22,"","Suffix ASC, SEQ ASC")
+	
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.AddGridviewFromDataview("GWOBOM","WOBOM","TEMPWOBOMVIEW")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetGridviewProperty("GWOBOM", "OptionsViewColumnAutoWidth", false)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.BestFitColumns("GWOBOM")
+	
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetGridviewProperty("GWOBOM","ReadOnly",True)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetGridviewProperty("GWOBOM","Editable",False)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetGridviewProperty("GWOBOM","OptionsSelectionEnableAppearanceFocusedRow",False)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetGridviewProperty("GWOBOM","OptionsViewColumnAutoWidth",True)
+	
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Job","Caption","Job")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Suffix","Caption","Suffix")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Seq","Caption","Seq")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Job_Part","Caption","Job Part")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Part","Caption","Part")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Description","Caption","Description")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Warranty","Caption","Warranty")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","SerialNumber","Caption","Serial Number")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Quantity","Caption","Quantity")
+	
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM", "Job", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM", "Suffix", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM", "Part", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM", "Job_Part", "CellForeColor", V.Color.LtBlue)
+	
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Warranty","Visible",False)
+	
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Job","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Job","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Suffix","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Suffix","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Part","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Part","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Description","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Description","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Warranty","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Warranty","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Seq","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Seq","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Job_Part","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Job_Part","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","SerialNumber","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","SerialNumber","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Quantity","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Quantity","HeaderForeColor","White")
+	
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetGridviewProperty("GWOBOM", "OptionsViewShowAutoFilterRow", True)
+'	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Job","MinWidth","30")
+'	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Suffix","MinWidth","30")
+'	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Seq","MinWidth","30")
+'	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Job_Part","MinWidth","30")
+'	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","Part","MinWidth","30")
+'	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetColumnProperty("GWOBOM","SerialNumber","MinWidth","30")
+	
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.AddStyleFormatCondition("GWOBOM","Warranty","ParentGreen","Equal","Y")
+    	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetStyleFormatConditionProperty("GWOBOM","Warranty","ParentGreen","BackColor", V.Color.LtGreen)
+    	Gui.FormSerialMangement.GsGridControlbomWOBOM.SetStyleFormatConditionProperty("GWOBOM","Warranty","ParentGreen","ApplyToRow",True)
+    
+	Gui.FormSerialMangement.GsGridControlbomWOBOM.MainView("GWOBOM")
+	
+	Gui.FormSerialMangement.GsGridControlOrigSO.AddGridviewFromDatatable("GOrigSO","OrigSO")
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetGridviewProperty("GOrigSO", "OptionsViewColumnAutoWidth", false)
+	Gui.FormSerialMangement.GsGridControlOrigSO.BestFitColumns("GOrigSO")
+	
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetGridviewProperty("GOrigSO","ReadOnly",True)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetGridviewProperty("GOrigSO","Editable",False)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetGridviewProperty("GOrigSO","OptionsSelectionEnableAppearanceFocusedRow",False)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetGridviewProperty("GOrigSO","OptionsViewColumnAutoWidth",True)
+	
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Order_No","Caption","SO #")
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Order_Line","Caption","SO Line")
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Part","Caption","Part")
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Description","Caption","Description")
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Quote","Caption","Quote")
+	
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Order_No","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Order_No","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Order_Line","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Order_Line","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Part","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Part","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Description","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Description","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Quote","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO","Quote","HeaderForeColor","White")
+	
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO", "Part", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO", "Order_No", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO", "Part", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGridControlOrigSO.SetColumnProperty("GOrigSO", "Quote", "CellForeColor", V.Color.LtBlue)
+	
+	Gui.FormSerialMangement.GsGridControlOrigSO.MainView("GOrigSO")
+	
+	Gui.FormSerialMangement.GsGridControlServSO.AddGridviewFromDatatable("GServSO","ServSO")
+	Gui.FormSerialMangement.GsGridControlServSO.SetGridviewProperty("GServSO", "OptionsViewColumnAutoWidth", false)
+	Gui.FormSerialMangement.GsGridControlServSO.BestFitColumns("GServSO")
+	
+	Gui.FormSerialMangement.GsGridControlServSO.SetGridviewProperty("GServSO","ReadOnly",True)
+	Gui.FormSerialMangement.GsGridControlServSO.SetGridviewProperty("GServSO","Editable",False)
+	
+	Gui.FormSerialMangement.GsGridControlServSO.SetGridviewProperty("GServSO","OptionsSelectionEnableAppearanceFocusedRow",False)
+	Gui.FormSerialMangement.GsGridControlServSO.SetGridviewProperty("GServSO","OptionsViewColumnAutoWidth",True)
+	
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Order_No","Caption","SO #")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Order_Line","Caption","SO Line")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Part","Caption","Part")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Description","Caption","Description")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","PO","Caption","PO #")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","PO_Line","Caption","PO Line")
+	
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Order_No","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Order_No","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Order_Line","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Order_Line","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Part","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Part","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Description","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Description","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","PO","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","PO","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","PO_Line","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","PO_Line","HeaderForeColor","White")
+	
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Order_No","CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","Part","CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGridControlServSO.SetColumnProperty("GServSO","PO","CellForeColor", V.Color.LtBlue)
+	
+	Gui.FormSerialMangement.GsGridControlServSO.MainView("GServSO")
+	
+	Gui.FormSerialMangement.GsGridControlCSRHist.AddGridviewFromDatatable("GServHist","ServHist")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetGridviewProperty("GServHist", "OptionsViewColumnAutoWidth", false)
+	Gui.FormSerialMangement.GsGridControlCSRHist.BestFitColumns("GServHist")
+	
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetGridviewProperty("GServHist","ReadOnly",True)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetGridviewProperty("GServHist","Editable",False)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetGridviewProperty("GServHist","OptionsViewColumnAutoWidth",True)
+	
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Request_Number","Caption","Request #")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Entered","Caption","Date Entered")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Closed","Caption","Date Closed")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","SUBJECT","Caption","Subject")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Notes","Caption","Notes")
+	
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Entered","DisplayCustomDatetime","d")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Closed","DisplayCustomDatetime","d")
+	
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Request_Number","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Request_Number","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Entered","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Entered","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Closed","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Closed","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","SUBJECT","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","SUBJECT","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Notes","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Notes","HeaderForeColor","White")
+	
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist", "Request_Number", "CellForeColor", V.Color.LtBlue)
+	
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Request_Number","Width",50)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Entered","Width",50)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Date_Closed","Width",50)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","SUBJECT","Width",100)
+	Gui.FormSerialMangement.GsGridControlCSRHist.SetColumnProperty("GServHist","Notes","Width",200)
+	
+	Gui.FormSerialMangement.GsGridControlCSRHist.MainView("GServHist")
+	
+	Gui.FormSerialMangement.GsGridControlCSREvent.AddGridviewFromDatatable("GEvent","Event")
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetGridviewProperty("GEvent", "OptionsViewColumnAutoWidth", false)
+	'Gui.FormSerialMangement.GsGridControlCSREvent.BestFitColumns("GEvent")
+	
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetGridviewProperty("GEvent","ReadOnly",True)
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetGridviewProperty("GEvent","Editable",False)
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetGridviewProperty("GEvent","OptionsViewColumnAutoWidth",True)
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetColumnProperty("GEvent","Date_Entered","Caption","Date")
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetColumnProperty("GEvent","TEXT","Caption","Text")
+	
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetColumnProperty("GEvent","Date_Entered","Width",50)
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetColumnProperty("GEvent","TEXT","Width",150)
+	
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetColumnProperty("GEvent","Date_Entered","DisplayCustomDatetime","d")
+	
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetColumnProperty("GEvent","Date_Entered","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetColumnProperty("GEvent","Date_Entered","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetColumnProperty("GEvent","TEXT","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGridControlCSREvent.SetColumnProperty("GEvent","TEXT","HeaderForeColor","White")
+	
+	Gui.FormSerialMangement.GsGridControlCSREvent.MainView("GEVENT")
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.AddGridviewFromDatatable("orderToWOGV", "orderToWoDT")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("orderToWOGV", "OptionsViewColumnAutoWidth", false)
+	Gui.FormSerialMangement.GsGcOrderToWO.BestFitColumns("orderToWOGV")
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("orderToWOGV", "ReadOnly", true)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("orderToWOGV", "Editable", false)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("orderToWOGV","OptionsViewColumnAutoWidth",True)
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("orderToWOGV", "OptionsSelectionEnableAppearanceFocusedRow", false)
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Job", "Caption", "Job")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Suffix", "Caption", "Suffix")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Order_No", "Caption", "SO #")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Order_Line", "Caption", "SO Line")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Part", "Caption", "Part")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Description", "Caption", "Description")
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Job", "HeaderBackColor", V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Suffix", "HeaderBackColor", V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Order_No", "HeaderBackColor", V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Order_Line", "HeaderBackColor", V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Part", "HeaderBackColor", V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Description", "HeaderBackColor", V.Color.GSS)
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Job", "HeaderForeColor", "White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Suffix", "HeaderForeColor", "White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Order_No", "HeaderForeColor", "White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Order_Line", "HeaderForeColor", "White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Part", "HeaderForeColor", "White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Description", "HeaderForeColor", "White")
+	
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Job", "MinWidth", "60")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Suffix", "MinWidth", "60")
+	
+	'Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Job", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Suffix", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Order_No", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Order_Line", "CellForeColor", V.Color.LtBlue)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("orderToWOGV", "Part", "CellForeColor", V.Color.LtBlue)
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.MainView("orderToWOGV")
+	
+	'F.Data.DataView.Create("orderToWoDT$ChildWO", "ChildDV", 22)
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.AddGridviewFromDataview("GCHILDWO", "orderToWoDT", "ChildDV")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("GCHILDWO", "OptionsViewColumnAutoWidth", false)
+	Gui.FormSerialMangement.GsGcOrderToWO.BestFitColumns("GCHILDWO")
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("GCHILDWO","ReadOnly",True)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("GCHILDWO","Editable",False)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("GCHILDWO","OptionsSelectionEnableAppearanceFocusedRow",False)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("GCHILDWO","OptionsViewColumnAutoWidth",True)
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job","Caption","Job")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Suffix","Caption","Suffix")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Seq","Caption","Seq")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job_Part","Caption","Job Part")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Part","Caption","Part")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Description","Caption","Description")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Warranty","Caption","Warranty")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","SerialNumber","Caption","Serial Number")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Quantity","Caption","Quantity")
+	
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO", "Job", "CellForeColor", V.Color.LtBlue)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO", "Suffix", "CellForeColor", V.Color.LtBlue)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO", "Part", "CellForeColor", V.Color.LtBlue)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO", "Job_Part", "CellForeColor", V.Color.LtBlue)
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Warranty","Visible",False)
+	
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Suffix","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Suffix","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Part","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Part","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Description","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Description","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Warranty","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Warranty","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Seq","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Seq","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job_Part","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job_Part","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","SerialNumber","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","SerialNumber","HeaderForeColor","White")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Quantity","HeaderBackColor",V.Color.GSS)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Quantity","HeaderForeColor","White")
+	
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job","MinWidth","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Suffix","MinWidth","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Seq","MinWidth","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job_Part","MinWidth","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Part","MinWidth","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","SerialNumber","MinWidth","30")
+'	
+	Gui.FormSerialMangement.GsGcOrderToWO.AddStyleFormatCondition("GCHILDWO","Warranty","ParentGreen","Equal","Y")
+	Gui.FormSerialMangement.GsGcOrderToWO.SetStyleFormatConditionProperty("GCHILDWO","Warranty","ParentGreen","BackColor", V.Color.LtGreen)
+	Gui.FormSerialMangement.GsGcOrderToWO.SetStyleFormatConditionProperty("GCHILDWO","Warranty","ParentGreen","ApplyToRow",True)
+
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Set_Properties.End
+
+Program.Sub.txtSerial_KeyPress.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.iRet.Declare(Long,0)
+	V.Local.sFile.Declare(String,"")
+	
+	'F.Intrinsic.Control.CallSub(cleanTxt)
+	
+	F.Data.DataView.SetFilter("Serv", "ServDV", "")
+	
+	F.Intrinsic.Control.If(V.Screen.FormSerialMangement!txtSerial.Text,<>,"")
+		F.Intrinsic.Control.If(V.Screen.FormSerialMangement!txtSerial.Text,<>,V.Global.sSerial)
+			V.Global.sSerial.Set(V.Screen.FormSerialMangement!txtSerial.Text)
+			F.Intrinsic.Control.CallSub(Get_Data)
+			F.Intrinsic.Control.CallSub(loadTxt)			
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Global.sSerial.Set("")
+		F.Data.DataTable.DeleteRow("WOBOM")
+		F.Intrinsic.Control.CallSub(cleanTxt)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("{0}\ART\GSS2.ico",V.Caller.GlobalDir,V.Local.sFile)
+	Gui.FormSerialMangement.htmlContainerDoc.Navigate(V.Local.sFile,false)
+	
+	F.Intrinsic.Control.ExitSub	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtSerial_KeyPress.End
+
+Program.Sub.Get_Data.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.sSql.Declare(String,"")
+	V.Local.sBillTo.Declare(String,"")
+	V.Local.sShipTo.Declare(String,"")
+	V.Local.i.Declare(Long,0)
+	V.Local.sSo.Declare(String,"")
+	V.Local.sPart.Declare(String,"")
+	V.Local.sJob.Declare(String,"")
+	V.Local.iLinkID.Declare(Long,0)
+	V.Local.sSerial.Declare
+	V.Local.iCnt.Declare
+	V.Local.sTemp.Declare
+	V.Local.iListLink.Declare
+	V.Local.sPartDoc.Declare
+	V.Local.sTempDoc.Declare
+	V.Local.sList.Declare
+	V.Local.sJobPart.Declare
+	V.Local.sDRWPart.Declare
+	V.Local.sJobSuffix.Declare(String,"")
+	
+
+	F.Intrinsic.String.RPad(V.Screen.FormSerialMangement!txtSerial.Text, " ", 20, V.Local.sSerial)
+	
+	'getting orginal Sales Order that was created for the selected Serial 
+	'looking in hist first then to order header
+'	F.Intrinsic.Control.If(V.ODBC.con.State, =, 1)
+'		F.ODBC.Connection!con.Close
+'	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.Intrinsic.String.Build("Select Top 1 Order_No, Part From V_Item_History Where Serial_Number = '{0}'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sSql)
+	
+	F.Intrinsic.Control.If(V.Global.bIssued)
+		F.Intrinsic.String.Build("{0} and Code_Transaction = 'J55'",V.Local.sSql,V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0} and Code_Transaction = 'O35'",V.Local.sSql,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	'F.Intrinsic.String.Build("Select Top 1 Order_No, Part From V_Item_History Where Serial_Number = '{0}' and Code_Transaction = 'O35'",V.Local.sSerial,V.Local.sSql)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql,V.Local.sSO)
+	
+	F.Intrinsic.String.Split(V.Local.sSo,"*!*",V.Local.sSo)
+	V.Local.sSo.RedimPreserve(0,1)
+	
+	V.Local.sPart.Set(V.Local.sSo(1).Trim)
+	
+	V.Local.sSo.RedimPreserve(0,0)
+	
+	'Previous serial numbers start with HA or HB. HC is the current ERP serial numbers. Old Serial Numbers won't have a J52 transaction.
+	F.Intrinsic.Control.If(V.Local.sSerial.Left2,<>,"HC")
+		F.Intrinsic.String.Build("Select Top 1 Job From V_Item_History Where Serial_Number = '{0}' and Part = '{1}' AND CODE_TRANSACTION = 'O35'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sPart,V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Select Top 1 Job From V_Item_History Where Serial_Number = '{0}' and Part = '{1}' AND CODE_TRANSACTION = 'J52'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sPart,V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql,V.Local.sJob)
+
+' HOURS_WORKED
+
+	Gui.FormSerialMangement.pBar1.Value(81)
+	Gui.FormSerialMangement.lbl1.Caption("81%")
+	
+	F.Intrinsic.Control.If(V.Local.sJob,<>,"")
+		'F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, Part, Job+Suffix+Seq as SerialNumber, Description, Job+Suffix+Seq as Quantity From V_Job_Hist_Dtl Where Job = '{0}' and LMO = 'M' Order by Suffix",V.Local.sJob,V.Local.sSql)
+		F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, Part, Job+Suffix+Seq as SerialNumber, Description, HOURS_WORKED as Quantity From V_Job_Hist_Dtl Where Job = '{0}' and LMO in ('M') Order by Suffix,Seq",V.Local.sJob,V.Local.sSql)
+		F.Data.DataTable.CreateFromSQL("TempWO","con",V.Local.sSql)
+		F.Intrinsic.Control.If(V.DataTable.TempWO.RowCount--,=,-1)
+			F.Data.DataTable.Close("TempWO")
+			'F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, Part, Job+Suffix+Seq as SerialNumber, Description, Job+Suffix+Seq as Quantity From V_Job_Detail Where Job = '{0}' and LMO = 'M' Order by Suffix",V.Local.sJob,V.Local.sSql)
+			F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, Part, Job+Suffix+Seq as SerialNumber, Description, HOURS_WORKED as Quantity From V_Job_Detail Where Job = '{0}' and LMO in ('M') Order by Suffix,Seq",V.Local.sJob,V.Local.sSql)
+			F.Data.DataTable.CreateFromSQL("TempWO","con",V.Local.sSql)
+		F.Intrinsic.Control.EndIf
+		
+		F.Data.DataTable.DeleteRow("WOBOM")
+		F.Data.DataTable.AcceptChanges("WOBOM")
+		F.Data.DataTable.Merge("TempWO","WOBOM",False,4)
+		F.Data.DataTable.Close("TempWO")		
+		
+		'F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, Part, Job+Suffix+Seq as SerialNumber, Description, Job+Suffix+Seq as Quantity From V_Job_Hist_Dtl Where Job = '{0}' and LMO = 'M' Order by Suffix",V.Local.sJob,V.Local.sSql)
+		F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, IF(UPPER(DESCRIPTION) LIKE 'PART: %',REPLACE(DESCRIPTION,'Part: ',''),'') As Part, Job+Suffix+Seq as SerialNumber, Description, CAST(0.00 AS NUMERIC(12,4)) as Quantity From V_Job_Hist_Ops Where Job = '{0}' and LMO in ('C') Order by Suffix,seq",V.Local.sJob,V.Local.sSql)
+		F.Data.DataTable.CreateFromSQL("TempWO","con",V.Local.sSql)
+		F.Intrinsic.Control.If(V.DataTable.TempWO.RowCount--,=,-1)
+			F.Data.DataTable.Close("TempWO")
+			'F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, Part, Job+Suffix+Seq as SerialNumber, Description, Job+Suffix+Seq as Quantity From V_Job_Detail Where Job = '{0}' and LMO = 'M' Order by Suffix",V.Local.sJob,V.Local.sSql)
+			F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, IF(UPPER(DESCRIPTION) LIKE 'PART: %',REPLACE(DESCRIPTION,'Part: ',''),'') As Part, Job+Suffix+Seq as SerialNumber, Description, CAST(0.00 AS NUMERIC(12,4)) as Quantity From V_Job_Operations Where Job = '{0}' and LMO in ('C') Order by Suffix,Seq",V.Local.sJob,V.Local.sSql)
+			F.Data.DataTable.CreateFromSQL("TempWO","con",V.Local.sSql)
+		F.Intrinsic.Control.EndIf
+		
+		F.Data.DataTable.AcceptChanges("WOBOM")
+		F.Data.DataTable.Merge("TempWO","WOBOM",False,4)
+		F.Data.DataTable.Close("TempWO")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.Dictionary.CreateFromSQL("Warranty","con","Select Part, 'Y' as Warranty From V_Inventory_Mstr Where Flag_Warranty = 'Y'")
+	F.Data.Dictionary.SetDefaultReturn("Warranty","N")
+	F.Data.DataTable.FillFromDictionary("WOBOM","Warranty","Part","Warranty")
+	F.Data.Dictionary.Close("Warranty")
+	
+	F.Data.Dictionary.CreateFromSQL("JobPart","con","Select Job+Suffix as Job_Part, Part from V_Job_Header union Select Job+Suffix as Job_Part, Part from V_job_hist_mast")
+	F.Data.Dictionary.SetDefaultReturn("JobPart","")
+	F.Data.DataTable.FillFromDictionary("WOBOM","JobPart", "Job_Part", "Job_Part")
+	F.Data.Dictionary.Close("JobPart")
+	
+'	F.Data.Dictionary.CreateFromSQL("QuantityDict","con","Select Job+Suffix+Seq as Job_Part, Hours_Actual as Quantity from V_JOB_OPERATIONS union Select Job+Suffix as Job_Part, Hours_Actual as Quantity from V_JOB_HIST_OPS")
+'	F.Data.Dictionary.SetDefaultReturn("QuantityDict","")
+'	F.Data.DataTable.FillFromDictionary("WOBOM","QuantityDict", "Quantity", "Quantity")
+'	F.Data.Dictionary.Close("QuantityDict")
+	
+	Gui.FormSerialMangement.pBar1.Value(82)
+	Gui.FormSerialMangement.lbl1.Caption("82%")
+	
+	F.Intrinsic.Control.If(V.DataTable.WOBOM.RowCount, >, 0)
+	
+		V.Local.sJobPart.Set(V.DataTable.WOBOM(0).Job_Part!FieldValTrim)
+		F.Intrinsic.String.Build("Select Part from V_BOM_MSTR where Parent ='{0}' and Category = 'R'", V.Local.sJobPart, V.Local.sSql)
+		F.Data.DataTable.CreateFromSQL("DrawingsDT", "con", V.Local.sSql, true)
+		V.Local.sSql.Set("")
+		F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.DrawingsDT.RowCount--, 1)
+			V.Local.sDRWPart.Set(V.DataTable.DrawingsDT(V.Local.iCnt).Part!FieldVal)
+			F.Intrinsic.String.RPad(V.Local.sDRWPart, " ", 20, V.Local.sDRWPart)
+			F.Intrinsic.Control.If(V.Local.sSql.Trim, =, "")
+				F.Intrinsic.String.Build("'{0}' {1}", V.Local.sDRWPart, V.Local.sSql, V.Local.sSql)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("'{0}', {1}", V.Local.sDRWPart, V.Local.sSql, V.Local.sSql)
+			F.Intrinsic.Control.EndIf
+			
+			
+		'F.Data.DataTable.AddRow("WOBOM", "Job", V.Local.sJob, "Suffix", "000", "Seq", "", "Job_Part", V.Local.sJobPart, "SerialNumber", "", "Part", V.Local.sDRWPart, "Description", V.Local.sDRWPart, "Warranty", "N")
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		F.Data.DataTable.Close("DrawingsDT")
+		F.Intrinsic.Control.If(V.Local.sSql.Trim, <>, "")
+			F.Intrinsic.String.Build("where Part in ({0})", V.Local.sSql, V.Local.sSql)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("Select Part, Description from V_Inventory_Mstr {0}", V.Local.sSql, V.Local.sSql)
+		F.Data.Dictionary.CreateFromSQL("descriptionDict", "con", V.Local.sSql)
+		F.Data.DataTable.FillFromDictionary("WOBOM","descriptionDict", "Description", "Description")
+		F.Data.Dictionary.Close("descriptionDict")
+		
+		F.Data.Dictionary.CreateFromSQL("Serial_NumberDict","con","Select  Job+Suffix+Sequence as JobSuffixSeq, Serial_number from V_Item_History where Code_Transaction = 'J55'")
+		F.Data.Dictionary.SetDefaultReturn("Serial_NumberDict","")
+		F.Data.DataTable.FillFromDictionary("WOBOM","Serial_NumberDict", "SerialNumber", "SerialNumber")
+		F.Data.Dictionary.Close("Serial_NumberDict")
+		
+		F.Intrinsic.String.Build("Select Top 1 Job+Suffix From V_Item_History Where Serial_Number = '{0}' and Part = '{1}'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sPart,V.Local.sSql)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql,V.Local.sJob)
+	F.Intrinsic.Control.EndIf
+	
+	Gui.FormSerialMangement.pBar1.Value(83)
+	Gui.FormSerialMangement.lbl1.Caption("83%")
+	
+	F.Data.DataTable.DeleteRow("Doc")
+	F.Data.DataTable.AcceptChanges("Doc")
+	
+'*88***************************************
+'Check Get Link using Job+Suffix. It's not working on customer's. Link at Inventory Level  (30 instead of 20).
+'Attachment on both levels.
+	F.Data.DataView.Create("WOBOM","VWOBOM",22,"","")
+	F.Intrinsic.Control.If(V.DataTable.DWOBOM.Exists)
+		F.Data.DataTable.Close("DWOBOM")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.ToDataTableDistinct("WOBOM","VWOBOM","DWOBOM","Job*!*Suffix",True)
+	F.Data.DataView.Close("WOBOM","VWOBOM")
+	F.Intrinsic.Control.For(V.Local.i,0,V.DataTable.DWOBOM.RowCount--,1)
+		F.Intrinsic.String.Build("{0}{1}",V.DataTable.DWOBOM(V.Local.i).Job!FieldValTrim,V.DataTable.DWOBOM(V.Local.i).Suffix!FieldValTrim,V.Local.sJobSuffix)
+		F.Global.DocumentControl.GetLinkID(V.Local.sJobSuffix,20,V.Local.iLinkID)
+		
+		F.Intrinsic.String.Build("Select File_Num, Path, File, Description From ATG_Doc_Assoc Where Link_ID = {0}",V.Local.iLinkID,V.Local.sSql)
+		F.Data.DataTable.CreateFromSQL("TempDoc","con",V.Local.sSql)
+'		F.Data.DataTable.DeleteRow("Doc")
+'		F.Data.DataTable.AcceptChanges("Doc")
+		F.Data.DataTable.Merge("TempDoc","Doc",False,4)
+		F.Data.DataTable.Close("TempDoc")
+	F.Intrinsic.Control.Next(V.Local.i)
+'***************** Adding Docs for Parts.
+	
+	F.Intrinsic.Control.If(V.DataView.WOBOM!WOBOMDV.Exists)
+		F.Data.DataView.Close("WOBOM", "WOBOMDV")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.Create("WOBOM", "WOBOMDV", 22, "([Part] LIKE 'DW*' or [Part] LIKE 'DP*' or [Part] LIKE 'DC*' or [Part] LIKE 'D-WI*' or [Part] LIKE 'D-SOP*')", "")
+	F.Data.DataView.ToDataTableDistinct("WOBOM", "WOBOMDV", "partDocsDT", "Part")
+	F.Data.DataTable.AddRow("partDocsDT", "Part", V.Local.sJobPart)
+
+	Gui.FormSerialMangement.pBar1.Value(84)
+	Gui.FormSerialMangement.lbl1.Caption("84%")
+	
+'Linking
+	F.Intrinsic.Control.If(V.DataTable.partDocsDT.RowCount, >, 0)	
+		V.Local.iListLink.Redim(0, V.DataTable.partDocsDT.RowCount--)
+	
+		F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.partDocsDT.RowCount--, 1)
+			V.Local.sPartDoc.Set(V.DataTable.partDocsDT(V.Local.iCnt).Part!FieldVal)
+			F.Intrinsic.String.RPad(V.Local.sPartDoc, " ", 22, V.Local.sPartDoc)
+			
+			F.Global.DocumentControl.GetLinkID(V.Local.sPartDoc, 30, V.Local.iListLink(V.Local.iCnt))	
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+		F.Intrinsic.String.Join(V.Local.iListLink, "','", V.Local.sTemp)
+		F.Intrinsic.String.Build("Select File_Num, Path, File, Description From ATG_Doc_Assoc Where Link_ID in ('{0}')",V.Local.sTemp,V.Local.sSql)
+		F.Data.DataTable.CreateFromSQL("TempDoc","con",V.Local.sSql)
+'		F.Data.DataTable.DeleteRow("Doc")
+'		F.Data.DataTable.AcceptChanges("Doc")
+		F.Data.DataTable.Merge("TempDoc","Doc",False,4)
+		F.Data.DataTable.Close("TempDoc")
+		F.Data.DataTable.Close("partDocsDT")
+	F.Intrinsic.Control.EndIf
+	
+	'******************
+'	F.Data.DataView.Create("partDocsDT", "partDocsDV", 22)
+'	F.Data.DataView.ToString("partDocsDT", "partDocsDV", "Part", "*!*", ",", V.Local.sTemp)
+'	F.Intrinsic.String.Build("'{0}'", V.Local.sTemp, V.Local.sTemp)
+	
+	Gui.FormSerialMangement.pBar1.Value(85)
+	Gui.FormSerialMangement.lbl1.Caption("85%")
+	
+	F.Intrinsic.String.Build("Select Order_No, Order_Line, Part, Description From V_Order_Hist_Line Where Order_No = '{0}'",V.Local.sSo,V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("TempOrigSO","con",V.Local.sSql)
+	F.Data.DataTable.AddColumn("TempOrigSO", "Quote", "String")
+	F.Data.DataTable.DeleteRow("OrigSO")
+	F.Data.DataTable.AcceptChanges("OrigSO")
+	F.Intrinsic.Control.If(V.DataTable.TempOrigSO.RowCount--,<>,-1)
+		F.Data.DataTable.Merge("TempOrigSO","OrigSO",False,4)
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.Close("TempOrigSO")
+		F.Intrinsic.String.Build("Select Order_No, Record_No as Order_Line, Part, Description From V_Order_Lines Where Order_No = '{0}'",V.Local.sSo,V.Local.sSql)
+		F.Data.DataTable.CreateFromSQL("TempOrigSO","con",V.Local.sSql)
+		F.Data.DataTable.Merge("TempOrigSO","OrigSO",False,4)
+	F.Intrinsic.Control.EndIf
+	
+	Gui.FormSerialMangement.pBar1.Value(86)
+	Gui.FormSerialMangement.lbl1.Caption("86%")
+	
+	F.Data.Dictionary.CreateFromSQL("quoteDict", "con", "Select order_no, quote from V_Order_Header")
+	F.Data.Dictionary.SetDefaultReturn("quoteDict", "")
+	F.Data.DataTable.FillFromDictionary("OrigSO", "quoteDict", "order_no", "Quote")
+	F.Data.Dictionary.Close("quoteDict")
+	
+	'F.Intrinsic.String.Build("Select a.Order_No, a.Order_Line, a.Part, Description, PO, PO_Line From V_Order_Hist_Line a Left Join PO_Drop_Ship b on  a.Order_No = b.Order_No and a.Order_Line = b.Order_Line Right Join V_Order_Hist_Head c on a.Order_No = c.Order_No Where a.Part Like 'SERV%' and c.User_1 = '{0}'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sSql)
+	
+	F.Intrinsic.String.Build("Select a.Order_No, a.Order_Line, a.Part, Description, PO, PO_Line From V_Order_Hist_Line a Left Join PO_Drop_Ship b on  a.Order_No = b.Order_No and a.Order_Line = b.Order_Line Right Join V_Order_Hist_Head c on a.Order_No = c.Order_No Where c.User_1 = '{0}'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sSql)
+	
+	'F.Intrinsic.String.Build("Select a.Order_No, a.Order_Line, a.Part, Description, PO, PO_Line From V_Order_Hist_Line a Left Join PO_Drop_Ship b on  a.Order_No = b.Order_No and a.Order_Line = b.Order_Line Right Join V_Order_Hist_Head c on a.Order_No = c.Order_No Where a.User_1 = '{0}' and date_shipped > '01/01/2020'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sSql)
+	
+	Gui.FormSerialMangement.pBar1.Value(87)
+	Gui.FormSerialMangement.lbl1.Caption("87%")
+	
+	F.Data.DataTable.CreateFromSQL("TempServSO","con",V.Local.sSql)
+	F.Data.DataTable.DeleteRow("ServSO")
+	F.Data.DataTable.AcceptChanges("ServSO")
+	F.Data.DataTable.Merge("TempServSO","ServSO",False,4)
+	F.Data.DataTable.Close("TempServSO")
+	F.Intrinsic.String.Build("Select a.Order_No, a.Record_No as Order_Line, a.Part, Description, PO, PO_Line From V_Order_Lines a Left Join PO_Drop_Ship b on a.Order_No = b.Order_No and a.Record_No = b.Order_Line Right Join V_Order_Header c on a.Order_No = c.Order_No Where c.User_1 = '{0}'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sSql)
+	'F.Intrinsic.String.Build("Select a.Order_No, a.Record_No as Order_Line, a.Part, Description, PO, PO_Line From V_Order_Lines a Left Join PO_Drop_Ship b on a.Order_No = b.Order_No and a.Record_No = b.Order_Line Right Join V_Order_Header c on a.Order_No = c.Order_No Where a.Part Like 'SERV%' and c.User_1 = '{0}'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sSql)
+
+	F.Data.DataTable.CreateFromSQL("TempServSO","con",V.Local.sSql)
+	F.Data.DataTable.Merge("TempServSO","ServSO",False,4)
+	F.Data.DataTable.Close("TempServSO")
+	
+	Gui.FormSerialMangement.pBar1.Value(88)
+	Gui.FormSerialMangement.lbl1.Caption("88%")
+	
+	F.Intrinsic.String.Build("Select CSR.Request_Number, CSR.Date_Entered, IF(CSR.Date_Closed = '1900-01-01','           ',CSR.Date_Closed) as Date_Closed, CSR.SUBJECT, CSRN.TEXT As Notes From V_Cust_Serv_Req CSR LEFT JOIN CUST_SVC_RQ_NOTES CSRN ON CSR.Request_Number = CSRN.CSR_Number Where CSR.Fax = '{0}' and (CSRN.Type_CD = 'P' OR CSRN.Type_CD IS NULL)",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("TempServHist","con",V.Local.sSql,True)
+	
+'	F.Data.DataTable.AddColumn("TempServHist", "Notes", "String")	
+'	F.Data.Dictionary.CreateFromSQL("notesDictionary", "con", "Select CSR_Number, TEXT from Cust_Svc_Rq_Notes where Type_CD = 'P'")
+'	F.Data.Dictionary.SetDefaultReturn("notesDictionary", " ")
+'	F.Data.DataTable.FillFromDictionary("TempServHist", "notesDictionary", "Request_Number", "Notes")
+'	F.Data.Dictionary.Close("notesDictionary")
+	
+	F.Data.DataTable.DeleteRow("ServHist")
+	F.Data.DataTable.AcceptChanges("ServHist")
+	F.Data.DataTable.Merge("TempServHist","ServHist",False,4)
+	F.Data.DataTable.Close("TempServHist")
+	
+	F.ODBC.Connection!con.Close
+	
+	Gui.FormSerialMangement.pBar1.Value(89)
+	Gui.FormSerialMangement.lbl1.Caption("89%")
+	
+	F.Intrinsic.Control.ExitSub
+		
+F.Intrinsic.Control.Catch
+
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Get_Data.End
+
+Program.Sub.cmdContactsSave_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sSerial.Declare
+V.Local.sCustomer.Declare
+V.Local.sCustContactNum.Declare
+V.Local.sCustomerName.Declare
+V.Local.sCustName.Declare
+V.Local.sCustPhone.Declare
+V.Local.sCustEmail.Declare
+
+V.Local.sSiteNames.Declare
+V.Local.sSiteName.Declare
+V.Local.sSiteContact.Declare
+V.Local.sSiteContacts.Declare
+
+V.Local.sVendor.Declare
+V.Local.sVendorContactNum.Declare
+V.Local.sVendorName.Declare
+V.Local.sVContactName.Declare
+V.Local.sVContactPhone.Declare
+V.Local.sVContactEmail.Declare
+
+V.Local.sSecVendor.Declare
+V.Local.sSecVendorContactNum.Declare
+V.Local.sSecVendorName.Declare
+V.Local.sSecVContactName.Declare
+V.Local.sSecVContactPhone.Declare
+V.Local.sSecVContactEmail.Declare
+
+	V.Local.sSerial.Set(V.Screen.FormSerialMangement!txtSerial.Text)
+	V.Local.sCustomer.Set(V.Screen.FormSerialMangement!txtCustNum.Text)
+	V.Local.sCustContactNum.Set(V.Screen.FormSerialMangement!txtCustContactNumber.Text)
+	V.Local.sCustomerName.Set(V.Screen.FormSerialMangement!txtCustName.Text)
+	V.Local.sCustName.Set(V.Screen.FormSerialMangement!txtContactCust.Text)
+	V.Local.sCustPhone.Set(V.Screen.FormSerialMangement!txtConCustPhone.Text)
+	V.Local.sCustEmail.Set(V.Screen.FormSerialMangement!txtConCustEmail.Text)
+
+	F.Intrinsic.String.Split(V.Screen.FormSerialMangement!txtSiteName.Text, V.Ambient.NewLine, V.Local.sSiteNames)
+	F.Intrinsic.String.Join(V.Local.sSiteNames, "!*!", V.Local.sSiteName)
+	
+	F.Intrinsic.String.Split(V.Screen.FormSerialMangement!txtSiteContact.Text, V.Ambient.NewLine, V.Local.sSiteContacts)
+	F.Intrinsic.String.Join(V.Local.sSiteContacts, "!*!", V.Local.sSiteContact)
+	
+	V.Local.sVendor.Set(V.Screen.FormSerialMangement!txtVendor.Text)
+	V.Local.sVendorContactNum.Set(V.Screen.FormSerialMangement!txtVendContactNumber.Text)
+	V.Local.sVendorName.Set(V.Screen.FormSerialMangement!txtVendorName.Text)
+	V.Local.sVContactName.Set(V.Screen.FormSerialMangement!txtVendorContact.Text)
+	V.Local.sVContactPhone.Set(V.Screen.FormSerialMangement!txtVendorPhone.Text)
+	V.Local.sVContactEmail.Set(V.Screen.FormSerialMangement!txtVendorEmail.Text)
+	
+	V.Local.sSecVendor.Set(V.Screen.FormSerialMangement!txtSecVendor.Text)
+	V.Local.sSecVendorName.Set(V.Screen.FormSerialMangement!txtSecVendorName.Text)
+	V.Local.sSecVendorContactNum.Set(V.Screen.FormSerialMangement!txtSecVendContactNumber.Text)
+	V.Local.sSecVContactName.Set(V.Screen.FormSerialMangement!txtSecVendorContact.Text)
+	V.Local.sSecVContactPhone.Set(V.Screen.FormSerialMangement!txtSecVendorPhone.Text)
+	V.Local.sSecVContactEmail.Set(V.Screen.FormSerialMangement!txtSecVendorEmail.Text)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Data.DataTable.CreateFromSQL("saveDT", "con", "Select * from GCG_5530_CSR_INFO")
+	F.ODBC.Connection!con.Close
+	
+	F.Data.DataTable.DeleteRow("saveDT")
+	
+	F.Data.DataTable.AddRow("saveDT", "Serial_Number", V.Local.sSerial, "Customer", V.Local.sCustomer, "Customer_Name", V.Local.sCustomerName, "CONTACTCUSTNUM", V.Local.sCustContactNum.Long,"ContactCustName", V.Local.sCustName, "ContactCustPhone", V.Local.sCustPhone, "ContactCustEmail", V.Local.sCustEmail, "Site_Names", V.Local.sSiteName, "Site_Contacts", V.Local.sSiteContact, "Vendor", V.Local.sVendor, "Vendor_Name", V.Local.sVendorName, "CONTACTVENDNUM", V.Local.sVendorContactNum.Long, "ContactVendorName", V.Local.sVContactName, "ContactVendorPhone", V.Local.sVContactPhone, "ContactVendorEmail", V.Local.sVContactEmail,"SEC_VEND_NO",V.Local.sSecVendor,"SEC_VEND_NAME",V.Local.sSecVendorName.Trim,"SEC_VEND_CONT_NO",V.Local.sSecVendorContactNum.Long,"SEC_VEND_CONT_NAME",V.Local.sSecVContactName.Trim,"SEC_VEND_CONT_PHONE",V.Local.sSecVContactPhone.Trim,"SEC_VEND_CONT_EMAIL",V.Local.sSecVContactEmail.Trim)
+	
+	F.Data.DataTable.AcceptChanges("saveDT")
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Data.DataTable.SaveToDB("saveDT", "con", "GCG_5530_CSR_INFO", "Serial_Number", 256)
+	F.ODBC.Connection!con.Close
+	
+	F.Intrinsic.UI.Msgbox("Save Complete")
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdContactsSave_Click.End
+
+Program.Sub.GsGridControlSERV_RowCellClick.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.sReF.Declare(String,"")
+	V.Local.sSql.Declare(String,"")
+	V.Local.sSerial.Declare
+	V.Local.sPartRev.Declare
+	
+'	Gui.FormSerialMangement.frmPrefVend.Visible(False)
+	
+	'F.Intrinsic.Control.BlockEvents
+	Gui.FormSerialMangement.pBar1.Value(0)
+	Gui.FormSerialMangement.lbl1.Caption("0%")
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.pBar1.Visible(True)
+	Gui.FormSerialMangement.lbl1.Visible(True)
+	
+	F.Intrinsic.Control.If(V.DataTable.Event.RowCount, >, 0)
+		F.Data.DataTable.DeleteRow("Event")
+		F.Data.DataTable.AcceptChanges("Event")
+	F.Intrinsic.Control.EndIf
+	
+	Gui.FormSerialMangement.pBar1.Value(10)
+	Gui.FormSerialMangement.lbl1.Caption("10%")
+	Gui.FormSerialMangement.GsGridControlSERV.GetCellValueByColumnName("GServ","Serial",V.Args.RowIndex,V.Local.sRef)
+	V.Local.sSerial.Set(V.Local.sRef)
+	Gui.FormSerialMangement.txtSerial.Text(V.Local.sReF.Trim)
+	
+	Gui.FormSerialMangement.pBar1.Value(20)
+	Gui.FormSerialMangement.lbl1.Caption("20%")
+	
+	Gui.FormSerialMangement.GsGridControlSERV.GetCellValueByColumnName("GServ","Customer",V.Args.RowIndex,V.Local.sRef)
+	
+	Gui.FormSerialMangement.pBar1.Value(30)
+	Gui.FormSerialMangement.lbl1.Caption("30%")
+	Gui.FormSerialMangement.txtCustomer.Text(V.Local.sReF.Trim)
+	Gui.FormSerialMangement.txtCustNum.Text(V.Local.sReF.Trim)
+	Gui.FormSerialMangement.pBar1.Value(60)
+	Gui.FormSerialMangement.lbl1.Caption("60%")
+	
+	'TJS, Oct 2020
+	Gui.FormSerialMangement.GsGridControlSERV.GetCellValueByColumnName("GServ","Part",V.Args.RowIndex,V.Local.sPartRev)
+	
+	Gui.FormSerialMangement.lblPartNo.Caption(V.Local.sPartRev.Trim)
+	Gui.FormSerialMangement.lblPartNo.Visible(True)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection(500)
+		F.Intrinsic.String.Build("Select TEXT from V_INV_EXTRA_TEXT where PART = '{0}'", V.Local.sPartRev.Trim, V.Local.sPartRev)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sPartRev, V.Local.sPartRev)
+	
+		F.Intrinsic.String.Build("Select Name_Customer from V_CUSTOMER_MASTER where Customer = '{0}'", V.Local.sRef, V.Local.sRef)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sRef, V.Local.sRef)
+	F.ODBC.Connection!con.Close
+	Gui.FormSerialMangement.txtCustName.Text(V.Local.sReF.Trim)
+	Gui.FormSerialMangement.pBar1.Value(80)
+	Gui.FormSerialMangement.lbl1.Caption("80%")
+	Gui.FormSerialMangement.txtExtDesc.Text(V.Local.sPartRev.Trim)
+	Gui.FormSerialMangement.pBar1.Value(85)
+	Gui.FormSerialMangement.lbl1.Caption("85%")
+	F.Intrinsic.Control.CallSub(txtSerial_KeyPress)
+	Gui.FormSerialMangement.pBar1.Value(100)
+	Gui.FormSerialMangement.lbl1.Caption("100%")
+	'add customer info to Textboxes.
+	'F.Intrinsic.Control.UnBlockEvents
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	Gui.FormSerialMangement.lbl1.Visible(False)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGridControlSERV_RowCellClick.End
+
+Program.Sub.GsGridControlDoc_RowCellClick.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.sError.Declare(String,"")
+	V.Local.sFile.Declare(String,"")
+	V.Local.sExt.Declare(String,"")
+	V.Local.sHold.Declare(String,"")
+	V.Local.sSql.Declare(String,"")
+	V.Local.sZipped.Declare(String,"")
+	V.local.bCompressed.Declare(Boolean,False)
+	V.Local.sTempDir.Declare(String,"")
+	V.Local.bExists.Declare(Boolean,False)
+	V.Local.bRet.Declare(Boolean,False)
+	
+	'F.Intrinsic.Control.BlockEvents
+	Gui.FormSerialMangement.lbl1.Caption("0%")
+	Gui.FormSerialMangement.pBar1.Value(0)
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.pBar1.Visible(True)
+	
+	Gui.FormSerialMangement.lbl1.Visible(True)
+	
+	F.Intrinsic.String.Build("{0}{1}",V.DataTable.Doc(V.Args.RowIndex).Path!FieldValTrim,V.DataTable.Doc(V.Args.RowIndex).File!FieldValTrim,V.Local.sFile)
+	F.Intrinsic.String.Split(V.Local.sFile,".",V.Local.sExt)
+	
+	Gui.FormSerialMangement.pBar1.Value(40)
+	Gui.FormSerialMangement.lbl1.Caption("40%")
+	Gui.FormSerialMangement.lblFileDesc.Caption(V.DataTable.Doc(V.Args.RowIndex).Description!FieldValTrim)
+	Gui.FormSerialMangement.pBar1.Value(80)
+	Gui.FormSerialMangement.lbl1.Caption("80%")
+	
+	F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bExists)
+	
+	F.Intrinsic.Control.If(V.Local.bExists,=,False)
+		F.global.vms.getshadowdirectory(V.Local.sExt(V.Local.sExt.UBound),V.Local.sFile)
+		F.Intrinsic.Control.If(V.Local.sFile.Trim,<>,"")
+			'Save Blob to File
+			'Save blob2file and open in read only
+			F.Intrinsic.String.Concat(V.Caller.LocalGSSTempDir,V.DataTable.Doc(V.Args.RowIndex).File!FieldValTrim,V.Local.sHold)
+			'Check to make sure the file doesn't already exist in the temp dir
+			
+			F.Intrinsic.File.Exists(V.Local.sHold,V.Local.bExists)
+			F.Intrinsic.Control.If(V.Local.bExists)
+				F.Intrinsic.File.SetFileAttributes(V.Local.sHold,0)
+				F.Intrinsic.File.DeleteFile(V.Local.sHold)
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.String.Build("Select File, Compressed from VMS_ACTIVE where FID = '{0}'",V.DataTable.Doc(V.Args.RowIndex).File_Num!FieldValTrim,V.Local.sSql)
+			F.ODBC.Connection!Con.OpenCompanyConnection
+			F.ODBC.Connection!con.OpenLocalRecordsetRW("rstVMS",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.con!rstVMS.EOF,=,False)
+				F.Intrinsic.Control.If(V.ODBC.con!rstVMS.FieldVal!Compressed,=,True)
+					F.Intrinsic.String.Concat(V.Local.sHold,".zip",V.Local.sZipped)
+					V.local.bCompressed.Set(True)
+					F.ODBC.con!rstVMS.SaveBLOBtoFile("FILE",V.Local.sZipped)
+				F.Intrinsic.Control.Else
+					F.ODBC.con!rstVMS.SaveBLOBtoFile("FILE",V.Local.sHold)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstVMS.Close
+			F.ODBC.Connection!Con.Close
+			'Compressed
+			F.Intrinsic.Control.If(V.Local.bCompressed,=,True)
+				F.Automation.Zip.UnZip(V.Local.sZipped,V.Local.sHold)
+				V.Local.sTempDir.Set(V.Local.sHold)
+				F.Intrinsic.String.Concat(V.Local.sHold,"\",V.DataTable.Doc(V.Args.RowIndex).File!FieldValTrim,V.Local.sHold)
+				F.Intrinsic.File.Exists(V.Local.sHold,V.Local.bExists)
+				F.Intrinsic.Control.If(V.Local.bExists,=,True)
+					'Delete Zipped File
+					F.Intrinsic.File.DeleteFile(V.Local.sZipped)
+				F.Intrinsic.Control.Else
+					'Unzip not successful
+					F.Intrinsic.UI.Msgbox("File Failed to Unzip")
+					F.Intrinsic.Control.ExitSub
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+	
+			F.Intrinsic.File.SetFileAttributes(V.Local.sHold,1)
+			V.Local.sFile.Set(V.Local.sHold)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	'F.Intrinsic.Control.If(V.Args.RowIndex,<>,V.Global.iLastDocIndex)
+		'V.Global.iLastDocIndex.Set(V.Args.RowIndex)
+		'Gui.FormSerialMangement.htmlContainerDoc.ClearMetaData
+		F.Intrinsic.Task.ShellExec(V.Caller.Handle,Open,V.Local.sFile,"","",1)
+		'Gui.FormSerialMangement.htmlContainerDoc.Navigate(V.Local.sFile,True)
+	'F.Intrinsic.Control.EndIf
+	
+	Gui.FormSerialMangement.pBar1.Value(100)
+	Gui.FormSerialMangement.lbl1.Caption("100%")
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	Gui.FormSerialMangement.lbl1.Visible(False)
+	'F.Intrinsic.Control.UnBlockEvents
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGridControlDoc_RowCellClick.End
+
+Program.Sub.GsGridControlCSRHist_RowCellClick.Start
+F.Intrinsic.Control.Try
+V.Local.sColumn.Declare
+V.Local.sFilePath.Declare
+V.Local.sText.Declare
+V.Local.iRet.Declare
+V.Local.sCustomer.Declare
+V.Local.iType.Declare
+V.Local.sSerialNumber.Declare
+V.Local.sParams.Declare
+V.Local.iPID.Declare(Long,0)
+V.Local.bCheck.Declare
+V.Local.bContains.Declare
+V.Local.iCnt.Declare
+V.Local.sReturn.Declare
+V.Local.sProcess.Declare
+V.Local.iCRMHwnd.Declare
+
+	V.Local.sError.Declare(String,"")
+	V.Local.sReF.Declare(String,"")
+	V.Local.sSql.Declare(String,"")
+	V.Local.i.Declare(Long,0)
+	V.Local.sCaption.Declare(String,"")
+	
+	'F.Intrinsic.Control.BlockEventsHC
+	Gui.FormSerialMangement.pBar1.Value(0)
+	Gui.FormSerialMangement.lbl1.Caption("0%")
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.pBar1.Visible(True)
+	Gui.FormSerialMangement.lbl1.Visible(True)
+	
+	'Gui.FormSerialMangement.frmPrefVend.Visible(True)
+	
+	F.Intrinsic.Control.If(V.DataTable.TempEvent.Exists)
+		F.Data.DataTable.Close("TempEvent")
+	F.Intrinsic.Control.EndIf
+	Gui.FormSerialMangement.pBar1.Value(10)
+	Gui.FormSerialMangement.lbl1.Caption("10%")
+	Gui.FormSerialMangement.GsGridControlCSRHist.GetCellValueByColumnName("GServHist","Request_Number",V.Args.RowIndex,V.Local.sRef)
+	
+	Gui.FormSerialMangement.pBar1.Value(15)
+	Gui.FormSerialMangement.lbl1.Caption("15%")
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Intrinsic.String.Build("Select a.Date as Date_Entered, Text From V_Cust_Svc_Rq_Notes a Where CSR_Number = '{0}' and Type_CD <> 'P'",V.Local.sReF.Trim,V.Local.sSql)
+		F.Data.DataTable.CreateFromSQL("TempEvent","con",V.Local.sSql,True)
+	F.ODBC.Connection!con.Close
+	
+'	Gui.FormSerialMangement.pBar1.Value(45)
+'	Gui.FormSerialMangement.lbl1.Caption("45%")
+	
+	F.Data.DataTable.DeleteRow("Event")
+	F.Data.DataTable.AcceptChanges("Event")
+	F.Data.DataTable.Merge("TempEvent","Event",False,4)
+	F.Data.DataTable.Close("TempEvent")
+	
+	
+	F.Intrinsic.String.UCase(V.Args.Column, V.Local.sColumn)
+	F.Intrinsic.Control.If(V.Local.sColumn, =, "REQUEST_NUMBER")
+	'	F.Intrinsic.String.Build("{0}\CUSTOM\GCG_5530\CSR_{1}{2}.txt", V.Caller.GlobalDir, V.Caller.CompanyCode, V.Caller.Terminal, V.Local.sFilePath)
+		'F.Intrinsic.File.String2File(V.Local.sFilePath, V.Local.sRef)
+		
+		'F.Global.General.LaunchMenuTask(250, 0, V.Local.iRet)
+	F.Intrinsic.Control.EndIf
+	
+	
+	'CRM
+	
+	V.Local.sCustomer.Set(V.Screen.FormSerialMangement!txtCustNum.Text)
+	V.Local.sSerialNumber.Set(V.Screen.FormSerialMangement!txtSerial.Text)
+'TJS, Oct 2020 - Removed the need for CRM to be running to create a CSR
+
+'	F.Intrinsic.Task.IsProgramRunning("CRM.exe", V.Local.bCheck)
+
+'	F.Intrinsic.Control.If(V.Local.bCheck.Not)
+'		F.Global.General.LaunchMenuTask(243, 0, V.Local.iRet)
+'		F.Intrinsic.UI.InvokeWaitDialog("Launching CRM, Please wait until CRM is finished loading and try again","Launching CRM, Please wait until CRM is finished loading and try again")
+'		F.Intrinsic.UI.Sleep(15)
+'		Gui.FormSerialMangement.lbl1.Visible(False)
+'		Gui.FormSerialMangement.pBar1.Visible(False)
+'		Gui.FormSerialMangement..Enabled(True)
+'		F.Intrinsic.UI.CloseWaitDialog
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.Else
+'		'added only for visual reasons. RLK
+'		F.Intrinsic.Control.For(V.Local.i,20,70,2)
+'			Gui.FormSerialMangement.pBar1.Value(V.Local.i)
+'			F.Intrinsic.String.Build("{0}%",V.Local.i,V.Local.sCaption)
+'			Gui.FormSerialMangement.lbl1.Caption(V.Local.sCaption)
+'			F.Intrinsic.UI.SleepMS(35)
+'		F.Intrinsic.Control.Next(V.Local.i)
+'	F.Intrinsic.Control.EndIf
+	
+'	F.Intrinsic.Task.IsProgramRunning("CRM.exe", V.Local.bCheck)
+'	F.Intrinsic.Control.If(V.Local.bCheck)
+'		F.Intrinsic.Task.GetProcessList(V.Local.sReturn)
+''		F.Intrinsic.String.Split(V.Local.sReturn, "*!*", V.Local.sReturn)
+''		F.Intrinsic.Control.For(V.Local.iCnt, 0, V.Local.sReturn.UBound, 1)
+''			F.Intrinsic.String.Instr(V.Local.sReturn(V.Local.iCnt), "CRM.exe", 0, V.Local.bContains)
+''			F.Intrinsic.Control.If(V.Local.bContains)
+''				F.Intrinsic.String.Split(V.Local.sReturn(V.Local.iCnt), "!*!", V.Local.sProcess)
+''				V.Local.iPID.Set(V.Local.sProcess(0))
+''				F.Intrinsic.Control.ExitFor(V.Local.iCnt)
+''			F.Intrinsic.Control.EndIf
+''		F.Intrinsic.Control.Next(V.Local.iCnt)
+'		'speeding up and adding in visual effects for the user. RLK
+'		F.Intrinsic.String.Instr(V.Local.sReturn, "CRM.exe", 0, V.Local.bContains)
+'		F.Intrinsic.Control.If(V.Local.bContains)
+'			Gui.FormSerialMangement.pBar1.Value(72)
+'			Gui.FormSerialMangement.lbl1.Caption("72%")
+'			F.Intrinsic.UI.SleepMS(35)
+'			F.Intrinsic.String.Split(V.Local.sReturn,"CRM.exe",V.Local.sProcess)
+'			Gui.FormSerialMangement.pBar1.Value(74)
+'			Gui.FormSerialMangement.lbl1.Caption("74%")
+'			F.Intrinsic.UI.SleepMS(35)
+'			F.Intrinsic.String.Split(V.Local.sProcess,"*!*",V.Local.sProcess)
+'			Gui.FormSerialMangement.pBar1.Value(76)
+'			Gui.FormSerialMangement.lbl1.Caption("76%")
+'			F.Intrinsic.UI.SleepMS(35)
+'			F.Intrinsic.String.Split(V.Local.sProcess(V.Local.sProcess.UBound),"!*!",V.Local.sProcess)
+'			Gui.FormSerialMangement.pBar1.Value(78)
+'			Gui.FormSerialMangement.lbl1.Caption("78%")
+'			F.Intrinsic.UI.SleepMS(35)
+'			V.Local.iPID.Set(V.Local.sProcess(0))
+'		F.Intrinsic.Control.Else
+'			F.Intrinsic.Control.For(V.Local.i,70,78,2)
+'				Gui.FormSerialMangement.pBar1.Value(V.Local.i)
+'				F.Intrinsic.String.Build("{0}%",V.Local.i,V.Local.sCaption)
+'				Gui.FormSerialMangement.lbl1.Caption(V.Local.sCaption)
+'				F.Intrinsic.UI.SleepMS(35)
+'			F.Intrinsic.Control.Next(V.Local.i)
+'		F.Intrinsic.Control.EndIf
+'		
+'		F.Intrinsic.Control.If(V.Local.iPID, <>, 0)
+'			F.Intrinsic.API.GetHandleFromPID(V.Local.iPID, V.Local.iCRMHwnd)
+'			
+'			'F.Intrinsic.String.Build("MODE::11*!*COMPANY-NUMBER::{0}*!*COMPANY-TYPE::15*!*NEW-CSR::1*!*SUBJECT:: *!*PROBLEM:: *!*CONTACT:: *!*FAX::{2}", V.Local.sCustomer, V.Local.sSerialNumber, V.Local.sParams)
+'			F.Intrinsic.String.Build("MODE::11*!*COMPANY-NUMBER::{0}*!*COMPANY-TYPE::15*!*NEW-CSR::0*!*SERV-REQ-NUMBER::{1}",V.Local.sCustomer, V.Local.sRef,V.Local.sParams)   
+'			F.Intrinsic.API.ChangeCaption(V.Local.iCRMHwnd, V.Local.sParams)
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.EndIf
+	
+	Gui.FormSerialMangement.pBar1.Value(80)
+	Gui.FormSerialMangement.lbl1.Caption("80%")
+	'added by RLK populating CSR Update Section on the form
+	'updating frame caption
+	F.Intrinsic.String.Build("CSR Update: #{0}",V.Local.sRef,V.Local.sCaption)
+	Gui.frmCSR..Caption(V.Local.sCaption)
+	F.Intrinsic.String.Build("Select A.Request_Number, A.Contact, A.Phone, A.Email, A.Subject, C.Root_Cause, A.Req_Type,C.SUB_REQ_TYPE,C.EVENT_CODE,C.Status,A.DATE_CLOSED, A.Responsible, B.Text From V_Cust_Serv_Req A Left Join V_Cust_Svc_Rq_Notes B on A.Request_Number = B.Csr_Number Left Join GCG_5530_CSR_ST_RC C on A.Request_Number = C.Request_Number Where A.Request_Number = '{0}'",V.Local.sRef,V.Local.sSql)
+	
+	F.Intrinsic.Control.If(V.DataTable.CSRUpdate.Exists)
+		F.Data.DataTable.Close("CSRUpdate")
+	F.Intrinsic.Control.EndIf
+	
+	Gui.FormSerialMangement.pBar1.Value(85)
+	Gui.FormSerialMangement.lbl1.Caption("85%")
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Data.DataTable.CreateFromSQL("CSRUpdate","con",V.Local.sSql,True)
+	F.ODBC.Connection!con.Close
+	
+	Gui.FormSerialMangement.pBar1.Value(90)
+	Gui.FormSerialMangement.lbl1.Caption("90%")
+	
+	F.Intrinsic.Control.If(V.DataTable.CSRUpdate.RowCount,<>,0)
+		Gui.frmCSR.txtReqNo.Text(V.Local.sReF)
+		Gui.frmCSR.txtSerNo.Text(V.Screen.FormSerialMangement!txtSerial.Text)
+		Gui.frmCSR.txtPrimeContact.Text(V.DataTable.CSRUpdate(0).Contact!FieldValTrim)
+		Gui.frmCSR.txtPhone.Text(V.DataTable.CSRUpdate(0).Phone!FieldValTrim)
+		Gui.frmCSR.txtEmail.Text(V.DataTable.CSRUpdate(0).Email!FieldValTrim)
+		Gui.frmCSR.txtSubject.Text(V.DataTable.CSRUpdate(0).Subject!FieldValTrim)
+		Gui.frmCSR.cboReqType.Text(V.DataTable.CSRUpdate(0).Req_Type!FieldValTrim)
+		Gui.frmCSR.cboReqSubType.Text(V.DataTable.CSRUpdate(0).SUB_REQ_TYPE!FieldValTrim)
+		Gui.frmCSR.cboEvent.Text(V.DataTable.CSRUpdate(0).EVENT_CODE!FieldValTrim)
+		Gui.frmCSR.cboRootCause.Text(V.DataTable.CSRUpdate(0).Root_Cause!FieldValTrim)		
+		Gui.frmCSR.cboStatus.Text(V.DataTable.CSRUpdate(0).Status!FieldValTrim)
+		Gui.frmCSR.cboResp.Text(V.DataTable.CSRUpdate(0).Responsible!FieldValTrim)
+		Gui.frmCSR.txtProb.Text(V.DataTable.CSRUpdate(0).Text!FieldValTrim)
+		
+		F.Intrinsic.Control.If(V.DataTable.CSRUpdate(0).DATE_CLOSED!FieldValTrim,<>,"1/1/1900")
+			Gui.frmCSR.chkClsCSR.Value(1)
+			Gui.frmCSR.chkClsCSR.Caption("CSR Closed")
+		F.Intrinsic.Control.Else
+			Gui.frmCSR.chkClsCSR.Value(0)
+			Gui.frmCSR.chkClsCSR.Caption("Close CSR")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	Gui.FormSerialMangement.pBar1.Value(100)
+	Gui.FormSerialMangement.lbl1.Caption("100%")
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	Gui.FormSerialMangement.lbl1.Visible(False)
+	
+	Gui.frmCSR..Show
+
+	'F.Intrinsic.Control.UnBlockEvents
+	
+	F.Intrinsic.Control.ExitSub
+		
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGridControlCSRHist_RowCellClick.End
+
+Program.Sub.GsGridControlOrigSO_RowCellClick.Start
+ V.Local.sPart.Declare
+ V.Local.sLocation.Declare
+ V.Local.sOrderNo.Declare
+ V.Local.sParams.Declare
+ V.Local.sCustomer.Declare
+ V.Local.sSQL.Declare
+V.Local.bOrderHist.Declare
+V.Local.sColumn.Declare
+V.Local.sQuote.Declare
+
+F.Intrinsic.Control.Try
+	
+	'F.Intrinsic.Control.BlockEvents
+	
+	F.Intrinsic.String.UCase(V.Args.Column, V.Local.sColumn)
+	F.Intrinsic.Control.SelectCase(V.Local.sColumn)
+		F.Intrinsic.Control.Case("ORDER_NO")
+			
+			Gui.FormSerialMangement.pBar1.Value(0)
+			Gui.FormSerialMangement.lbl1.Caption("0%")
+			
+			Gui.FormSerialMangement..Enabled(False)
+	
+			Gui.FormSerialMangement.pBar1.Visible(True)
+			Gui.FormSerialMangement.lbl1.Visible(True)
+			
+			Gui.FormSerialMangement.pBar1.Value(10)
+			Gui.FormSerialMangement.lbl1.Caption("10%")
+			V.Local.sOrderNo.Set(V.DataTable.OrigSO(V.Args.RowIndex).Order_No!FieldValTrim)
+			
+'			F.Intrinsic.Control.If(V.ODBC.con.State, =, 1)
+'				F.ODBC.Connection!con.Close
+'			F.Intrinsic.Control.EndIf
+	
+			F.ODBC.Connection!con.OpenCompanyConnection
+				Gui.FormSerialMangement.pBar1.Value(30)
+				Gui.FormSerialMangement.lbl1.Caption("30%")
+				F.Intrinsic.String.Build("Select * from v_order_header where Order_No = '{0}'", V.Local.sOrderNo, V.Local.sSQL)
+				F.Data.DataTable.CreateFromSQL("orderDT", "con", V.Local.sSQL)
+					F.Intrinsic.Control.If(V.DataTable.orderDT.RowCount, =, 1)
+						V.Local.sCustomer.Set(V.DataTable.orderDT(0).Customer!FieldValTrim)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Build("Select distinct customer from V_ORDER_HIST_HEAD where Order_No = '{0}'", V.Local.sOrderNo, V.Local.sSQL)
+						F.Data.DataTable.CreateFromSQL("orderHistDT", "con", V.Local.sSQL)
+						F.Intrinsic.Control.If(V.DataTable.orderHistDT.RowCount, =, 1)
+							V.Local.sCustomer.Set(V.DataTable.orderHistDT(0).Customer!FieldValTrim)
+							V.Local.bOrderHist.Set(true)
+						F.Intrinsic.Control.Else
+							F.Intrinsic.UI.Msgbox("Multiple Customers are asociated with this Order.")
+							V.Local.sCustomer.Set("*!*ZDR*!*")
+						F.Intrinsic.Control.EndIf	
+						F.Data.DataTable.Close("orderHistDT")
+					F.Intrinsic.Control.EndIf					
+				F.Data.DataTable.Close("orderDT")
+			F.ODBC.Connection!con.Close
+			
+			Gui.FormSerialMangement.pBar1.Value(60)
+			Gui.FormSerialMangement.lbl1.Caption("60%")
+			F.Intrinsic.Control.If(V.Local.bOrderHist)
+				F.Intrinsic.String.Build("{0}!*!{1}", V.Local.sOrderNo, V.Local.sCustomer, V.Local.sParams)
+				F.Global.General.CallwrapperAsync(7070 , V.Local.sParams)
+				Gui.FormSerialMangement.pBar1.Value(100)
+				Gui.FormSerialMangement.lbl1.Caption("100%")
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}!*!O!*!{1}", V.Local.sOrderNo, V.Local.sCustomer, V.Local.sParams)
+				F.Global.General.CallwrapperAsync(200000, V.Local.sParams)
+				Gui.FormSerialMangement.pBar1.Value(100)
+				Gui.FormSerialMangement.lbl1.Caption("100%")
+			F.Intrinsic.Control.EndIf
+			
+			Gui.FormSerialMangement..Enabled(True)
+	
+			Gui.FormSerialMangement.pBar1.Visible(False)
+			Gui.FormSerialMangement.lbl1.Visible(False)
+			
+		F.Intrinsic.Control.Case("PART")
+			V.Local.sPart.Set(V.DataTable.OrigSO(V.Args.RowIndex).Part!FieldValTrim)
+			'F.Intrinsic.String.RPad(V.Local.sPart, " ", 20, V.Local.sPart)
+			'V.Local.sLocation.Set(V.DataTable.OrigSO(V.Args.RowIndex).Location!FieldValTrim)
+			V.Local.sLocation.Set("  ")
+			F.Intrinsic.String.Build("{0}!*!O!*!*!*ZDR*!*!*!*!*ZDR*!*!*!{1}!*!{2}", V.Caller.CompanyCode, V.Local.sPart, V.Local.sLocation, V.Local.sParams)
+			F.Global.General.CallwrapperAsync(3500, V.Local.sParams)
+			
+		F.Intrinsic.Control.Case("QUOTE")
+			V.Local.sQuote.Set(V.DataTable.OrigSO(V.Args.RowIndex).Quote!FieldValTrim)
+			F.Intrinsic.String.Build("{0}!*!O", V.Local.sQuote, V.Local.sParams)
+			F.Global.General.CallwrapperAsync(251000, V.Local.sParams)
+	F.Intrinsic.Control.EndSelect
+	
+	'F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGridControlOrigSO_RowCellClick.End
+
+Program.Sub.GsGridControlServSO_RowCellClick.Start
+ V.Local.sPart.Declare
+ V.Local.sLocation.Declare
+ V.Local.sOrderNo.Declare
+ V.Local.sParams.Declare
+ V.Local.sCustomer.Declare
+ V.Local.sSQL.Declare
+V.Local.sPO.Declare
+V.Local.bOrderHist.Declare
+
+V.Local.sColumn.Declare
+
+F.Intrinsic.Control.Try
+			
+	'F.Intrinsic.Control.BlockEvents
+	Gui.FormSerialMangement.pBar1.Value(0)
+	Gui.FormSerialMangement.lbl1.Caption("0%")
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.pBar1.Visible(True)
+	Gui.FormSerialMangement.lbl1.Visible(True)
+	
+	F.Intrinsic.String.UCase(V.Args.Column, V.Local.sColumn)
+	F.Intrinsic.Control.SelectCase(V.Local.sColumn)
+		F.Intrinsic.Control.Case("ORDER_NO")
+			V.Local.sOrderNo.Set(V.DataTable.ServSO(V.Args.RowIndex).Order_No!FieldValTrim)
+			
+'			F.Intrinsic.Control.If(V.ODBC.con.State, =, 1)
+'				F.ODBC.Connection!con.Close
+'			F.Intrinsic.Control.EndIf
+			Gui.FormSerialMangement.pBar1.Value(30) 
+			Gui.FormSerialMangement.lbl1.Caption("30%")
+			
+			F.ODBC.Connection!con.OpenCompanyConnection
+				F.Intrinsic.String.Build("Select * from v_order_header where Order_No = '{0}'", V.Local.sOrderNo, V.Local.sSQL)
+				F.Data.DataTable.CreateFromSQL("orderDT", "con", V.Local.sSQL)
+					Gui.FormSerialMangement.pBar1.Value(40)
+					Gui.FormSerialMangement.lbl1.Caption("40%")
+					F.Intrinsic.Control.If(V.DataTable.orderDT.RowCount, =, 1)
+						V.Local.sCustomer.Set(V.DataTable.orderDT(0).Customer!FieldValTrim)
+						Gui.FormSerialMangement.pBar1.Value(50)
+						Gui.FormSerialMangement.lbl1.Caption("50%")
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Build("Select distinct customer from V_ORDER_HIST_HEAD where Order_No = '{0}'", V.Local.sOrderNo, V.Local.sSQL)
+						F.Data.DataTable.CreateFromSQL("orderHistDT", "con", V.Local.sSQL)
+						F.Intrinsic.Control.If(V.DataTable.orderHistDT.RowCount, =, 1)
+							V.Local.sCustomer.Set(V.DataTable.orderHistDT(0).Customer!FieldValTrim)
+							V.Local.bOrderHist.Set(true)
+						F.Intrinsic.Control.Else
+							Gui.FormSerialMangement.pBar1.Value(100)
+							Gui.FormSerialMangement.lbl1.Caption("100%")
+							F.Intrinsic.UI.Msgbox("Multiple Customers are asociated with this Order.")
+							V.Local.sCustomer.Set("*!*ZDR*!*")
+						F.Intrinsic.Control.EndIf	
+						F.Data.DataTable.Close("orderHistDT")
+					F.Intrinsic.Control.EndIf					
+				F.Data.DataTable.Close("orderDT")
+			F.ODBC.Connection!con.Close
+			
+			Gui.FormSerialMangement.pBar1.Value(70)
+			Gui.FormSerialMangement.lbl1.Caption("70%")
+			
+			F.Intrinsic.Control.If(V.Local.bOrderHist)
+				F.Intrinsic.String.Build("{0}!*!{1}", V.Local.sOrderNo, V.Local.sCustomer, V.Local.sParams)
+				F.Global.General.CallwrapperAsync(7070 , V.Local.sParams)
+				Gui.FormSerialMangement.pBar1.Value(100)
+				Gui.FormSerialMangement.lbl1.Caption("100%")
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}!*!O!*!{1}", V.Local.sOrderNo, V.Local.sCustomer, V.Local.sParams)
+				F.Global.General.CallwrapperAsync(200000, V.Local.sParams)
+				Gui.FormSerialMangement.pBar1.Value(100)
+				Gui.FormSerialMangement.lbl1.Caption("100%")
+			F.Intrinsic.Control.EndIf
+			
+		F.Intrinsic.Control.Case("PART")
+			Gui.FormSerialMangement.pBar1.Value(30)
+			Gui.FormSerialMangement.lbl1.Caption("30%")
+			V.Local.sPart.Set(V.DataTable.ServSO(V.Args.RowIndex).Part!FieldValTrim)
+			V.Local.sLocation.Set("  ")
+			Gui.FormSerialMangement.pBar1.Value(60)
+			Gui.FormSerialMangement.lbl1.Caption("60%")
+			F.Intrinsic.String.Build("{0}!*!O!*!*!*ZDR*!*!*!*!*ZDR*!*!*!{1}!*!{2}", V.Caller.CompanyCode, V.Local.sPart, V.Local.sLocation, V.Local.sParams)
+			F.Global.General.CallwrapperAsync(3500, V.Local.sParams)
+			Gui.FormSerialMangement.pBar1.Value(100)
+			Gui.FormSerialMangement.lbl1.Caption("100%")
+			
+		F.Intrinsic.Control.Case("PO")
+			Gui.FormSerialMangement.pBar1.Value(30)
+			Gui.FormSerialMangement.lbl1.Caption("30%")
+			V.Local.sPO.Set(V.DataTable.ServSO(V.Args.RowIndex).PO!FieldValTrim)
+			Gui.FormSerialMangement.pBar1.Value(60)
+			Gui.FormSerialMangement.lbl1.Caption("60%")
+			F.Intrinsic.String.Build("O!*!{0}!*!*!*ZDR*!*", V.Local.sPO, V.Local.sParams)
+			F.Global.General.CallwrapperAsync(175200, V.Local.sParams)
+			Gui.FormSerialMangement.pBar1.Value(100)
+			Gui.FormSerialMangement.lbl1.Caption("100%")
+	F.Intrinsic.Control.EndSelect
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	Gui.FormSerialMangement.lbl1.Visible(False)
+			
+	'F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGridControlServSO_RowCellClick.End
+
+Program.Sub.GsGridControlbomWOBOM_RowCellClick.Start
+V.Local.sJob.Declare
+V.Local.sSuffix.Declare
+V.Local.sPart.Declare
+V.Local.sParams.Declare
+V.Local.sColumn.Declare
+V.Local.sSeq.Declare(String)
+V.Local.sDescription.Declare(String)
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.Control.Try
+	
+	'F.Intrinsic.Control.BlockEvents
+	Gui.FormSerialMangement.pBar1.Value(0)
+	Gui.FormSerialMangement.lbl1.Caption("0%")
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.pBar1.Visible(True)
+	Gui.FormSerialMangement.lbl1.Visible(True)
+	
+	F.Intrinsic.String.UCase(V.Args.Column, V.Local.sColumn)
+	F.Intrinsic.Control.SelectCase(V.Local.sColumn)
+		F.Intrinsic.Control.Case("JOB")
+			Gui.FormSerialMangement.pBar1.Value(30)
+			Gui.FormSerialMangement.lbl1.Caption("30%")
+			V.Local.sJob.Set(V.DataTable.WOBOM(V.Args.RowIndex).Job!FieldValTrim)
+			V.Local.sSuffix.Set(V.DataTable.WOBOM(V.Args.RowIndex).Suffix!FieldValTrim)
+			F.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A", V.Local.sJob, V.Local.sSuffix, V.Local.sParams)
+			F.Global.General.CallwrapperAsync(450000, V.Local.sParams)
+			Gui.FormSerialMangement.pBar1.Value(100)
+			Gui.FormSerialMangement.lbl1.Caption("100%")
+		F.Intrinsic.Control.Case("SUFFIX")
+			Gui.FormSerialMangement.pBar1.Value(30)
+			Gui.FormSerialMangement.lbl1.Caption("30%")
+			V.Local.sJob.Set(V.DataTable.WOBOM(V.Args.RowIndex).Job!FieldValTrim)
+			V.Local.sSuffix.Set(V.DataTable.WOBOM(V.Args.RowIndex).Suffix!FieldValTrim)
+			F.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A", V.Local.sJob, V.Local.sSuffix, V.Local.sParams)
+			F.Global.General.CallwrapperAsync(450000, V.Local.sParams)
+			Gui.FormSerialMangement.pBar1.Value(100)
+			Gui.FormSerialMangement.lbl1.Caption("100%")
+		F.Intrinsic.Control.Case("PART")
+			'Change to Open Suply and Demand.
+			Gui.FormSerialMangement.pBar1.Value(30)
+			Gui.FormSerialMangement.lbl1.Caption("30%")
+			V.Local.sPart.Set(V.DataTable.WOBOM(V.Args.RowIndex).Part!FieldValTrim)
+			'F.Intrinsic.String.Build("{0}!*!O!*!*!*ZDR*!*!*!*!*ZDR*!*!*!{1}!*!  ", V.Caller.CompanyCode, V.Local.sPart, V.Local.sParams)
+			F.Intrinsic.String.Build("{0}!*!  ", V.Local.sPart, V.Local.sParams)
+			'F.Global.General.CallwrapperAsync(3500, V.Local.sParams)
+			
+			F.Global.General.CallwrapperAsync(300010 , V.Local.sParams)
+			Gui.FormSerialMangement.pBar1.Value(100)
+			Gui.FormSerialMangement.lbl1.Caption("100%")
+		F.Intrinsic.Control.Case("DESCRIPTION")
+			V.Local.sDescription.Set(V.DataTable.WOBOM(V.Args.RowIndex).DESCRIPTION!FieldValTrim)
+			F.Intrinsic.Control.If(V.Local.sDescription.UCase,=,"NOTES")
+				V.Local.sJob.Set(V.DataTable.WOBOM(V.Args.RowIndex).Job!FieldValTrim)
+				V.Local.sSuffix.Set(V.DataTable.WOBOM(V.Args.RowIndex).Suffix!FieldValTrim)
+				V.Local.sSeq.Set(V.DataTable.WOBOM(V.Args.RowIndex).Seq!FieldValTrim)
+				
+				F.Intrinsic.String.Build("Select TEXT FROM WO_SEQ_COMMENTS WHERE WO = '{0}' and WO_SUFFIX = '{1}' and WO_SEQ = '{2}'",V.Local.sJob,V.Local.sSuffix,V.Local.sSeq,V.Local.sSQL)
+				F.ODBC.Connection!con.OpenCompanyConnection
+				F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sDescription)
+				F.ODBC.Connection!con.Close
+				
+				Gui.F_Seq_Notes.mltSeqNotes.Text(V.Local.sDescription)
+				Gui.F_Seq_Notes..Visible(True)
+				
+			F.Intrinsic.Control.EndIf
+			
+	F.Intrinsic.Control.EndSelect
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	Gui.FormSerialMangement.lbl1.Visible(False)
+	
+	'F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGridControlbomWOBOM_RowCellClick.End
+
+Program.Sub.GsGcOrderToWO_RowCellClick.Start
+ V.Local.sPart.Declare
+ V.Local.sLocation.Declare
+ V.Local.sOrderNo.Declare
+ V.Local.sParams.Declare
+ V.Local.sCustomer.Declare
+ V.Local.sSQL.Declare
+V.Local.sPO.Declare
+V.Local.bOrderHist.Declare
+
+V.Local.sJob.Declare
+V.Local.sSuffix.Declare
+
+V.Local.sColumn.Declare
+
+F.Intrinsic.Control.Try
+
+	'F.Intrinsic.Control.BlockEvents
+	
+	Gui.FormSerialMangement.pBar1.Value(0)
+	Gui.FormSerialMangement.lbl1.Caption("0%")
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.pBar1.Visible(True)
+	Gui.FormSerialMangement.lbl1.Visible(True)
+	
+	F.Intrinsic.String.UCase(V.Args.Column, V.Local.sColumn)
+	F.Intrinsic.Control.SelectCase(V.Local.sColumn)
+	
+	Gui.FormSerialMangement.pBar1.Value(50)
+	Gui.FormSerialMangement.lbl1.Caption("50%")
+	
+		F.Intrinsic.Control.Case("SUFFIX")
+			V.Local.sJob.Set(V.DataTable.orderToWoDT(V.Args.RowIndex).Job!FieldValTrim)
+			V.Local.sSuffix.Set(V.DataTable.orderToWoDT(V.Args.RowIndex).Suffix!FieldValTrim)
+			F.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A", V.Local.sJob, V.Local.sSuffix, V.Local.sParams)
+			F.Global.General.CallwrapperAsync(450000, V.Local.sParams)
+			Gui.FormSerialMangement.pBar1.Value(100)
+			Gui.FormSerialMangement.lbl1.Caption("100%")
+		F.Intrinsic.Control.Case("PART")
+			V.Local.sPart.Set(V.DataTable.orderToWoDT(V.Args.RowIndex).Part!FieldValTrim)
+			F.Intrinsic.String.Build("{0}!*!O!*!*!*ZDR*!*!*!*!*ZDR*!*!*!{1}!*!  ", V.Caller.CompanyCode, V.Local.sPart, V.Local.sParams)
+			F.Global.General.CallwrapperAsync(3500, V.Local.sParams)
+			Gui.FormSerialMangement.pBar1.Value(100)
+			Gui.FormSerialMangement.lbl1.Caption("100%")
+		F.Intrinsic.Control.Case("ORDER_NO")
+			V.Local.sOrderNo.Set(V.DataTable.orderToWoDT(V.Args.RowIndex).Order_No!FieldValTrim)
+			
+'			F.Intrinsic.Control.If(V.ODBC.con.State, =, 1)
+'				F.ODBC.Connection!con.Close
+'			F.Intrinsic.Control.EndIf
+			
+			Gui.FormSerialMangement.pBar1.Value(50)
+			Gui.FormSerialMangement.lbl1.Caption("50%")
+			
+			F.ODBC.Connection!con.OpenCompanyConnection
+				F.Intrinsic.String.Build("Select * from v_order_header where Order_No = '{0}'", V.Local.sOrderNo, V.Local.sSQL)
+				F.Data.DataTable.CreateFromSQL("orderDT", "con", V.Local.sSQL)
+					F.Intrinsic.Control.If(V.DataTable.orderDT.RowCount, =, 1)
+						V.Local.sCustomer.Set(V.DataTable.orderDT(0).Customer!FieldValTrim)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Build("Select distinct customer from V_ORDER_HIST_HEAD where Order_No = '{0}'", V.Local.sOrderNo, V.Local.sSQL)
+						F.Data.DataTable.CreateFromSQL("orderHistDT", "con", V.Local.sSQL)
+						F.Intrinsic.Control.If(V.DataTable.orderHistDT.RowCount, =, 1)
+							V.Local.sCustomer.Set(V.DataTable.orderHistDT(0).Customer!FieldValTrim)
+							V.Local.bOrderHist.Set(true)
+						F.Intrinsic.Control.Else
+							F.Intrinsic.UI.Msgbox("Multiple Customers are asociated with this Order.")
+							V.Local.sCustomer.Set("*!*ZDR*!*")
+						F.Intrinsic.Control.EndIf	
+						F.Data.DataTable.Close("orderHistDT")
+					F.Intrinsic.Control.EndIf					
+				F.Data.DataTable.Close("orderDT")
+			F.ODBC.Connection!con.Close
+			Gui.FormSerialMangement.pBar1.Value(70)
+			Gui.FormSerialMangement.lbl1.Caption("70%")
+			
+			F.Intrinsic.Control.If(V.Local.bOrderHist)
+				F.Intrinsic.String.Build("{0}!*!{1}", V.Local.sOrderNo, V.Local.sCustomer, V.Local.sParams)
+				F.Global.General.CallwrapperAsync(7070 , V.Local.sParams)
+				Gui.FormSerialMangement.pBar1.Value(100)
+				Gui.FormSerialMangement.lbl1.Caption("100%")
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}!*!O!*!{1}", V.Local.sOrderNo, V.Local.sCustomer, V.Local.sParams)
+				F.Global.General.CallwrapperAsync(200000, V.Local.sParams)
+				Gui.FormSerialMangement.pBar1.Value(100)
+				Gui.FormSerialMangement.lbl1.Caption("100%")
+			F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndSelect
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	Gui.FormSerialMangement.lbl1.Visible(False)
+	
+	'F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGcOrderToWO_RowCellClick.End
+
+Program.Sub.cmdContact_Click.Start
+V.Local.sContact.Declare
+V.Local.sRet.Declare
+V.Local.sCustomer.Declare	
+V.Local.sSQL.Declare
+F.Intrinsic.Control.Try
+	V.Local.sCustomer.Set(V.Screen.FormSerialMangement!txtCustNum.Text)
+	
+	F.Intrinsic.Control.If(V.Local.sCustomer.Trim, =, "")
+		F.Intrinsic.UI.Msgbox("Please select a Customer.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("Select Cust,TYPE,NAME,SEQ,PHONE1,EMAIL1,ALT_ID From V_Contact where Type = 'C' and Cust = '{0}'", V.Local.sCustomer, V.Local.sSQL)
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	
+'	F.Intrinsic.Control.If(V.ODBC.con.State, =, 1)
+'		F.ODBC.Connection!con.Close
+'	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Intrinsic.UI.Browser("Contacts", "con", V.Local.sSQL, "Cust*!*TYPE*!*NAME*!*SEQ*!*PHONE1*!*EMAIL1*!*ALT_ID", "60*!*40*!*80*!*40*!*80*!*120*!*40", V.Local.sRet)
+	F.ODBC.Connection!con.Close
+	
+	F.Intrinsic.Control.If(V.Local.sRet, <>, "***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sContact)
+		Gui.FormSerialMangement.txtCustContactNumber.Text(V.Local.sContact(6))
+		Gui.FormSerialMangement.txtContactCust.Text(V.Local.sContact(2))
+		Gui.FormSerialMangement.txtConCustPhone.Text(V.Local.sContact(4))
+		Gui.FormSerialMangement.txtConCustEmail.Text(V.Local.sContact(5))
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdContact_Click.End
+
+Program.Sub.cmdPreferredVendor_Click.Start
+V.Local.sRet.Declare
+V.Local.sVendors.Declare
+F.Intrinsic.Control.Try
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	F.Intrinsic.UI.Browser(300, , V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet, <>, "***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sVendors)
+		Gui.FormSerialMangement.txtVendor.Text(V.Local.sVendors(0))
+		Gui.FormSerialMangement.txtVendorName.Text(V.Local.sVendors(1))
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPreferredVendor_Click.End
+
+Program.Sub.cmdPreferredVendor2_Click.Start
+V.Local.sRet.Declare
+V.Local.sVendors.Declare
+F.Intrinsic.Control.Try
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	F.Intrinsic.UI.Browser(300, , V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet, <>, "***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sVendors)
+		Gui.FormSerialMangement.txtSecVendor.Text(V.Local.sVendors(0))
+		Gui.FormSerialMangement.txtSecVendorName.Text(V.Local.sVendors(1))
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPreferredVendor2_Click.End
+
+Program.Sub.cmdVendorContact_Click.Start
+V.Local.sContact.Declare
+V.Local.sRet.Declare
+V.Local.sVendor.Declare
+V.Local.sSQL.Declare
+F.Intrinsic.Control.Try
+
+	V.Local.sVendor.Set(V.Screen.FormSerialMangement!txtVendor.Text)
+	F.Intrinsic.Control.If(V.Local.sVendor.Trim, =, "")
+		F.Intrinsic.UI.Msgbox("Please select a Vendor.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("Select Cust,TYPE,NAME,SEQ,PHONE1,EMAIL1,ALT_ID From V_Contact where Type = 'V' and Cust = '{0}'", V.Local.sVendor, V.Local.sSQL)
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Intrinsic.UI.Browser("Contacts", "con", V.Local.sSQL, "Cust*!*TYPE*!*NAME*!*SEQ*!*PHONE1*!*EMAIL1*!*ALT_ID", "60*!*40*!*80*!*40*!*80*!*120*!*40", V.Local.sRet)
+	F.ODBC.Connection!con.Close
+	
+	F.Intrinsic.Control.If(V.Local.sRet, <>, "***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sContact)
+		Gui.FormSerialMangement.txtVendContactNumber.Text(V.Local.sContact(6))
+		Gui.FormSerialMangement.txtVendorContact.Text(V.Local.sContact(2))
+		Gui.FormSerialMangement.txtVendorPhone.Text(V.Local.sContact(4))
+		Gui.FormSerialMangement.txtVendorEmail.Text(V.Local.sContact(5))
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdVendorContact_Click.End
+
+Program.Sub.cmdSecVendCont_Click.Start
+V.Local.sContact.Declare
+V.Local.sRet.Declare
+V.Local.sVendor.Declare
+V.Local.sSQL.Declare
+F.Intrinsic.Control.Try
+
+	V.Local.sVendor.Set(V.Screen.FormSerialMangement!txtSecVendor.Text)
+	F.Intrinsic.Control.If(V.Local.sVendor.Trim, =, "")
+		F.Intrinsic.UI.Msgbox("Please select a Vendor.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("Select Cust,TYPE,NAME,SEQ,PHONE1,EMAIL1,ALT_ID From V_Contact where Type = 'V' and Cust = '{0}'", V.Local.sVendor, V.Local.sSQL)
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Intrinsic.UI.Browser("Contacts", "con", V.Local.sSQL, "Cust*!*TYPE*!*NAME*!*SEQ*!*PHONE1*!*EMAIL1*!*ALT_ID", "60*!*40*!*80*!*40*!*80*!*120*!*40", V.Local.sRet)
+	F.ODBC.Connection!con.Close
+	
+	F.Intrinsic.Control.If(V.Local.sRet, <>, "***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sContact)
+		Gui.FormSerialMangement.txtSecVendContactNumber.Text(V.Local.sContact(6))
+		Gui.FormSerialMangement.txtSecVendorContact.Text(V.Local.sContact(2))
+		Gui.FormSerialMangement.txtSecVendorPhone.Text(V.Local.sContact(4))
+		Gui.FormSerialMangement.txtSecVendorEmail.Text(V.Local.sContact(5))
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSecVendCont_Click.End
+
+Program.Sub.cleanTxt.Start
+F.Intrinsic.Control.Try
+	'Gui.FormSerialMangement.txtSerial.Text("")
+	'Gui.FormSerialMangement.txtCustomer.Text("")
+	Gui.FormSerialMangement.txtCustNum.Text("")
+	Gui.FormSerialMangement.txtCustName.Text("")
+	Gui.FormSerialMangement.txtCustContactNumber.Text("")
+	Gui.FormSerialMangement.txtVendContactNumber.Text("")
+	Gui.FormSerialMangement.txtContactCust.Text("")
+	Gui.FormSerialMangement.txtConCustPhone.Text("")
+	Gui.FormSerialMangement.txtConCustEmail.Text("")
+	Gui.FormSerialMangement.txtSiteName.Text("")
+	Gui.FormSerialMangement.txtSiteContact.Text("")
+	Gui.FormSerialMangement.txtVendor.Text("")
+	Gui.FormSerialMangement.txtVendorName.Text("")
+	Gui.FormSerialMangement.txtVendorContact.Text("")
+	Gui.FormSerialMangement.txtVendorPhone.Text("")
+	Gui.FormSerialMangement.txtVendorEmail.Text("")
+	Gui.FormSerialMangement.txtSecVendor.Text("")
+	Gui.FormSerialMangement.txtSecVendorName.Text("")
+	Gui.FormSerialMangement.txtSecVendorContact.Text("")
+	Gui.FormSerialMangement.txtSecVendorPhone.Text("")
+	Gui.FormSerialMangement.txtSecVendorEmail.Text("")
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cleanTxt.End
+
+Program.Sub.loadSO_WO.Start
+V.Local.sSQL.Declare
+V.Local.sRet.Declare
+F.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.If(V.DataTable.orderToWoDT.RowCount, >, 0)
+		F.Data.DataTable.DeleteRow("orderToWoDT")
+		F.Data.DataTable.AcceptChanges("orderToWoDT")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("Select Job, Suffix, Order_no, Order_line, Part, Description from Order_to_wo where Order_No+Order_Line in (Select Order_No+Record_No from V_Order_Lines where Order_no in (Select distinct Order_No from V_Order_Header where User_1 = '{0}')) ", V.Args.sSerialNumber, V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Data.DataTable.CreateFromSQL("tempOrderToWoDT", "con", V.Local.sSQL)
+		F.Intrinsic.Control.If(V.DataTable.tempOrderToWoDT.RowCount, =, 0)
+			F.Data.DataTable.Close("tempOrderToWoDT")
+			F.Intrinsic.String.Build("Select Job, Suffix, Order_no, Order_line, Part, Description from Order_to_wo where Order_No+Order_Line in (Select Order_No+Record_No from V_Order_Lines where Order_no in (Select distinct Order_No from V_ORDER_HIST_HEAD where User_1 = '{0}')) ", V.Args.sSerialNumber, V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("tempOrderToWoDT","con",V.Local.sSQL,True)
+		F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!con.Close
+	
+	F.Data.DataTable.Merge("tempOrderToWoDT", "orderToWoDT", false, 2)
+	F.Data.DataTable.Close("tempOrderToWoDT")	
+	
+	Gui.FormSerialMangement.pBar1.Value(92)
+	Gui.FormSerialMangement.lbl1.Caption("92%")
+	
+	F.Intrinsic.Control.If(V.DataView.orderToWoDT!orderToWoDV.Exists)
+		F.Data.DataView.Close("orderToWoDT", "orderToWoDV")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.DataView.Create("orderToWoDT", "orderToWoDV", 22)
+'	F.Data.DataView.ToDataTableDistinct("orderToWoDT", "orderToWoDV", "jobSuffixDT", "Job*!*Suffix")
+'	F.Data.DataView.Close("orderToWoDT", "orderToWoDV")
+'	F.Data.DataView.Create("jobSuffixDT", "jobSuffixDV", 22)
+	F.Data.DataView.ToString("orderToWoDT", "orderToWoDV", "Job*!*Suffix", "", "','", V.Local.sRet )
+
+	
+	Gui.FormSerialMangement.pBar1.Value(93)
+	Gui.FormSerialMangement.lbl1.Caption("93%")
+	
+	F.ODBC.Connection!con.OpenCompanyConnection(9999)
+		F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, Part, Job+Suffix+Seq as SerialNumber, Description From V_Job_Hist_Dtl Where Job+Suffix in ('{0}') and LMO = 'M' Order by Suffix",V.Local.sRet,V.Local.sSql)
+		F.Data.DataTable.CreateFromSQL("TempChildWO","con",V.Local.sSql)
+		
+		F.Intrinsic.Control.If(V.DataTable.TempChildWO.RowCount--,=,-1)
+			F.Data.DataTable.Close("TempChildWO")
+			F.Intrinsic.String.Build("Select Job, Suffix, Seq, Job+Suffix as Job_Part, Part, Job+Suffix+Seq as SerialNumber, Description From V_Job_Detail Where Job+Suffix in ('{0}') and LMO = 'M' Order by Suffix",V.Local.sRet,V.Local.sSql)
+			F.Data.DataTable.CreateFromSQL("TempChildWO","con",V.Local.sSql)
+		F.Intrinsic.Control.EndIf
+		
+		Gui.FormSerialMangement.pBar1.Value(94)
+		Gui.FormSerialMangement.lbl1.Caption("94%")
+	
+		'F.Data.DataTable.AddColumn("TempChildWO", "Quantity", "Float")
+		
+
+		F.Data.DataTable.DeleteRow("orderToWoDT$ChildWO")
+		F.Data.DataTable.AcceptChanges("orderToWoDT$ChildWO")
+		F.Data.DataTable.Merge("TempChildWO","orderToWoDT$ChildWO",False,4)
+		F.Data.DataTable.Close("TempChildWO")
+		Gui.FormSerialMangement.pBar1.Value(95)
+		Gui.FormSerialMangement.lbl1.Caption("95%")
+		
+'		F.Data.Dictionary.CreateFromSQL("QuantityDict","con","Select Job+Suffix+seq as Job_Part, Hours_Actual as Quantity from V_JOB_OPERATIONS union Select Job+Suffix+seq as Job_Part, Hours_Actual as Quantity from V_JOB_HIST_OPS")
+		F.Intrinsic.String.Build("Select Job+Suffix+seq as Job_Part, Hours_Actual as Quantity from V_JOB_OPERATIONS WHERE Job+Suffix in ('{0}')",V.Local.sRet,V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("QD","con",V.Local.sSQL,True)
+		Gui.FormSerialMangement.pBar1.Value(96)
+		Gui.FormSerialMangement.lbl1.Caption("96%")
+		F.Intrinsic.String.Build("Select Job+Suffix+seq as Job_Part, Hours_Actual as Quantity from V_JOB_HIST_OPS WHERE Job+Suffix in ('{0}')",V.Local.sRet,V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("TempQD","con",V.Local.sSQL,True)
+		Gui.FormSerialMangement.pBar1.Value(97)
+		Gui.FormSerialMangement.lbl1.Caption("97%")
+		F.Data.DataTable.Merge("TempQD","QD",False,4)
+		F.Data.DataTable.Close("TempQD")
+		F.Data.DataView.Create("QD","VQD",22,"","")
+		F.Data.Dictionary.CreateFromDataView("QuantityDict","QD","VQD","Job_Part","Quantity",4)
+		F.Data.DataView.Close("QD","VQD")
+		F.Data.DataTable.Close("QD")
+		Gui.FormSerialMangement.pBar1.Value(98)
+		Gui.FormSerialMangement.lbl1.Caption("98%")
+		F.Data.Dictionary.SetDefaultReturn("QuantityDict","0")
+		F.Data.DataTable.FillFromDictionary("orderToWoDT$ChildWO","QuantityDict", "SerialNumber", "Quantity")
+		F.Data.Dictionary.Close("QuantityDict")
+		Gui.FormSerialMangement.pBar1.Value(99)
+		Gui.FormSerialMangement.lbl1.Caption("99%")
+	
+		'F.Data.DataTable.AddRelation("orderToWoDT", "Job", "ChildWO", "Job", "childOrderToWo")
+	
+'	F.Data.Dictionary.CreateFromSQL("Warranty","con","Select Part, 'Y' as Warranty From V_Inventory_Mstr Where Flag_Warranty = 'Y'")
+'	F.Data.Dictionary.SetDefaultReturn("Warranty","N")
+'	F.Data.DataTable.FillFromDictionary("WOBOM","Warranty","Part","Warranty")
+'	F.Data.Dictionary.Close("Warranty")
+'	
+'	F.Data.Dictionary.CreateFromSQL("JobPart","con","Select Job+Suffix as Job_Part, Part from V_Job_Header union Select Job+Suffix as Job_Part, Part from V_job_hist_mast")
+'	F.Data.Dictionary.SetDefaultReturn("JobPart","")
+'	F.Data.DataTable.FillFromDictionary("WOBOM","JobPart", "Job_Part", "Job_Part")
+'	F.Data.Dictionary.Close("JobPart")
+'	
+
+''******************
+'	F.Intrinsic.Control.If(V.DataTable.WOBOM.RowCount, >, 0)
+'	
+'		V.Local.sJobPart.Set(V.DataTable.WOBOM(0).Job_Part!FieldValTrim)
+'		F.Intrinsic.String.Build("Select Part from V_BOM_MSTR where Parent ='{0}' and Category = 'R'", V.Local.sJobPart, V.Local.sSql)
+'		F.Data.DataTable.CreateFromSQL("DrawingsDT", "con", V.Local.sSql, true)
+'		V.Local.sSql.Set("")
+'		F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.DrawingsDT.RowCount--, 1)
+'			V.Local.sDRWPart.Set(V.DataTable.DrawingsDT(V.Local.iCnt).Part!FieldVal)
+'			F.Intrinsic.String.RPad(V.Local.sDRWPart, " ", 20, V.Local.sDRWPart)
+'			F.Intrinsic.Control.If(V.Local.sSql.Trim, =, "")
+'				F.Intrinsic.String.Build("'{0}' {1}", V.Local.sDRWPart, V.Local.sSql, V.Local.sSql)
+'			F.Intrinsic.Control.Else
+'				F.Intrinsic.String.Build("'{0}', {1}", V.Local.sDRWPart, V.Local.sSql, V.Local.sSql)
+'			F.Intrinsic.Control.EndIf
+'			
+'			F.Data.DataTable.AddRow("WOBOM", "Job", V.Local.sJob, "Suffix", "000", "Seq", "", "Job_Part", V.Local.sJobPart, "SerialNumber", "", "Part", V.Local.sDRWPart, "Description", V.Local.sDRWPart, "Warranty", "N")
+'		F.Intrinsic.Control.Next(V.Local.iCnt)
+'		F.Data.DataTable.Close("DrawingsDT")
+'		
+'		F.Intrinsic.String.Build("Select Part, Description from V_Inventory_Mstr where Part in ({0})", V.Local.sSql, V.Local.sSql)
+'		F.Data.Dictionary.CreateFromSQL("descriptionDict", "con", V.Local.sSql)
+'		F.Data.DataTable.FillFromDictionary("WOBOM","descriptionDict", "Description", "Description")
+'		F.Data.Dictionary.Close("descriptionDict")
+'		
+'		F.Data.Dictionary.CreateFromSQL("Serial_NumberDict","con","Select  Job+Suffix+Sequence as JobSuffixSeq, Serial_number from V_Item_History where Code_Transaction = 'J55'")
+'		F.Data.Dictionary.SetDefaultReturn("Serial_NumberDict","")
+'		F.Data.DataTable.FillFromDictionary("WOBOM","Serial_NumberDict", "SerialNumber", "SerialNumber")
+'		F.Data.Dictionary.Close("Serial_NumberDict")
+'		
+'		F.Intrinsic.String.Build("Select Top 1 Job+Suffix From V_Item_History Where Serial_Number = '{0}' and Part = '{1}'",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sPart,V.Local.sSql)
+'		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql,V.Local.sJob)
+'	F.Intrinsic.Control.EndIf
+	
+	
+	F.ODBC.Connection!con.Close
+	
+	Gui.FormSerialMangement.pBar1.Value(99)
+	Gui.FormSerialMangement.lbl1.Caption("99%")
+	
+'	
+'	Function.Intrinsic.Debug.InvokeDebugger
+'	Function.Intrinsic.Debug.Stop
+'	
+'	Gui.FormSerialMangement.GsGcOrderToWO.AddGridviewFromDatatable("GCHILDWO", "orderToWoDT$ChildWO")
+''	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("GCHILDWO","ReadOnly",True)
+''	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("GCHILDWO","Editable",False)
+''	Gui.FormSerialMangement.GsGcOrderToWO.SetGridviewProperty("GCHILDWO","OptionsSelectionEnableAppearanceFocusedRow",False)
+'	
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job","Caption","Job")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Suffix","Caption","Suffix")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Seq","Caption","Seq")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job_Part","Caption","Job Part")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Part","Caption","Part")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Description","Caption","Description")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Warranty","Caption","Warranty")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","SerialNumber","Caption","Serial Number")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Quantity","Caption","Quantity")
+'	
+''	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO", "Job", "CellForeColor", V.Color.LtBlue)
+''	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO", "Suffix", "CellForeColor", V.Color.LtBlue)
+''	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO", "Part", "CellForeColor", V.Color.LtBlue)
+''	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO", "Job_Part", "CellForeColor", V.Color.LtBlue)
+'	
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Warranty","Visible",False)
+'	
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job","HeaderBackColor",V.Color.GSS)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job","HeaderForeColor","White")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Suffix","HeaderBackColor",V.Color.GSS)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Suffix","HeaderForeColor","White")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Part","HeaderBackColor",V.Color.GSS)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Part","HeaderForeColor","White")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Description","HeaderBackColor",V.Color.GSS)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Description","HeaderForeColor","White")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Warranty","HeaderBackColor",V.Color.GSS)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Warranty","HeaderForeColor","White")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Seq","HeaderBackColor",V.Color.GSS)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Seq","HeaderForeColor","White")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job_Part","HeaderBackColor",V.Color.GSS)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job_Part","HeaderForeColor","White")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","SerialNumber","HeaderBackColor",V.Color.GSS)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","SerialNumber","HeaderForeColor","White")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Quantity","HeaderBackColor",V.Color.GSS)
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Quantity","HeaderForeColor","White")
+'	
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job","Width","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Suffix","Width","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Seq","Width","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Job_Part","Width","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","Part","Width","30")
+'	Gui.FormSerialMangement.GsGcOrderToWO.SetColumnProperty("GCHILDWO","SerialNumber","Width","30")
+''	
+'	Gui.FormSerialMangement.GsGcOrderToWO.AddStyleFormatCondition("GCHILDWO","Warranty","ParentGreen","Equal","Y")
+'    	Gui.FormSerialMangement.GsGcOrderToWO.SetStyleFormatConditionProperty("GCHILDWO","Warranty","ParentGreen","BackColor", V.Color.LtGreen)
+'    	Gui.FormSerialMangement.GsGcOrderToWO.SetStyleFormatConditionProperty("GCHILDWO","Warranty","ParentGreen","ApplyToRow",True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.loadSO_WO.End
+
+Program.Sub.loadTxt.Start
+V.Local.sReF.Declare
+V.Local.sSerial.Declare
+V.Local.sSQL.Declare
+F.Intrinsic.Control.Try
+
+'	F.Intrinsic.Control.If(V.ODBC!con.State, =, 1)
+'		F.ODBC.Connection!con.Close
+'	F.Intrinsic.Control.EndIf
+	
+	V.Local.sReF.Set(V.Screen.FormSerialMangement!txtCustomer.Text)
+	'Gui.FormSerialMangement.txtCustNum.Text(V.Local.sRef)
+	V.Local.sSerial.Set(V.Screen.FormSerialMangement!txtSerial.Text)
+	
+	Gui.FormSerialMangement.pBar1.Value(90)
+	Gui.FormSerialMangement.lbl1.Caption("90%")
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Intrinsic.String.Build("Select Name_Customer from V_customer_Master where Customer = '{0}'", V.Local.sRef, V.Local.sSql)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRef)
+		F.Intrinsic.String.Build("Select * from GCG_5530_CSR_INFO where Serial_Number = '{0}'", V.Local.sSerial, V.Local.sSql)
+		F.Data.DataTable.CreateFromSQL("csrDT", "con", V.Local.sSql)
+	F.ODBC.Connection!con.Close
+	
+	'Gui.FormSerialMangement.txtCustName.Text(V.Local.sReF.Trim)
+	
+	F.Intrinsic.Control.If(V.DataTable.csrDT.RowCount, =, 1)
+		Gui.FormSerialMangement.txtCustNum.Text(V.DataTable.csrDT(0).Customer!FieldValTrim)
+		Gui.FormSerialMangement.txtCustName.Text(V.DataTable.csrDT(0).Customer_Name!FieldValTrim)
+		Gui.FormSerialMangement.txtContactCust.Text(V.DataTable.csrDT(0).ContactCustName!FieldValTrim)
+		Gui.FormSerialMangement.txtConCustPhone.Text(V.DataTable.csrDT(0).ContactCustPhone!FieldValTrim)
+		Gui.FormSerialMangement.txtConCustEmail.Text(V.DataTable.csrDT(0).ContactCustEmail!FieldValTrim)
+		
+		Gui.FormSerialMangement.txtCustContactNumber.Text(V.DataTable.csrDT(0).CONTACTCUSTNUM!FieldValTrim)
+		Gui.FormSerialMangement.txtVendContactNumber.Text(V.DataTable.csrDT(0).CONTACTVENDNUM!FieldValTrim)
+		
+		V.Local.sReF.Set(V.DataTable.csrDT(0).Site_Names!FieldValTrim)
+		F.Intrinsic.String.Replace(V.Local.sRef, "!*!", V.Ambient.NewLine, V.Local.sRef)
+		Gui.FormSerialMangement.txtSiteName.Text(V.Local.sRef)
+		
+		V.Local.sReF.Set(V.DataTable.csrDT(0).Site_Contacts!FieldValTrim)
+		F.Intrinsic.String.Replace(V.Local.sRef, "!*!", V.Ambient.NewLine, V.Local.sRef)
+		Gui.FormSerialMangement.txtSiteContact.Text(V.Local.sRef)
+		
+		Gui.FormSerialMangement.txtVendor.Text(V.DataTable.csrDT(0).Vendor!FieldValTrim)
+		Gui.FormSerialMangement.txtVendorName.Text(V.DataTable.csrDT(0).Vendor_Name!FieldValTrim)
+		Gui.FormSerialMangement.txtVendorContact.Text(V.DataTable.csrDT(0).ContactVendorName!FieldValTrim)
+		Gui.FormSerialMangement.txtVendorPhone.Text(V.DataTable.csrDT(0).ContactVendorPhone!FieldValTrim)
+		Gui.FormSerialMangement.txtVendorEmail.Text(V.DataTable.csrDT(0).ContactVendorEmail!FieldValTrim)
+		'TJS, Oct 2020
+		Gui.FormSerialMangement.txtSecVendor.Text(V.DataTable.csrDT(0).SEC_VEND_NO!FieldValTrim)
+		Gui.FormSerialMangement.txtSecVendorName.Text(V.DataTable.csrDT(0).SEC_VEND_NAME!FieldValTrim)
+		Gui.FormSerialMangement.txtSecVendorContact.Text(V.DataTable.csrDT(0).SEC_VEND_CONT_NAME!FieldValTrim)
+		Gui.FormSerialMangement.txtSecVendorPhone.Text(V.DataTable.csrDT(0).SEC_VEND_CONT_PHONE!FieldValTrim)
+		Gui.FormSerialMangement.txtSecVendorEmail.Text(V.DataTable.csrDT(0).SEC_VEND_CONT_EMAIL!FieldValTrim)
+		
+	F.Intrinsic.Control.EndIf	
+	
+	F.Data.DataTable.Close("csrDT")
+	
+	Gui.FormSerialMangement.pBar1.Value(91)
+	Gui.FormSerialMangement.lbl1.Caption("91%")
+	
+	F.Intrinsic.Control.CallSub(loadSO_WO, sSerialNumber, V.Local.sSerial)
+	
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.loadTxt.End
+
+Program.Sub.txtCustomer_KeyPressEnter.Start
+V.Local.sCustomer.Declare
+V.Local.sSQL.Declare
+
+F.Intrinsic.Control.Try
+'	F.Intrinsic.Control.If(V.ODBC.con.State, =, 1)
+'		F.ODBC.Connection!con.Close
+'	F.Intrinsic.Control.EndIf
+	
+	'F.Intrinsic.Control.BlockEvents
+	Gui.FormSerialMangement.pBar1.Value(0)
+	Gui.FormSerialMangement.lbl1.Caption("0%")
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.pBar1.Visible(True)
+	Gui.FormSerialMangement.lbl1.Visible(True)
+	
+	V.Local.sCustomer.Set(V.Screen.FormSerialMangement!txtCustomer.Text)
+	V.Local.sCustomer.Set(V.Local.sCustomer.Trim)
+	Gui.FormSerialMangement.txtCustomer.Text(V.Local.sCustomer.UCase)
+	Gui.FormSerialMangement.pBar1.Value(5)
+	Gui.FormSerialMangement.lbl1.Caption("5%")
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Intrinsic.String.Build("Select right(rtrim(Reference),7) as Ref, rtrim(Serial_Number) as Serial, Customer, Customer as Name_Customer, '' as Status, Date_History, Part From V_Item_History Where Code_Transaction = 'O35' and Customer like '%{0}%' ", V.Local.sCustomer.UCase, V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("tmpServ", "con", V.Local.sSQL,True)
+		Gui.FormSerialMangement.pBar1.Value(10)
+		Gui.FormSerialMangement.lbl1.Caption("10%")
+		
+		F.Intrinsic.Control.If(V.DataTable.tmpSerV.RowCount, =, 0)
+			F.Data.DataTable.Close("tmpServ")
+			F.Intrinsic.String.Build("Select right(rtrim(Reference),7) as Ref, rtrim(Serial_Number) as Serial, Customer, Customer as Name_Customer, '' as Status, Date_History, Part From V_Item_History Where Code_Transaction = 'O35' and Customer like '{0}%' ", V.Local.sCustomer.UCase, V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("tmpServ", "con", V.Local.sSQL,True)
+			
+			Gui.FormSerialMangement.pBar1.Value(15)
+			Gui.FormSerialMangement.lbl1.Caption("15%")
+			
+			F.Intrinsic.Control.If(V.DataTable.tmpSerV.RowCount, =, 0)
+				F.Data.DataTable.Close("tmpServ")
+				F.Intrinsic.String.Build("Select right(rtrim(Reference),7) as Ref, rtrim(Serial_Number) as Serial, Customer, Customer as Name_Customer, '' as Status, Date_History, Part From V_Item_History Where Code_Transaction = 'O35' and Customer like '%{0}' ", V.Local.sCustomer.UCase, V.Local.sSQL)
+				F.Data.DataTable.CreateFromSQL("tmpServ", "con", V.Local.sSQL,True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		Gui.FormSerialMangement.pBar1.Value(20)
+		Gui.FormSerialMangement.lbl1.Caption("20%")
+		
+		F.Data.Dictionary.CreateFromSQL("custDict", "con", "Select Customer, Name_Customer from V_customer_Master")
+		F.Data.Dictionary.SetDefaultReturn("custDict", "")
+		F.Data.DataTable.FillFromDictionary("tmpServ", "custDict", "Name_Customer")
+		F.Data.Dictionary.Close("custDict")
+	F.ODBC.Connection!con.Close
+	
+	Gui.FormSerialMangement.pBar1.Value(60)
+	Gui.FormSerialMangement.lbl1.Caption("60%")
+	
+	F.Data.DataTable.DeleteRow("Serv")
+	F.Data.DataTable.AcceptChanges("Serv")
+	F.Data.DataTable.Merge("tmpServ", "Serv", false, 4)
+	F.Data.DataTable.Close("tmpServ")
+	
+	Gui.FormSerialMangement.pBar1.Value(100)
+	Gui.FormSerialMangement.lbl1.Caption("100%")
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	Gui.FormSerialMangement.lbl1.Visible(False)
+	
+	'F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCustomer_KeyPressEnter.End
+
+Program.Sub.txtSerial_KeyPressEnter.Start
+V.Local.sSerial.Declare
+V.Local.sFilter.Declare
+V.Local.sSQL.Declare
+
+F.Intrinsic.Control.Try
+'	F.Intrinsic.Control.If(V.ODBC.con.State, =, 1)
+'		F.ODBC.Connection!con.Close
+'	F.Intrinsic.Control.EndIf
+	
+	'F.Intrinsic.Control.BlockEvents
+	Gui.FormSerialMangement.pBar1.Value(0)
+	Gui.FormSerialMangement.lbl1.Caption("0%")
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.pBar1.Visible(True)
+	Gui.FormSerialMangement.lbl1.Visible(True)
+	
+	V.Local.sSerial.Set(V.Screen.FormSerialMangement!txtSerial.Text)
+	V.Local.sSerial.Set(V.Local.sSerial.Trim)
+	Gui.FormSerialMangement.txtSerial.Text(V.Local.sSerial.UCase)
+	
+	Gui.FormSerialMangement.pBar1.Value(5)
+	Gui.FormSerialMangement.lbl1.Caption("5%")
+
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Intrinsic.String.Build("Select right(rtrim(A.Reference),7) as Ref, rtrim(A.Serial_Number) as Serial, A.Customer, B.NAME_Customer as Name_Customer,A.Date_History, A.Part From V_Item_History A left join V_CUSTOMER_MASTER B on A.CUSTOMER = B.CUSTOMER Where A.Code_Transaction = 'O35' and Serial_Number like '%{0}%' ", V.Local.sSerial.UCase, V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("tmpServ", "con", V.Local.sSQL,True)
+		
+		Gui.FormSerialMangement.pBar1.Value(10)
+		Gui.FormSerialMangement.lbl1.Caption("10%")
+		
+		F.Intrinsic.Control.If(V.DataTable.tmpSerV.RowCount, =, 0)
+			F.Data.DataTable.Close("tmpServ")
+			F.Intrinsic.String.Build("Select right(rtrim(A.Reference),7) as Ref, rtrim(A.Serial_Number) as Serial, A.Customer, B.NAME_Customer as Name_Customer,A.Date_History, A.Part From V_Item_History A left join V_CUSTOMER_MASTER B on A.CUSTOMER = B.CUSTOMER where A.Code_Transaction = 'O35' and Serial_Number like '{0}%' ", V.Local.sSerial.UCase, V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("tmpServ", "con", V.Local.sSQL,True)
+			
+			Gui.FormSerialMangement.pBar1.Value(15)
+			Gui.FormSerialMangement.lbl1.Caption("15%")
+			
+			F.Intrinsic.Control.If(V.DataTable.tmpSerV.RowCount, =, 0)
+				F.Data.DataTable.Close("tmpServ")
+				F.Intrinsic.String.Build("Select right(rtrim(A.Reference),7) as Ref, rtrim(A.Serial_Number) as Serial, A.Customer, B.NAME_Customer as Name_Customer, A.Date_History, A.Part From V_Item_History left Join V_CUSTOMER_MASTER B on A.CUSTOMER = B.CUSTOMER Where A.Code_Transaction = 'O35' and Serial_Number like '%{0}' ", V.Local.sSerial.UCase, V.Local.sSQL)
+				F.Data.DataTable.CreateFromSQL("tmpServ", "con", V.Local.sSQL,True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		Gui.FormSerialMangement.pBar1.Value(20)
+		Gui.FormSerialMangement.lbl1.Caption("20%")
+		
+		F.Data.DataTable.SetValueFormat("tmpServ", -1, "Name_Customer", "Name_Customer", ">>>>>>")
+		
+'		F.Data.Dictionary.CreateFromSQL("custDict", "con", "Select Customer, Name_Customer from V_customer_Master")
+'		F.Data.Dictionary.SetDefaultReturn("custDict", "")
+'		F.Data.DataTable.FillFromDictionary("tmpServ", "custDict", "Name_Customer", "Name_Customer")
+'		F.Data.Dictionary.Close("custDict")
+		Gui.FormSerialMangement.pBar1.Value(60)
+		Gui.FormSerialMangement.lbl1.Caption("60%")
+	F.ODBC.Connection!con.Close
+	
+	F.Data.DataTable.DeleteRow("Serv")
+	F.Data.DataTable.AcceptChanges("Serv")
+	F.Data.DataTable.Merge("tmpServ", "Serv", false, 4)
+	F.Data.DataTable.Close("tmpServ")
+	
+	Gui.FormSerialMangement.pBar1.Value(100)
+	Gui.FormSerialMangement.lbl1.Caption("100%")
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	Gui.FormSerialMangement.lbl1.Visible(False)
+	
+	'F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtSerial_KeyPressEnter.End
+
+Program.Sub.cmdRefresh_Click.Start
+V.Local.sSQL.Declare
+V.Local.sSerial.Declare
+V.Local.i.Declare
+V.Local.iMonth.Declare
+V.Local.dDate.Declare
+V.Local.sStatus.Declare
+F.Intrinsic.Control.Try
+	
+	Gui.FormSerialMangement.pBar1.Value(0)
+	Gui.FormSerialMangement.lbl1.Caption("0%")
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	Gui.FormSerialMangement.pBar1.Visible(True)
+	Gui.FormSerialMangement.lbl1.Visible(True)
+	
+	V.Local.sSerial.Set(V.Screen.FormSerialMangement!txtSerial.Text)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		Gui.FormSerialMangement.pBar1.Value(10)
+		Gui.FormSerialMangement.lbl1.Caption("10%")
+		
+		'F.Intrinsic.String.Build("Select right(Reference,7) as Ref, rtrim(Serial_Number) as Serial, Customer, '' as Status, Date_History, Date_History as Date_Warranty, Part From V_Item_History Where Code_Transaction = 'O35' and Serial_Number like '%{0}%' ", V.Local.sSerial.Trim, V.Local.sSQL)
+		'F.Intrinsic.String.Build("Select right(Reference,7) as Ref, rtrim(Serial_Number) as Serial, Customer, '' as Status, Date_History, Date_History as Date_Warranty, Part From V_Item_History Where Code_Transaction = 'O35' ", V.Local.sSQL)
+		'F.Intrinsic.String.Build("Select right(Reference,7) as Ref, rtrim(Serial_Number) as Serial, rtrim(Customer) as Customer, rtrim(Customer) as Name_Customer,  rtrim(Customer) as Warranty_Code,'' as Status, Date_History, Date_History as Date_Warranty, Part From V_Item_History Where Code_Transaction = 'O35' and Serial_Number <> ''", V.Local.sSql)
+		V.Local.sSql.Set("Select right(rtrim(Reference),7) as Ref, rtrim(Serial_Number) as Serial, rtrim(Customer) as Customer, rtrim(Customer) as Name_Customer,'' as Status, Date_History, Part From V_Item_History Where Code_Transaction = 'O35' and Serial_Number <> ''")
+		F.Data.DataTable.CreateFromSQL("tmpServ", "con", V.Local.sSQL,True)
+		
+		Gui.FormSerialMangement.pBar1.Value(20)
+		Gui.FormSerialMangement.lbl1.Caption("20%")
+'		F.Intrinsic.Control.If(V.DataTable.tmpSerV.RowCount, =, 0)
+'			F.Data.DataTable.Close("tmpServ")
+'			F.Intrinsic.String.Build("Select right(Reference,7) as Ref, rtrim(Serial_Number) as Serial, Customer, '' as Status, Date_History, Date_History as Date_Warranty, Part From V_Item_History Where Code_Transaction = 'O35' and Serial_Number like '{0}%' ", V.Local.sSerial.Trim, V.Local.sSQL)
+'			F.Data.DataTable.CreateFromSQL("tmpServ", "con", V.Local.sSQL,True)
+'			Gui.FormSerialMangement.pBar1.Value(30)
+'			Gui.FormSerialMangement.lbl1.Caption("30%")
+'			F.Intrinsic.Control.If(V.DataTable.tmpSerV.RowCount, =, 0)
+'				F.Data.DataTable.Close("tmpServ")
+'				F.Intrinsic.String.Build("Select right(Reference,7) as Ref, rtrim(Serial_Number) as Serial, Customer, '' as Status, Date_History, Date_History as Date_Warranty, Part From V_Item_History Where Code_Transaction = 'O35' and Serial_Number like '%{0}' ", V.Local.sSerial.Trim, V.Local.sSQL)
+'				F.Data.DataTable.CreateFromSQL("tmpServ", "con", V.Local.sSQL,True)
+'			F.Intrinsic.Control.EndIf
+'		F.Intrinsic.Control.EndIf
+	
+	Gui.FormSerialMangement.pBar1.Value(60)
+	Gui.FormSerialMangement.lbl1.Caption("60%")
+		
+	F.Data.DataTable.CreateFromSQL("shipDT", "con", "Select Order_No, Date_shipped from V_SHIPMENT_HEADER")
+		F.Data.DataTable.CreateFromSQL("histDT", "con", "Select Order_No, Date_shipped from V_ORDER_HIST_HEAD")
+		F.Data.DataTable.Merge("histDT", "shipDT", false, 2)
+		F.Data.Dictionary.CreateFromDataTable("shipDict", "shipDT", "Order_No", "Date_shipped")
+		F.Data.Dictionary.SetDefaultReturn("shipDict", 1/1/1900)
+		F.Data.DataTable.FillFromDictionary("tmpServ", "shipDict", "Ref", "Date_History")
+		F.Data.Dictionary.Close("shipDict")
+		F.Data.DataTable.Close("histDT")
+		F.Data.DataTable.Close("shipDT")	
+	F.ODBC.Connection!con.Close
+	
+	F.Data.DataTable.DeleteRow("Serv")
+	F.Data.DataTable.AcceptChanges("Serv")
+	F.Data.DataTable.Merge("tmpServ","Serv",False,4)
+	F.Data.DataTable.Close("tmpServ")
+	F.Data.DataTable.AcceptChanges("Serv")
+	F.Data.DataView.SetFilter("Serv", "ServDV", "")
+	
+	Gui.FormSerialMangement.pBar1.Value(70)
+	Gui.FormSerialMangement.lbl1.Caption("70%")
+	
+	Gui.FormSerialMangement.txtSerial.Text("")
+	Gui.FormSerialMangement.txtCustomer.Text("")
+	Gui.FormSerialMangement.pBar1.Value(100)
+	Gui.FormSerialMangement.lbl1.Caption("100%")
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+	Gui.FormSerialMangement.pBar1.Visible(False)
+	Gui.FormSerialMangement.lbl1.Visible(False)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.loadsingle.Start
+F.Intrinsic.Control.Try
+V.Local.sSerial.Declare
+V.Local.sSO.Declare
+V.Local.sSQL.Declare
+V.Local.iCnt.Declare
+V.Local.sCharCheck.Declare
+V.Local.iLength.Declare
+V.Local.sDateRet.Declare
+V.Local.sJob.Declare
+
+V.Local.dDate.Declare(Date,V.Ambient.Date)
+V.Local.iMonth.Declare(Long,0)
+V.Local.sStatus.Declare(String,"")
+
+	V.Global.bIssued.Set(False)
+	
+	F.Intrinsic.Control.If(V.Screen.FormSerialMangement!txtSerial.Text,<>,V.Global.sSerial)
+		F.Intrinsic.Control.CallSub(cleanTxt)
+		F.Data.DataTable.DeleteRow("Doc")
+		F.Data.DataTable.DeleteRow("OrigSO")
+		F.Data.DataTable.DeleteRow("WOBOM")
+		F.Data.DataTable.DeleteRow("orderToWoDT")
+		F.Data.DataTable.DeleteRow("Serv")
+		F.Data.DataTable.DeleteRow("ServSO")
+		F.Data.DataTable.DeleteRow("ServHist")
+		F.Data.DataTable.DeleteRow("Event")
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sSerial.Set(V.Screen.FormSerialMangement!txtSerial.Text)
+	F.Intrinsic.String.UCase(V.Local.sSerial, V.Local.sSerial)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection(1000)
+		F.Intrinsic.String.Build("Select distinct right(rtrim(Reference),7) as Ref, rtrim(Serial_Number) as Serial, rtrim(Customer) as Customer, rtrim(Customer) as Name_Customer,Date_History, Part From V_Item_History Where Code_Transaction = 'O35' and Serial_Number like '{0}'", V.Local.sSerial, V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("tmpServ","con",V.Local.sSql,True)
+		
+		F.Intrinsic.Control.If(V.DataTable.tmpSerV.RowCount,<,1)
+			F.Data.DataTable.Close("tmpServ")
+			F.Intrinsic.String.Build("Select distinct right(rtrim(Reference),7) as Ref, rtrim(Serial_Number) as Serial, rtrim(Customer) as Customer, rtrim(Customer) as Name_Customer, Date_History, Part From V_Item_History Where Code_Transaction = 'J55' and Serial_Number like '{0}'", V.Local.sSerial, V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("tmpServ","con",V.Local.sSQL,True)
+			V.Global.bIssued.Set(True)
+		F.Intrinsic.Control.EndIf
+		
+		'F.Data.Dictionary.CreateFromSQL("warrantyDict", "con", "select Customer, C_Sort_1 from CUSTOMER_SALES where customer = '{0}' and rec = '2'")
+		F.Data.Dictionary.CreateFromSQL("servDict", "con", "Select rtrim(Customer) as Customer, Name_Customer from V_Customer_Master")
+		F.Data.Dictionary.SetDefaultReturn("servDict","")
+		F.Data.DataTable.FillFromDictionary("tmpServ","servDict","Name_Customer")
+		
+		F.Data.Dictionary.CreateFromSQL("descriptionDict", "con", "Select Part, Description from V_Inventory_MSTR")
+	F.ODBC.Connection!con.Close
+	
+	'Changes 1/17/2020 adding part and description
+	F.Data.DataTable.AddColumn("tmpServ", "Description", "String")
+	F.Data.Dictionary.SetDefaultReturn("descriptionDict", "")
+	F.Data.DataTable.FillFromDictionary("tmpServ", "descriptionDict", "Part", "Description")
+	F.Data.Dictionary.Close("descriptionDict")
+		
+	
+	F.Intrinsic.Control.If(V.DataTable.tmpSerV.RowCount, <, 1)
+		V.Global.bIssued.Set(False)
+		F.Intrinsic.UI.Msgbox("No records found.")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.tmpSerV.RowCount--, 1)
+		V.Local.sSerial.Set(V.DataTable.tmpServ(V.Local.iCnt).Serial!FieldValTrim)
+		F.Intrinsic.String.Left(V.Local.sSerial, 2, V.Local.sCharCheck)
+		
+		F.Intrinsic.Control.If(V.Local.sCharCheck, =, "HC")
+			V.Local.sSO.Set(V.DataTable.tmpServ(V.Local.iCnt).Ref!FieldValtrim)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Sub(V.Local.sSerial.Length, 2, V.Local.iLength)
+			F.Intrinsic.String.Right(V.Local.sSerial, V.Local.iLength, V.Local.sSO)
+			F.Intrinsic.String.LPad(V.Local.sSO, "0", 6, V.Local.sJob)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	F.Data.Dictionary.Close("servDict")
+	
+	F.Data.DataTable.DeleteRow("Serv")
+	F.Data.DataTable.AcceptChanges("Serv")
+	F.Data.DataTable.Merge("tmpServ", "Serv", false, 2)
+	F.Data.DataTable.Close("tmpServ")
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.loadsingle.End
+
+Program.Sub.Serialize.Start
+V.Local.sSerialize.Declare
+
+F.Intrinsic.Control.Try
+
+'F.Intrinsic.Control.If(V.DataTable.uploadDT.Exists, =, False)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+Gui.FormSerialMangement.GsGridControlSERV.Serialize("GServ",V.Local.sSerialize)
+F.Global.Registry.AddValue(V.Caller.User, V.Caller.CompanyCode, "GServ", 5530, 1000, False, "Serialize", False, 0, -999.0, 1/1/1980, 12:00:00 AM, V.Local.sSerialize)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+V.Local.sSerialize.Declare
+F.Intrinsic.Control.Try
+	F.Global.Registry.ReadValue(V.Caller.User, V.Caller.CompanyCode, "GServ", 5530, 0, 5, "", V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize, <>, "")
+		F.ODBC.Connection!common.OpenCommonConnection
+			F.ODBC.Connection!common.Execute("delete from GS_REGISTRY where REG_ID = '5530'")
+		F.ODBC.Connection!common.Close
+	F.Intrinsic.Control.EndIf
+	
+	F.Global.Registry.ReadValue(V.Caller.User, V.Caller.CompanyCode, "GServ", "5530", 1000, 6, "", V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim, <>, "")
+		Gui.FormSerialMangement.GsGridControlSERV.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.cmdUpdate_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sFilter.Declare(String,"")
+V.Local.sData.Declare(String,"")
+V.Local.sSQL.Declare(String,"")
+V.Local.sReqNo.Declare(String,"")
+V.Local.sTEXT.Declare
+
+'TJS, Oct 2020
+V.Local.sData.Redim(0,19)
+'CUST_SERV_REQ
+V.Local.sData(0).Set(V.Screen.frmCSR!txtReqNo.Text)
+V.Local.sData(1).Set(V.Screen.FormSerialMangement!txtCustNum.Text)
+V.Local.sData(2).Set(V.Screen.FormSerialMangement!txtCustName.Text)
+V.Local.sData(3).Set(V.Screen.frmCSR!txtPrimeContact.Text)
+V.Local.sData(4).Set(V.Screen.frmCSR!txtPhone.Text)
+V.Local.sData(5).Set(V.Screen.frmCSR!txtSerNo.Text)
+V.Local.sData(6).Set(V.Screen.frmCSR!txtEmail.Text)
+V.Local.sData(7).Set(V.Screen.frmCSR!txtSubject.Text)
+V.Local.sData(8).Set(V.Screen.frmCSR!cboReqType.Text)
+V.Local.sData(9).Set(V.Screen.frmCSR!txtCustPO.Text)
+V.Local.sData(10).Set(V.Screen.frmCSR!txtCustSO.Text)
+V.Local.sData(11).Set(V.Screen.frmCSR!txtCustSOLine.Text)
+V.Local.sData(12).Set(V.Screen.frmCSR!txtCustPart.Text)
+V.Local.sData(13).Set(V.Screen.frmCSR!txtCustLocn.Text)
+V.Local.sData(14).Set(V.Screen.frmCSR!cboResp.Text)
+
+'CUST_SVC_RQ_NOTES
+V.Local.sData(15).Set(V.Screen.frmCSR!txtProb.Text)
+
+'GCG_5530_CSR_ST_RC
+V.Local.sData(16).Set(V.Screen.frmCSR!cboRootCause.Text)
+V.Local.sData(17).Set(V.Screen.frmCSR!cboStatus.Text)
+V.Local.sData(18).Set(V.Screen.frmCSR!cboReqSubType.Text)
+V.Local.sData(19).Set(V.Screen.frmCSR!cboEvent.Text)
+
+'F.Intrinsic.Control.If(V.DataTable.CSRUpdate.Exists)
+'	F.ODBC.Connection!Con.OpenCompanyConnection
+'		F.Intrinsic.Control.If(V.DataTable.CSRUpdate.RowCount--,<>,-1)
+'			F.Data.DataTable.SetValue("CSRUpdate",V.DataTable.CSRUpdate.RowCount--,"Contact",V.Local.sData(0).Trim,"Phone",V.Local.sData(1).Trim,"Subject",V.Local.sData(2).Trim,"Root_Cause",V.Local.sData(3).Trim,"Req_Type",V.Local.sData(4).Trim,"Responsible",V.Local.sData(5).Trim,"Text",V.Local.sData(6).Trim,"Status",V.Local.sData(7).Trim,"Email",V.Local.sData(8).Trim)
+'			
+'			F.Data.DataTable.SaveToDB("CSRUpdate","Con","GCG_5530_CSR_ST_RC","Request_Number",256,"Request_Number@!@Request_Number*!*Root_Cause@!@Root_Cause*!*Status@!@Status")
+'			F.Data.DataTable.SaveToDB("CSRUpdate","Con","CUST_SERV_REQ","Request_Number",256,"Request_Number@!@Request_Number*!*Phone@!@Phone*!*Subject@!@Subject*!*Req_Type@!@Req_Type*!*Responsible@!@Responsible*!*Contact@!@Contact*!*Email@!@Email")
+'			F.Data.DataTable.SaveToDB("CSRUpdate","Con","CUST_SVC_RQ_NOTES","Request_Number",256,"Request_Number@!@CSR_Number*!*Text@!@Text")
+'			F.Intrinsic.UI.Msgbox("CSR Updated..........","Attention")
+'		F.Intrinsic.Control.EndIf
+'		F.Data.DataTable.Close("CSRUpdate")
+'F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!Con.OpenCompanyConnection
+
+F.Intrinsic.Control.If(V.Local.sData(0).Trim,=,"")
+	Gui.frmCSR.chkClsCSR.Visible(False)
+	F.ODBC.Connection!Con.ExecuteAndReturn("Select top 1 REQUEST_NUMBER from CUST_SERV_REQ order by REQUEST_NUMBER desc",V.Local.sReqNo)
+	F.Intrinsic.Math.Add(V.Local.sReqNo,1,V.Local.sReqNo)
+	F.Intrinsic.String.LPad(V.Local.sReqNo,"0",7,V.Local.sReqNo)
+	'CUST_SERV_REQ
+	'George Sandoval 15 March 2022 - Made the customer name PSQL friendly as well to handle customers with apostrophes
+	F.Intrinsic.String.Build("Insert into CUST_SERV_REQ (REQUEST_NUMBER,CUSTOMER,NAME,CONTACT,PHONE,FAX,EMAIL,DATE_ENTERED,TIME_ENTERED,ENTERED_BY,SUBJECT,DATE_LAST_UPDATE,TIME_LAST_UPDATE,LAST_BY,DATE_CLOSED,REQ_TYPE,CUST_PO,SALES_ORD,SALES_LINE,PART,LOCN,RESPONSIBLE) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}')",V.Local.sReqNo.Trim,V.Local.sData(1),V.Local.sData(2).PSQLFriendly,V.Local.sData(3),V.Local.sData(4),V.Local.sData(5),V.Local.sData(6),V.Ambient.Date.FormatYYYYMMDD,V.Ambient.Time.FormatHHNNSS,V.Caller.User,V.Local.sData(7),V.Ambient.Date.FormatYYYYMMDD,V.Ambient.Time.FormatHHNNSS,V.Caller.User,"00000000",V.Local.sData(8),V.Local.sData(9),V.Local.sData(10),V.Local.sData(11),V.Local.sData(12),V.Local.sData(13),V.Local.sData(14),V.Local.sSQL)
+'	F.Intrinsic.String.Build("Insert into CUST_SERV_REQ (REQUEST_NUMBER,CUSTOMER,NAME,CONTACT,PHONE,FAX,EMAIL,DATE_ENTERED,TIME_ENTERED,ENTERED_BY,SUBJECT,DATE_LAST_UPDATE,TIME_LAST_UPDATE,LAST_BY,DATE_CLOSED,REQ_TYPE,CUST_PO,SALES_ORD,SALES_LINE,PART,LOCN,RESPONSIBLE) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}')",V.Local.sReqNo.Trim,V.Local.sData(1),V.Local.sData(2),V.Local.sData(3),V.Local.sData(4),V.Local.sData(5),V.Local.sData(6),V.Ambient.Date.FormatYYYYMMDD,V.Ambient.Time.FormatHHNNSS,V.Caller.User,V.Local.sData(7),V.Ambient.Date.FormatYYYYMMDD,V.Ambient.Time.FormatHHNNSS,V.Caller.User,"00000000",V.Local.sData(8),V.Local.sData(9),V.Local.sData(10),V.Local.sData(11),V.Local.sData(12),V.Local.sData(13),V.Local.sData(14),V.Local.sSQL)
+	F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+	'CUST_SVC_RQ_NOTES
+	F.Intrinsic.String.Build("Insert into CUST_SVC_RQ_NOTES (CSR_NUMBER,TYPE_CD,DATE,TIME,USERID,TEXT) values('{0}','{1}','{2}','{3}','{4}','{5}')",V.Local.sReqNo.Trim,"P",V.Ambient.Date.FormatYYYYMMDD,V.Ambient.Time.FormatHHNNSS,V.Caller.User,V.Local.sData(15).PSQLFriendly,V.Local.sSQL)
+	F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+	'GCG_5530_CSR_ST_RC
+	F.Intrinsic.String.Build("Insert into GCG_5530_CSR_ST_RC (REQUEST_NUMBER,ROOT_CAUSE,STATUS,SUB_REQ_TYPE,EVENT_CODE) values ('{0}','{1}','{2}','{3}','{4}')",V.Local.sReqNo,V.Local.sData(16).Trim,V.Local.sData(17).Trim,V.Local.sData(18).Trim,V.Local.sData(19).Trim,V.Local.sSQL)
+	F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+F.Intrinsic.Control.Else
+	Gui.frmCSR.chkClsCSR.Visible(True)
+	'CUST_SERV_REQ
+	F.Intrinsic.Control.If(V.Screen.frmCSR!chkClsCSR.CheckedAsBoolean)
+		F.Intrinsic.String.Build("Update CUST_SERV_REQ set CONTACT = '{0}',PHONE = '{1}',FAX = '{2}',EMAIl = '{3}',SUBJECT = '{4}',DATE_LAST_UPDATE = '{5}',TIME_LAST_UPDATE = '{6}',LAST_BY = '{7}',REQ_TYPE = '{8}',CUST_PO = '{9}',SALES_ORD = '{10}',SALES_LINE = '{11}',PART = '{12}',LOCN = '{13}',RESPONSIBLE = '{14}',DATE_CLOSED = '{15}' where REQUEST_NUMBER = '{16}'",V.Local.sData(3),V.Local.sData(4),V.Local.sData(5),V.Local.sData(6),V.Local.sData(7),V.Ambient.Date.FormatYYYYMMDD,V.Ambient.Time.FormatHHNNSS,V.Caller.User,V.Local.sData(8),V.Local.sData(9),V.Local.sData(10),V.Local.sData(11),V.Local.sData(12),V.Local.sData(13),V.Local.sData(14),V.Ambient.Date.FormatYYYYMMDD,V.Local.sData(0),V.Local.sSQL)
+		F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Update CUST_SERV_REQ set CONTACT = '{0}',PHONE = '{1}',FAX = '{2}',EMAIl = '{3}',SUBJECT = '{4}',DATE_LAST_UPDATE = '{5}',TIME_LAST_UPDATE = '{6}',LAST_BY = '{7}',REQ_TYPE = '{8}',CUST_PO = '{9}',SALES_ORD = '{10}',SALES_LINE = '{11}',PART = '{12}',LOCN = '{13}',RESPONSIBLE = '{14}',DATE_CLOSED = '{15}' where REQUEST_NUMBER = '{16}'",V.Local.sData(3),V.Local.sData(4),V.Local.sData(5),V.Local.sData(6),V.Local.sData(7),V.Ambient.Date.FormatYYYYMMDD,V.Ambient.Time.FormatHHNNSS,V.Caller.User,V.Local.sData(8),V.Local.sData(9),V.Local.sData(10),V.Local.sData(11),V.Local.sData(12),V.Local.sData(13),V.Local.sData(14),"00000000",V.Local.sData(0),V.Local.sSQL)
+		F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+
+	'CUST_SVC_RQ_NOTES
+	F.Intrinsic.String.Build("select * from CUST_SVC_RQ_NOTES where CSR_NUMBER = '{0}'",V.Local.sData(0).Trim,V.Local.sSQL)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Local.sSQL.Trim,=,"")
+		F.Intrinsic.String.Build("Insert into CUST_SVC_RQ_NOTES (CSR_NUMBER,TYPE_CD,DATE,TIME,USERID,TEXT) values('{0}','{1}','{2}','{3}','{4}','{5}')",V.Local.sData(0).Trim,"P",V.Ambient.Date.FormatYYYYMMDD,V.Ambient.Time.FormatHHNNSS,V.Caller.User,V.Local.sData(15).PSQLFriendly,V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Update CUST_SVC_RQ_NOTES set TEXT = '{0}' where CSR_NUMBER = '{1}'",V.Local.sData(15).PSQLFriendly,V.Local.sData(0).Trim,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!Con.Execute(V.Local.sSQL)	
+	
+	'GCG_5530_CSR_ST_RC
+	F.Intrinsic.String.Build("Select * from GCG_5530_CSR_ST_RC where REQUEST_NUMBER = '{0}'",V.Local.sData(0).Trim,V.Local.sSQL)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Local.sSQL.Trim,=,"")
+		F.Intrinsic.String.Build("Insert into GCG_5530_CSR_ST_RC (REQUEST_NUMBER,ROOT_CAUSE,STATUS,SUB_REQ_TYPE,EVENT_CODE) values ('{0}','{1}','{2}','{3}','{4}')",V.Local.sData(0).Trim,V.Local.sData(16).Trim,V.Local.sData(17).Trim,V.Local.sData(18).Trim,V.Local.sData(19).Trim,V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Update GCG_5530_CSR_ST_RC set ROOT_CAUSE = '{0}',STATUS = '{1}',SUB_REQ_TYPE = '{2}',EVENT_CODE = '{3}' where REQUEST_NUMBER = '{4}'",V.Local.sData(16).Trim,V.Local.sData(17).Trim,V.Local.sData(18).Trim,V.Local.sData(19).Trim,V.Local.sData(0).Trim,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+
+	F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!Con.Close
+
+F.Intrinsic.Control.CallSub(frmCSR_UnLoad)
+
+F.Intrinsic.Control.CallSub(cmdCSRHISTREFRESH_Click)
+
+F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUpdate_Click.End
+
+Program.Sub.cmdPrimContact_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare(String,"")
+	V.Local.sCustomer.Declare(String,"")
+	V.Local.sRet.Declare(String,"")
+	V.Local.sContact.Declare(String,"")
+	
+	V.Local.sCustomer.Set(V.Screen.FormSerialMangement!txtCustNum.Text)
+	
+	F.Intrinsic.String.Build("Select Cust,TYPE,NAME,SEQ,PHONE1,EMAIL1,ALT_ID From V_Contact where Type = 'C' and Cust = '{0}'", V.Local.sCustomer.Trim, V.Local.sSQL)
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+		F.Intrinsic.UI.Browser("Contacts", "con", V.Local.sSQL, "Cust*!*TYPE*!*NAME*!*SEQ*!*PHONE1*!*EMAIL1*!*ALT_ID", "60*!*40*!*80*!*40*!*80*!*120*!*40", V.Local.sRet)
+	F.ODBC.Connection!con.Close
+	
+	F.Intrinsic.Control.If(V.Local.sRet, <>, "***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sContact)
+		Gui.frmCSR.txtPrimeContact.Text(V.Local.sContact(2).Trim)
+		Gui.frmCSR.txtEmail.Text(V.Local.sContact(5).Trim)
+		Gui.frmCSR.txtPhone.Text(V.Local.sContact(4).Trim)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPrimContact_Click.End
+
+Program.Sub.cmdCSRHISTREFRESH_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sSql.Declare(String,"")
+	V.Local.iMonth.Declare(Long,0)
+	V.Local.i.Declare(Long,0)
+	V.Local.dDate.Declare
+	
+	Gui.FormSerialMangement..Enabled(False)
+	
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	
+	F.Intrinsic.String.Build("Select CSR.Request_Number, CSR.Date_Entered, IF(CSR.Date_Closed = '1900-01-01','           ',CSR.Date_Closed) as Date_Closed, CSR.SUBJECT, CSRN.TEXT As Notes From V_Cust_Serv_Req CSR LEFT JOIN CUST_SVC_RQ_NOTES CSRN ON CSR.Request_Number = CSRN.CSR_Number Where CSR.Fax = '{0}' and (CSRN.Type_CD = 'P' OR CSRN.Type_CD IS NULL)",V.Screen.FormSerialMangement!txtSerial.Text,V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("TempServHist","con",V.Local.sSql,True)
+'	F.Data.DataTable.AddColumn("TempServHist", "Notes", "String")
+'	
+'	F.Data.Dictionary.CreateFromSQL("notesDictionary", "con", "Select CSR_Number, TEXT from Cust_Svc_Rq_Notes where Type_CD = 'P'")
+'	F.Data.Dictionary.SetDefaultReturn("notesDictionary", " ")
+'	F.Data.DataTable.FillFromDictionary("TempServHist", "notesDictionary", "Request_Number", "Notes")
+'	F.Data.Dictionary.Close("notesDictionary")
+	
+	F.Data.DataTable.DeleteRow("ServHist")
+	F.Data.DataTable.AcceptChanges("ServHist")
+	F.Data.DataTable.Merge("TempServHist","ServHist",False,4)
+	F.Data.DataTable.Close("TempServHist")
+	
+	F.ODBC.Connection!con.Close
+	
+	Gui.FormSerialMangement..Enabled(True)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCSRHISTREFRESH_Click.End
+
+Program.Sub.F_Seq_Notes_UnLoad.Start
+F.Intrinsic.Control.Try
+
+Gui.F_Seq_Notes..Visible(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Seq_Notes_UnLoad.End
+
+Program.Sub.cboReqType_Change.Start
+F.Intrinsic.Control.Try
+
+Gui.frmCSR.cboReqSubType.ClearItems
+
+F.Intrinsic.Control.SelectCase(V.Screen.frmCSR!cboReqType.Value)
+	F.Intrinsic.Control.Case("Installation")
+		Gui.frmCSR.cboReqSubType.AddItem("Size/Clearances")
+		Gui.frmCSR.cboReqSubType.AddItem("Electrical (incorrect phase monitor setting, incorrect nameplate electrical)")
+		Gui.frmCSR.cboReqSubType.AddItem("Etc...")
+	F.Intrinsic.Control.Case("Site Related")
+		Gui.frmCSR.cboReqSubType.AddItem("Ventilation")
+		Gui.frmCSR.cboReqSubType.AddItem("Ambient temperature")
+		Gui.frmCSR.cboReqSubType.AddItem("Facility water quality/consistency")
+		Gui.frmCSR.cboReqSubType.AddItem("Electrical")
+		Gui.frmCSR.cboReqSubType.AddItem("Etc...")
+	F.Intrinsic.Control.Case("Education/Maint")
+		Gui.frmCSR.cboReqSubType.AddItem("General (bypass valve, building water fault, water treatment, condenser cleaning, filter/strainer replacement)")
+		Gui.frmCSR.cboReqSubType.AddItem("Controller settings")
+		Gui.frmCSR.cboReqSubType.AddItem("Mask/fault wording/layout")
+		Gui.frmCSR.cboReqSubType.AddItem("Installation")
+		Gui.frmCSR.cboReqSubType.AddItem("Maintenance")
+		Gui.frmCSR.cboReqSubType.AddItem("Etc...")
+	F.Intrinsic.Control.Case("Temp Control")
+		Gui.frmCSR.cboReqSubType.AddItem("Compressor cycling")
+		Gui.frmCSR.cboReqSubType.AddItem("Compressor not running")
+		Gui.frmCSR.cboReqSubType.AddItem("Insufficient capacity")
+		Gui.frmCSR.cboReqSubType.AddItem("Temp over set point (undercooling)")
+		Gui.frmCSR.cboReqSubType.AddItem("Temp under set point (overcooling)")
+		Gui.frmCSR.cboReqSubType.AddItem("Temperature stability")
+		Gui.frmCSR.cboReqSubType.AddItem("Etc...")
+	F.Intrinsic.Control.Case("Issue @ Receipt")
+		Gui.frmCSR.cboReqSubType.AddItem("Leak(cracked fitting,loose connection)")
+		Gui.frmCSR.cboReqSubType.AddItem("Labeling")
+		Gui.frmCSR.cboReqSubType.AddItem("Design issue(frame too large, pump too small, etc...)")
+		Gui.frmCSR.cboReqSubType.AddItem("Improper setting or adjustment")
+		Gui.frmCSR.cboReqSubType.AddItem("Missing parts")
+		Gui.frmCSR.cboReqSubType.AddItem("Documentation")
+		Gui.frmCSR.cboReqSubType.AddItem("Damage")
+		Gui.frmCSR.cboReqSubType.AddItem("Etc...")
+	F.Intrinsic.Control.Case("Controller")
+		Gui.frmCSR.cboReqSubType.AddItem("Display is blank")
+		Gui.frmCSR.cboReqSubType.AddItem("Output/input failure")
+		Gui.frmCSR.cboReqSubType.AddItem("Temp display/transmitted inaccurate")
+		Gui.frmCSR.cboReqSubType.AddItem("Modbus/BACnet communication")
+		Gui.frmCSR.cboReqSubType.AddItem("Change settings")
+		Gui.frmCSR.cboReqSubType.AddItem("Etc?")
+	F.Intrinsic.Control.Case("Fluid Circuit")
+		Gui.frmCSR.cboReqSubType.AddItem("High pressure/no flow (restriction)")
+		Gui.frmCSR.cboReqSubType.AddItem("Seal leak")
+		Gui.frmCSR.cboReqSubType.AddItem("Priming")
+		Gui.frmCSR.cboReqSubType.AddItem("Over pressure/under pressure (OPC)")
+		Gui.frmCSR.cboReqSubType.AddItem("No flow/no pressure (broken/worn impeller)")
+		Gui.frmCSR.cboReqSubType.AddItem("Redundant pump switching")
+		Gui.frmCSR.cboReqSubType.AddItem("Bypass valve/restriction")
+		Gui.frmCSR.cboReqSubType.AddItem("Irregular flow")
+		Gui.frmCSR.cboReqSubType.AddItem("High/low pressure for application")
+		Gui.frmCSR.cboReqSubType.AddItem("Etc?")
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cboReqType_Change.End
+
+Program.Sub.frmCSR_UnLoad.Start
+'Gui.frmCSR..ClearGroup(1)
+Gui.frmCSR.txtCustLocn.Text("")
+Gui.frmCSR.txtCustPart.Text("")
+Gui.frmCSR.txtCustPO.Text("")
+Gui.frmCSR.txtCustSO.Text("")
+Gui.frmCSR.txtCustSOLine.Text("")
+Gui.frmCSR.txtEmail.Text("")
+Gui.frmCSR.txtPhone.Text("")
+Gui.frmCSR.txtPrimeContact.Text("")
+Gui.frmCSR.txtProb.Text("")
+Gui.frmCSR.txtReqNo.Text("")
+Gui.frmCSR.txtSubject.Text("")
+Gui.frmCSR.txtSerNo.Text("")
+Gui.frmCSR.cboEvent.Text("")
+Gui.frmCSR.cboReqSubType.Text("")
+Gui.frmCSR.cboReqType.Text("")
+Gui.frmCSR.cboResp.Text("")
+Gui.frmCSR.cboRootCause.Text("")
+Gui.frmCSR.cboStatus.Text("")
+Gui.frmCSR.chkClsCSR.Value(0)
+Gui.frmCSR..Caption("")
+
+Gui.frmCSR..Visible(False)
+Program.Sub.frmCSR_UnLoad.End
+
+Program.Sub.cmdCustPOBrw_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sRet.Declare
+V.Local.sCustNo.Declare
+V.Local.sSQL.Declare
+
+V.Local.sCustNo.Set(V.Screen.FormSerialMangement!txtCustNum.Text.Trim)
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Intrinsic.String.Build("SELECT CUSTOMER_PO AS Customer_PO, ORDER_NO AS Order_No, DATE_DUE AS Due_Date FROM V_ORDER_HEADER WHERE CUSTOMER ='{0}' UNION SELECT CUSTOMER_PO AS Customer_PO, ORDER_NO AS Order_No, DATE_ORDER_DUE AS Due_Date FROM V_ORDER_HIST_HEAD WHERE CUSTOMER ='{0}' ORDER BY Customer_PO",V.Local.sCustNo,V.Local.sSQL)
+
+F.Intrinsic.UI.Browser("Customer PO","conts",V.Local.sSQL,"Customer PO*!*Order*!*Due Date","150*!*150*!*150",V.Local.sRet)
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.frmCSR.txtCustPO.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCustPOBrw_Click.End
+
+Program.Sub.cmdSOBrw_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sRet.Declare
+V.Local.sCustNo.Declare
+V.Local.sSQL.Declare
+V.Local.sPart.Declare
+V.Local.sRev.Declare
+V.Local.sBrowser.Declare
+
+V.Local.sCustNo.Set(V.Screen.FormSerialMangement!txtCustNum.Text.Trim)
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Intrinsic.String.Build("SELECT DISTINCT L.ORDER_NO AS Order_No, L.RECORD_NO AS Line, H.CUSTOMER_PO AS Customer_PO, SUBSTRING(L.PART,1,17) AS Part_Number, SUBSTRING(L.PART,18,3) AS Rev, L.DESCRIPTION AS Part_Description, L.ITEM_PROMISE_DT AS Due_Date from V_ORDER_LINES L JOIN V_ORDER_HEADER H ON L.ORDER_NO = H.ORDER_NO AND H.CUSTOMER = '{0}' ORDER BY Order_No, Line",V.Local.sCustNo.Trim,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtActive","conts",V.Local.sSQL)
+
+F.Intrinsic.String.Build("SELECT DISTINCT L.ORDER_NO AS Order_No, L.ORDER_LINE AS Line, H.CUSTOMER_PO AS Customer_PO, SUBSTRING(L.PART,1,17) AS Part_Number, SUBSTRING(L.PART,18,3) AS Rev, L.DESCRIPTION AS Part_Description, L.DATE_ORDER_DUE AS Due_Date from V_ORDER_HIST_LINE L JOIN V_ORDER_HIST_HEAD H ON L.ORDER_NO = H.ORDER_NO AND H.CUSTOMER = '{0}' ORDER BY Order_No, Line;",V.Local.sCustNo.Trim,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtHist","conts",V.Local.sSQL)
+
+F.ODBC.Connection!conts.Close
+
+F.Data.DataTable.Merge("dtHist","dtActive",True,1)
+
+F.Data.DataView.Create("dtActive","dvSO")
+F.Data.DataView.ToString("dtActive","dvSO","Order_No*!*Line*!*Customer_PO*!*Part_Number*!*Rev*!*Part_Description*!*Due_Date","*!*","#$#",V.Local.sBrowser)
+
+F.Data.DataView.Close("dtActive","dvSO")
+F.Data.DataTable.Close("dtActive")
+F.Data.DataTable.Close("dtHist")
+
+F.Intrinsic.UI.BrowserFromString("Sales Order",V.Local.sBrowser,"*!*","#$#","Order_No*!*Line*!*Customer_PO*!*Part_Number*!*Rev*!*Part_Description*!*Due_Date","150*!*150*!*150*!*150*!*150*!*150*!*150",V.Local.sRet)
+
+'F.Intrinsic.UI.Browser("Sales Order","conts",V.Local.sSQL,"Order*!*Line*!*Customer PO*!*Part Number*!*Rev*!*Part Description*!*Due Date","150*!*150*!*150*!*150*!*150*!*150*!*150",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.frmCSR.txtCustSO.Text(V.Local.sRet(0))
+	Gui.frmCSR.txtCustSOLine.Text(V.Local.sRet(1))
+	Gui.frmCSR.txtCustPO.Text(V.Local.sRet(2))
+	
+	V.Local.sPart.Set(V.Local.sRet(3))
+	V.Local.sRev.Set(V.Local.sRet(4))
+	
+	F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+	F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Local.sRev.Trim,V.Local.sPart)
+	
+	Gui.frmCSR.txtCustPart.Text(V.Local.sPart)	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSOBrw_Click.End
+
+Program.Sub.cmdPartBrw_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sRet.Declare
+V.Local.sCustNo.Declare
+V.Local.sSQL.Declare
+V.Local.sPart.Declare
+V.Local.sRev.Declare
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Intrinsic.UI.Browser("Sales Order","conts","select DISTINCT SUBSTRING(PART, 1, 17) AS Part, SUBSTRING(PART, 18, 3) AS Rev, LOCATION AS Loc, MFG_PART AS Mfg_Part, MFG_NAME AS Mfg_Name, CUSTOMER AS Customer, CUSTOMER_PART AS Customer_Part, DESCRIPTION AS Description from INV_CROSS_REF ORDER BY PART","Part*!*Rev*!*Loc*!*Mfg Part*!*Mfg Name*!*Customer*!*Customer Part*!*Description","150*!*150*!*150*!*150*!*150*!*150*!*150*!*150",V.Local.sRet)
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Local.sPart.Set(V.Local.sRet(0))
+	V.Local.sRev.Set(V.Local.sRet(1))
+		
+	F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+	F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Local.sRev.Trim,V.Local.sPart)
+	
+	Gui.frmCSR.txtCustPart.Text(V.Local.sPart)
+	Gui.frmCSR.txtCustLocn.Text(V.Local.sRet(2))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPartBrw_Click.End
+
+Program.Sub.chkClsCSR_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.frmCSR!chkClsCSR.CheckedAsBoolean)
+	Gui.frmCSR.chkClsCSR.Caption("CSR Closed")
+F.Intrinsic.Control.Else
+	Gui.frmCSR.chkClsCSR.Caption("Close CSR")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.chkClsCSR_Click.End
