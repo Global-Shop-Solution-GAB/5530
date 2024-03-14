@@ -1,0 +1,134 @@
+Program.Sub.ScreenSU.Start
+Gui.Form..Create
+Gui.Form..Caption("Warranty Term Maintenace")
+Gui.Form..Size(5430,10695)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..BackColor(-2147483633)
+Gui.Form..MousePointer(0)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.GsGcDisplay.Create(GsGridControl)
+Gui.Form.GsGcDisplay.Size(5070,9570)
+Gui.Form.GsGcDisplay.Position(45,60)
+Gui.Form.cmdSave.Create(Button)
+Gui.Form.cmdSave.Size(855,375)
+Gui.Form.cmdSave.Position(4275,9705)
+Gui.Form.cmdSave.Caption("Save")
+Gui.Form.cmdSave.Event(Click,cmdSave_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.CallSub(createDisplayDT)
+	f.Intrinsic.Control.CallSub(loadGridProperties)
+	f.Intrinsic.Control.CallSub(loadData)
+	gui.Form..Show
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Closes ODBC connection, default to connection : "con"
+f.Intrinsic.Control.If(v.ODBC!con.State, =, 1)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.EndIf
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_5530_Warranty.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.createDisplayDT.Start
+f.Intrinsic.Control.Try
+	f.Data.DataTable.Create("displayDT", true)
+	f.Data.DataTable.AddColumn("displayDT", "warranty_Code", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Terms", "Long")
+	
+	f.Data.DataView.Create("displayDT", "displayDV", 22)
+	gui.Form.GsGcDisplay.AddGridviewFromDataview("displayGV", "displayDT", "displayDV")
+	gui.Form.GsGcDisplay.MainView("displayGV")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createDisplayDT.End
+
+Program.Sub.loadGridProperties.Start
+v.Local.iCnt.Declare
+v.Local.sFields.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Split(v.DataTable.displayDT.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "ReadOnly", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "AllowEdit", False)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+'		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+'		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Terms", "ReadOnly", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Terms", "AllowEdit", True)
+	
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "warranty_Code", "Caption", "Warranty Code")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Terms", "Caption", "Terms")
+	
+	gui.Form.GsGcDisplay.BestFitColumns("displayGV")
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "HeaderHAlignment", "Center")
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "CellHAlignment", "Center")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadGridProperties.End
+
+Program.Sub.loadData.Start
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+	 	f.Data.DataTable.CreateFromSQL("tmpDisplay", "con", "Select distinct C_Sort_1 as Warranty_Code from Customer_Sales where rec = '2' and C_Sort_1 <> ''")
+	 	f.Data.Dictionary.CreateFromSQL("warrantyDict", "con", "Select Warranty_Code, Terms from GCG_5530_Warranty")
+	f.ODBC.Connection!con.Close
+	
+	f.Data.DataTable.AddColumn("tmpDisplay", "Terms", "Long")
+	f.Data.Dictionary.SetDefaultReturn("warrantyDict", "0")
+	f.Data.DataTable.FillFromDictionary("tmpDisplay", "warrantyDict", "warranty_Code", "Terms")
+	f.Data.Dictionary.Close("warrantyDict")
+	
+	f.Data.DataTable.DeleteRow("displayDT")
+	f.Data.DataTable.AcceptChanges("displayDT")
+	f.Data.DataTable.Merge("tmpDisplay", "displayDT", false, 2)
+	f.Data.DataTable.Close("tmpDisplay")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadData.End
+
+Program.Sub.cmdSave_Click.Start
+f.Intrinsic.Control.Try
+	f.Data.DataTable.AcceptChanges("displayDT")
+	f.ODBC.Connection!con.OpenCompanyConnection
+	 	f.Data.DataTable.SaveToDB("displayDT", "con", "GCG_5530_WARRANTY", "Warranty_Code", 256, "Warranty_Code@!@Warranty_Code*!*Terms@!@Terms")
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.UI.Msgbox("Save Complete.")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.Form_UnLoad.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Form_UnLoad.End
+
+
